@@ -106,7 +106,6 @@
 	<classpathentry kind="lib" path="WEB-INF/lib/smtp.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/spring-1.2.5.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/spring-aop.jar"/>
-	<classpathentry kind="lib" path="WEB-INF/lib/spring-beans.dtd"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/spring-beans.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/spring-context.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/spring-core.jar"/>
@@ -119,10 +118,7 @@
 	<classpathentry kind="lib" path="WEB-INF/lib/spring-support.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/spring-web.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/spring-webmvc.jar"/>
-	<classpathentry kind="lib" path="WEB-INF/lib/spring.ftl"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/spring.jar"/>
-	<classpathentry kind="lib" path="WEB-INF/lib/spring.tld"/>
-	<classpathentry kind="lib" path="WEB-INF/lib/spring.vm"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/standard-1.1.1.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/storyteller-common-1.0.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/storyteller-core-1.0.jar"/>
@@ -134,5 +130,8 @@
 	<classpathentry kind="lib" path="WEB-INF/lib/versioncheck.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/xerces-2.6.2.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/xml-apis.jar"/>
+	<classpathentry kind="lib" path="/Applications/tomcat55/common/lib/jasper-runtime.jar"/>
+	<classpathentry kind="lib" path="/Applications/tomcat55/common/lib/jsp-api.jar"/>
+	<classpathentry kind="lib" path="/Applications/tomcat55/common/lib/servlet-api.jar"/>
 	<classpathentry kind="output" path="WEB-INF/classes"/>
 </classpath>

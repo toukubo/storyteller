@@ -1,11 +1,11 @@
 package net.storyteller.desktop;
 
 public class LocalStaticData {
-	String remotehosturi = "http://storytellermachine.net:8080/storyteller";
-//	String eclipseroot = "/Users/tokubokoji/Documents/workspace/";
-	String eclipseroot = "c:/current/workspace/";
-	String nameofj2eeproject = "point";
-	String idofproject = "150";
+	String remotehosturi = "http://localhost:8080/storyteller";
+	String eclipseroot = "/Users/toukubo/Dropbox/git/nodepad/storyteller";
+//	String eclipseroot = "c:/current/workspace/";
+	String nameofj2eeproject = "nodepad";
+	String idofproject = "1";
 	public String getEclipseroot() {
 		return eclipseroot;
 	}

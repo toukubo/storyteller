@@ -37,6 +37,11 @@ public class HttpClientFilePostOfAndromdaCoreJarAddingToJ2eeStory {
 				file = new File(data.getEclipseroot() +"/"+ data.getNameofj2eeproject()+ "/mda/web/target/"+data.getNameofj2eeproject()+"-web-1.0/WEB-INF/lib/"+data.getNameofj2eeproject()+"-core-1.0.jar");
 				System.err.println("core jar doesn't exist in mda/name of j2ee story + /web/target....look for mda/web/target");
 			}
+			if(!file.exists()){
+				file = new File(data.getEclipseroot() +"/"+ data.getNameofj2eeproject()+ "/mda/"+data.getNameofj2eeproject()+"-core-1.0.jar");
+				System.err.println("core jar doesn't exist in mda/name of j2ee story + /web/target....look for mda/web/target");
+			}
+			
 			
 			if(file.exists()){
 				System.err.println("core jar  exist! try to post!");
