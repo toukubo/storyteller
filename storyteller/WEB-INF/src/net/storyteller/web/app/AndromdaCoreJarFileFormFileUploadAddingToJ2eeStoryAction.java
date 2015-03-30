@@ -39,7 +39,7 @@ public class AndromdaCoreJarFileFormFileUploadAddingToJ2eeStoryAction extends Ac
 		AndromdaCoreJarFile andromdacorejarfile = new AndromdaCoreJarFileImpl();
 		AndromdaCoreJarFileForm andromdacorejarfileform = (AndromdaCoreJarFileForm) form;
 		
-		///////////////////////validation for file names jpg��JPG��JPEG����Ȃ��Ȃ�
+		///////////////////////validation for file names jpg�ｽ�ｽJPG�ｽ�ｽJPEG�ｽ�ｽ�ｽ�ｽﾈゑｿｽ�ｽﾈゑｿｽ
 //		if(! (andromdacorejarfileform.getFormFile().getFileName().endsWith(".jpg") || andromdacorejarfileform.getFormFile().getFileName().endsWith(".JPG") || andromdacorejarfileform.getFormFile().getFileName().endsWith(".JPEG") )){
 		//			req.getSession().setAttribute("systemmessage","jpg only");
 //			new HTTPGetRedirection(req, res, "##secoundmodelclass##Detail.do", andromdacorejarfileform.getJ2eeStory().toString());
@@ -71,6 +71,9 @@ public class AndromdaCoreJarFileFormFileUploadAddingToJ2eeStoryAction extends Ac
 		J2eeStory j2eestory = (J2eeStory) criteria2
 				.uniqueResult();
 
+		if(j2eestory==null){
+			System.err.println("j2ee null........ for the " + J2eeStoryInt + " int id ...");
+		}
                 if(j2eestory.getAndromdaCoreJarFile()!=null){
                    andromdacorejarfile.setId(j2eestory.getAndromdaCoreJarFile().getId());
                 }
@@ -90,8 +93,15 @@ public class AndromdaCoreJarFileFormFileUploadAddingToJ2eeStoryAction extends Ac
 		String filename = andromdacorejarfile.getId().toString() +".jar";
 		String filename2 = j2eestory.getName() +".jar";
 		
+		System.err.println("jiofjiofjioff");
+		
+		
+		if(file==null){
+			System.err.println("file is null!!!!!!!!!!!!!!!!");
+		}
+		
 		InputStream is = file.getInputStream();
-		String basepath = 		this.getServlet().getServletContext().getRealPath(".");
+		String basepath = 		this.getServlet().getServletContext().getRealPath(".")+"/jars/";
 
 		
 		BufferedInputStream inBuffer = new BufferedInputStream(is);
@@ -105,6 +115,7 @@ public class AndromdaCoreJarFileFormFileUploadAddingToJ2eeStoryAction extends Ac
 		is.close();
 		inBuffer.close();
 		outBuffer.close();
+		System.err.println("putting it to " + basepath + "/" + filename2); 
 		FileCopyUtils.copy(new File(basepath + "/" + filename),new File(basepath + "/" + filename2));
 //		
 //		//also save to nameofj2eeproject.jar
@@ -121,8 +132,7 @@ public class AndromdaCoreJarFileFormFileUploadAddingToJ2eeStoryAction extends Ac
 //		inBuffer.close();
 //		outBuffer.close();
 		
-		
-		new HTTPGetRedirection(req, res, "J2eeStoryDetail.do", J2eeStoryInt.toString());
+//		new HTTPGetRedirection(req, res, "J2eeStoryDetail.do", J2eeStoryInt.toString());
 		return null;
 //		req.setAttribute("id", andromdacorejarfile.getId());
 //		return mapping.findForward("success");

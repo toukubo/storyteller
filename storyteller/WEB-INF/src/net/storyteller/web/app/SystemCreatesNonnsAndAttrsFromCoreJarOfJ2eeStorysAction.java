@@ -41,27 +41,33 @@ public class SystemCreatesNonnsAndAttrsFromCoreJarOfJ2eeStorysAction extends Act
 		Criteria criteria = session.createCriteria(J2eeStory.class);
 		if(StringUtils.isNotBlank(req.getParameter("j2eeStory"))){
 			criteria.add(Restrictions.eq("name", req.getParameter("j2eeStory")));
-			System.err.println("creat enouns for j2eeStory" + req.getParameter("j2eeStory"));
-		}
-		
+			System.err.println("creat enouns for j2eeStory " + req.getParameter("j2eeStory"));
+		} 
+		String packageName = req.getParameter("packageName");
+		System.err.println("packagename si " + packageName);
+		System.err.println("mark -2");
+
 		Vector vector = new Vector();
 		for (Iterator iter = criteria.list().iterator(); iter.hasNext();) {
 			J2eeStory story = (J2eeStory) iter.next();
-			File file = new File(this.getServlet().getServletContext().getRealPath(".") + "/" + story.getName().toString() + ".jar");
-			if(!file.exists()){
-				file = new  File(this.getServlet().getServletContext().getRealPath(".") + "/" + story.getName().toString() + "-core-1.0.jar");
+			File file = new File(this.getServlet().getServletContext().getRealPath(".") + "/jars/" + story.getName().toString() + ".jar");
+			if(!file.exists()){ 
+				file = new  File(this.getServlet().getServletContext().getRealPath(".") + "/jars/" + story.getName().toString() + "-core-1.0.jar");
 			}
+			System.err.println("mark -1");
 			if(file.exists()){
-				
+				System.err.println("mark 0.5");
+
 				JarFile jarFile = new JarFile(file);
 				ClassLoader classLoader = new URLClassLoader(new URL[]{file.toURL()}, getClass().getClassLoader());
 				Enumeration enumeration = jarFile.entries();
 				java.util.Hashtable hashtable = new java.util.Hashtable();
 				while (enumeration.hasMoreElements()) {
 					JarEntry entry = (JarEntry) enumeration.nextElement();
-					if(entry.getName().startsWith("net/"+story.getName() + "/model/") 
-							&& entry.getName().endsWith("Impl.class")
-							&& !entry.getName().endsWith("DaoImpl.class")){
+					System.err.println("mark 0");
+					if(isSuitablePojoClass(story, entry,packageName)){
+						System.err.println("mark 2");
+
 				        Class classl = classLoader.loadClass(entry.getName().replaceAll("\\.class","").replaceAll("/","."));
 			        	hashtable.put("net."+story.getName() + ".model." + classl.getSimpleName().replaceAll("Impl",""),"aiueo");
 					}
@@ -69,9 +75,10 @@ public class SystemCreatesNonnsAndAttrsFromCoreJarOfJ2eeStorysAction extends Act
 				enumeration = jarFile.entries();
 				while (enumeration.hasMoreElements()) {
 					JarEntry entry = (JarEntry) enumeration.nextElement();
-					if(entry.getName().startsWith("net/"+story.getName() + "/model/") 
-							&& entry.getName().endsWith("Impl.class")
-							&& !entry.getName().endsWith("DaoImpl.class")){
+					System.err.println("mark 1");
+					if(isSuitablePojoClass(story, entry, packageName)){
+						System.err.println("mark 3");
+
 				        Class classl = classLoader.loadClass(entry.getName().replaceAll("\\.class","").replaceAll("/","."));
 				        Noun noun = new NounImpl();
 				        Criteria criteria2 = session.createCriteria(Noun.class);
@@ -186,6 +193,18 @@ public class SystemCreatesNonnsAndAttrsFromCoreJarOfJ2eeStorysAction extends Act
 		
 		
 		return mapping.findForward("success");
+	}
+
+	private boolean isSuitablePojoClass(J2eeStory story, JarEntry entry,String packageName) {
+		if(StringUtils.isNotEmpty(packageName) && entry.getName().endsWith(".class")){
+			return true;
+			
+		}else{
+			return entry.getName().startsWith("net/"+story.getName() + "/model/") 
+					&& entry.getName().endsWith("Impl.class")
+					&& !entry.getName().endsWith("DaoImpl.class");
+			
+		}
 	}
 	
 	
