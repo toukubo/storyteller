@@ -1,0 +1,88 @@
+package net.musicmug.web.app;
+
+import net.musicmug.model.*;
+import net.musicmug.beans.*;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import java.util.Iterator;
+import java.util.Vector;
+import org.apache.commons.beanutils.BeanUtils;
+import org.apache.struts.action.Action;
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.web.context.support.WebApplicationContextUtils;
+
+
+import net.enclosing.util.HibernateSession;
+import net.storyteller.desktop.CopyProperties;
+
+
+public class FavoritesAction extends Action{
+	public ActionForward execute(
+			ActionMapping mapping,
+			ActionForm form,
+			HttpServletRequest req,
+			HttpServletResponse res) throws Exception{
+
+
+
+		Session session = new HibernateSession().currentSession(this
+				.getServlet().getServletContext());
+
+                Vector vector = new Vector();
+		Criteria criteria = session.createCriteria(Favorite.class);
+		for (Iterator iter = criteria.list().iterator(); iter.hasNext();) {
+			Favorite favorite = (Favorite) iter.next();
+			vector.add(favorite);
+		}
+		Favorite favorite = new FavoriteImpl();
+		FavoriteForm favoriteform = new FavoriteForm();
+		criteria = session.createCriteria(Favorite.class);
+
+
+		if (req.getAttribute("form")== null && req.getParameter("id")!=null){
+			criteria.add(Restrictions.idEq(Integer.valueOf(req
+					.getParameter("id"))));
+			favorite = (Favorite) criteria.uniqueResult();
+			new CopyProperties(favorite,favoriteform);
+		} else if(req.getAttribute("form")!=null){
+                        favoriteform = (FavoriteForm)req.getAttribute("form");
+			criteria.add(Restrictions.idEq(favoriteform.getId()));
+			favorite = (Favorite) criteria.uniqueResult();
+		}
+		
+
+		req.setAttribute("model",favorite);
+		req.setAttribute("form",favoriteform);
+		
+		
+		req.setAttribute("favorites",vector);
+
+
+                  Criteria criteriaPublicUser= session.createCriteria(PublicUser.class);
+			req.setAttribute("PublicUsers", criteriaPublicUser.list());
+
+Criteria criteriaMusicCategory= session.createCriteria(MusicCategory.class);
+			req.setAttribute("MusicCategorys", criteriaMusicCategory.list());
+
+ 
+
+		
+
+                if(req.getParameter("displayexport") !=null){
+     		    return mapping.findForward("displayexport");
+                }
+
+		return mapping.findForward("success");
+	}
+	
+	
+}

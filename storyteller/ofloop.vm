@@ -1,0 +1,2 @@
+for(Iterator iter##crinum## = list##loopnum##.iterator();iter##crinum##.hasNext();){
+	##modelclass## ##modelobj## = (##modelclass##)iter##crinum##.next();

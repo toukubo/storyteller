@@ -1,0 +1,1 @@
+criteria##crinum##.add(Restrictions.eq("##modelobj##",##modelobj##.getId()));

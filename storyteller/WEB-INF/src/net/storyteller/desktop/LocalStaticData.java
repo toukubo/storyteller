@@ -1,0 +1,36 @@
+package net.storyteller.desktop;
+
+public class LocalStaticData {
+	String remotehosturi = "http://storytellermachine.net:8080/storyteller";
+//	String eclipseroot = "/Users/tokubokoji/Documents/workspace/";
+	String eclipseroot = "c:/current/workspace/";
+	String nameofj2eeproject = "point";
+	String idofproject = "150";
+	public String getEclipseroot() {
+		return eclipseroot;
+	}
+	public void setEclipseroot(String eclipseroot) {
+		this.eclipseroot = eclipseroot;
+	}
+	public String getNameofj2eeproject() {
+		return nameofj2eeproject;
+	}
+	public void setNameofj2eeproject(String nameofj2eeproject) {
+		this.nameofj2eeproject = nameofj2eeproject;
+	}
+	public String getRemotehosturi() {
+		return remotehosturi;
+	}
+	public void setRemotehosturi(String remotehosturi) {
+		this.remotehosturi = remotehosturi;
+	}
+	public String getIdofproject() {
+		return idofproject;
+	}
+	public void setIdofproject(String idofproject) {
+		this.idofproject = idofproject;
+	}
+
+	
+
+}

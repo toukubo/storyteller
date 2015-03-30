@@ -1,0 +1,80 @@
+package net.gasbooknet.web.app;
+
+import net.gasbooknet.model.*;
+import net.gasbooknet.beans.*;
+
+import java.io.File;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import net.enclosing.util.StringFullfiller;
+import net.enclosing.util.HTTPGetRedirection;
+import net.enclosing.util.HibernateSession;
+
+import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.lang.StringUtils;
+
+import org.apache.struts.action.Action;
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
+
+
+public class PostGroupingVPAction extends Action{
+	public ActionForward execute(
+			ActionMapping mapping,
+			ActionForm form,
+			HttpServletRequest req,
+			HttpServletResponse res) throws Exception{
+		
+		Grouping grouping = new GroupingImpl();
+		GroupingForm groupingform = (GroupingForm) form;
+
+                String error = "";
+
+
+                
+		
+		Session session = new HibernateSession().currentSession(this.getServlet().getServletContext());
+		if(groupingform.getId() == null || groupingform.getId().intValue() == 0){
+			grouping.setId(null);
+			groupingform.setId(null);
+		}else{
+			grouping.setId(groupingform.getId());
+			Criteria criteria = session.createCriteria(Grouping.class);
+			criteria.add(Restrictions.idEq(Integer.valueOf(req.getParameter("id"))));
+			grouping = (Grouping) criteria.uniqueResult();
+
+		}
+                
+
+		
+		StringFullfiller.fullfil(grouping);
+                
+
+		Transaction transaction = session.beginTransaction();
+		session.saveOrUpdate(grouping);
+		transaction.commit();
+		session.flush();
+                if(req.getParameter("from")!=null && req.getParameter("from").equals("detail")){
+		   new HTTPGetRedirection(req, res, "PostGroupingDetail.do", grouping.getId().toString());
+                }
+		if (StringUtils.isNotBlank(req.getParameter("ajax"))) {
+			req.setAttribute("message","success");
+			return mapping.findForward("success");
+		}
+
+		
+		new HTTPGetRedirection(req, res, "Groupings.do", grouping.getId().toString());
+		return null;
+
+		
+	}
+	
+	
+}

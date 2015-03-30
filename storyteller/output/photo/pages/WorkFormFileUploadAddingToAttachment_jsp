@@ -1,0 +1,32 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/xml" prefix="x" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://struts.apache.org/tags-tiles" prefix="tiles" %>
+<%@ taglib uri="/tags/struts-logic" prefix="logic" %>
+<%@ taglib uri="/tags/struts-html" prefix="html" %>
+<%@ taglib uri="/tags/struts-bean" prefix="bean" %>
+
+<%@ taglib uri="http://displaytag.sf.net" prefix="display" %>
+
+
+<%@ page isELIgnored="false" %>
+
+<html:html>
+<tiles:insert page="/h.jsp"/>
+
+			<form method="POST" action="WorkVP.do" enctype="multipart/form-data">
+				<html:file property="file" name="formFile"></html:file>
+				<input type="hidden" name="id" value="${work.id}" />
+				<input type="hidden" name="attachment" value="${attachment.id}" />
+				<html:submit value="追加"/>
+			</form>
+
+
+
+	</body>
+</html:html>
+
+

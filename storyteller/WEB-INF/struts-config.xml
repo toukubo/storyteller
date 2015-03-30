@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources/>
+  <form-beans>
+    <form-bean name="manageAndromdaCoreJarFileForm" type="net.storyteller.model.crud.AndromdaCoreJarFileForm"/>
+    <form-bean name="AndromdaCoreJarFileForm" type="net.storyteller.beans.AndromdaCoreJarFileForm"/>
+    <form-bean name="manageAttrForm" type="net.storyteller.model.crud.AttrForm"/>
+    <form-bean name="AttrForm" type="net.storyteller.beans.AttrForm"/>
+    <form-bean name="manageAttrUseForm" type="net.storyteller.model.crud.AttrUseForm"/>
+    <form-bean name="AttrUseForm" type="net.storyteller.beans.AttrUseForm"/>
+    <form-bean name="manageComponeyForm" type="net.storyteller.model.crud.ComponeyForm"/>
+    <form-bean name="ComponeyForm" type="net.storyteller.beans.ComponeyForm"/>
+    <form-bean name="manageJ2eeStoryForm" type="net.storyteller.model.crud.J2eeStoryForm"/>
+    <form-bean name="J2eeStoryForm" type="net.storyteller.beans.J2eeStoryForm"/>
+    <form-bean name="manageJspForm" type="net.storyteller.model.crud.JspForm"/>
+    <form-bean name="JspForm" type="net.storyteller.beans.JspForm"/>
+    <form-bean name="manageJspTemplateForm" type="net.storyteller.model.crud.JspTemplateForm"/>
+    <form-bean name="JspTemplateForm" type="net.storyteller.beans.JspTemplateForm"/>
+    <form-bean name="manageNounClauseForm" type="net.storyteller.model.crud.NounClauseForm"/>
+    <form-bean name="NounClauseForm" type="net.storyteller.beans.NounClauseForm"/>
+    <form-bean name="manageNounForm" type="net.storyteller.model.crud.NounForm"/>
+    <form-bean name="NounForm" type="net.storyteller.beans.NounForm"/>
+    <form-bean name="manageNounUseForm" type="net.storyteller.model.crud.NounUseForm"/>
+    <form-bean name="NounUseForm" type="net.storyteller.beans.NounUseForm"/>
+    <form-bean name="managePostTemplateForm" type="net.storyteller.model.crud.PostTemplateForm"/>
+    <form-bean name="PostTemplateForm" type="net.storyteller.beans.PostTemplateForm"/>
+    <form-bean name="manageSentenceForm" type="net.storyteller.model.crud.SentenceForm"/>
+    <form-bean name="SentenceForm" type="net.storyteller.beans.SentenceForm"/>
+    <form-bean name="manageStaticDataForm" type="net.storyteller.model.crud.StaticDataForm"/>
+    <form-bean name="StaticDataForm" type="net.storyteller.beans.StaticDataForm"/>
+    <form-bean name="manageStorytellerForm" type="net.storyteller.model.crud.StorytellerForm"/>
+    <form-bean name="StorytellerForm" type="net.storyteller.beans.StorytellerForm"/>
+    <form-bean name="manageStrutsActionForm" type="net.storyteller.model.crud.StrutsActionForm"/>
+    <form-bean name="StrutsActionForm" type="net.storyteller.beans.StrutsActionForm"/>
+    <form-bean name="manageStrutsActionTemplateForm" type="net.storyteller.model.crud.StrutsActionTemplateForm"/>
+    <form-bean name="StrutsActionTemplateForm" type="net.storyteller.beans.StrutsActionTemplateForm"/>
+    <form-bean name="manageTemplateInputForm" type="net.storyteller.model.crud.TemplateInputForm"/>
+    <form-bean name="TemplateInputForm" type="net.storyteller.beans.TemplateInputForm"/>
+    <form-bean name="manageValidationRuleChoiseForm" type="net.storyteller.model.crud.ValidationRuleChoiseForm"/>
+    <form-bean name="ValidationRuleChoiseForm" type="net.storyteller.beans.ValidationRuleChoiseForm"/>
+    <form-bean name="manageValidationRuleForm" type="net.storyteller.model.crud.ValidationRuleForm"/>
+    <form-bean name="ValidationRuleForm" type="net.storyteller.beans.ValidationRuleForm"/>
+    <form-bean name="manageVerbForm" type="net.storyteller.model.crud.VerbForm"/>
+    <form-bean name="VerbForm" type="net.storyteller.beans.VerbForm"/>
+    <form-bean name="CommonTranslationForm" type="net.storyteller.beans.CommonTranslationForm"/>
+    <form-bean name="IntraUserForm" type="net.storyteller.beans.IntraUserForm"/>
+    <form-bean name="OutOfPattenSentenceForm" type="net.storyteller.beans.OutOfPattenSentenceForm"/>
+    <form-bean name="TestForm" type="net.storyteller.beans.TestForm"/>
+    <form-bean name="ManualStepForm" type="net.storyteller.beans.ManualStepForm"/>
+    <form-bean name="StorytellerPageForm" type="net.storyteller.beans.StorytellerPageForm"/>
+    <form-bean name="BusinessCostForm" type="net.storyteller.beans.BusinessCostForm"/>
+    <form-bean name="BuyingForm" type="net.storyteller.beans.BuyingForm"/>
+    <form-bean name="ClientForm" type="net.storyteller.beans.ClientForm"/>
+    <form-bean name="CommonCostForm" type="net.storyteller.beans.CommonCostForm"/>
+    <form-bean name="ContributeForm" type="net.storyteller.beans.ContributeForm"/>
+    <form-bean name="ContributionTypeForm" type="net.storyteller.beans.ContributionTypeForm"/>
+    <form-bean name="ProfitDividientForm" type="net.storyteller.beans.ProfitDividientForm"/>
+    <form-bean name="RoleForm" type="net.storyteller.beans.RoleForm"/>
+    <form-bean name="TaskForm" type="net.storyteller.beans.TaskForm"/>
+    <form-bean name="TaskTemplateForm" type="net.storyteller.beans.TaskTemplateForm"/>
+    <form-bean name="ViewCodeForm" type="net.storyteller.beans.ViewCodeForm"/>
+    <form-bean name="EstimationChoiseForm" type="net.storyteller.beans.EstimationChoiseForm"/>
+    <form-bean name="EstimationForm" type="net.storyteller.beans.EstimationForm"/>
+    <form-bean name="StorytellerRoleForm" type="net.storyteller.beans.StorytellerRoleForm"/>
+    <form-bean name="RoleAssignForm" type="net.storyteller.beans.RoleAssignForm"/>
+    <form-bean name="BasecampAccountForm" type="net.storyteller.beans.BasecampAccountForm"/>
+    <form-bean name="BasecampProjectForm" type="net.storyteller.beans.BasecampProjectForm"/>
+    <form-bean name="BasecampTodoForm" type="net.storyteller.beans.BasecampTodoForm"/>
+    <form-bean name="BasecampTodoListForm" type="net.storyteller.beans.BasecampTodoListForm"/>
+    <form-bean name="AccountSnapshotForm" type="net.storyteller.beans.AccountSnapshotForm"/>
+    <form-bean name="IncomePaymentForm" type="net.storyteller.beans.IncomePaymentForm"/>
+    <form-bean name="MessageResourceForm" type="net.storyteller.beans.MessageResourceForm"/>
+  </form-beans>
+  <global-exceptions/>
+  <global-forwards/>
+  <action-mappings>
+    <action path="/DeleteAttr" type="net.storyteller.web.DeleteAttrAction">
+      <forward name="success" path="/Attrs.do"/>
+    </action>
+    <action path="/AttrVP" name="manageAttrForm" type="net.storyteller.web.AttrVPAction" input="/pages/AttrDetail.jsp">
+      <forward name="success" path="/AttrDetail.do"/>
+    </action>
+    <action path="/AttrDetail" type="net.storyteller.web.AttrDetailAction">
+      <forward name="success" path="/pages/AttrDetail.jsp"/>
+    </action>
+    <action path="/Attrs" type="net.storyteller.web.AttrsAction">
+      <forward name="success" path="/pages/Attrs.jsp"/>
+    </action>
+    <action path="/Verbs" type="net.storyteller.web.VerbsAction">
+      <forward name="success" path="/pages/app/Verbs.jsp"/>
+    </action>
+    <action path="/VerbDetail" type="net.storyteller.web.VerbDetailAction">
+      <forward name="success" path="/pages/app/VerbDetail.jsp"/>
+    </action>
+    <action path="/VerbVP" name="VerbForm" type="net.storyteller.web.VerbVPAction" input="/pages/app/VerbDetail.jsp">
+      <forward name="success" path="/VerbDetail.do"/>
+    </action>
+    <action path="/J2eeStorys" type="net.storyteller.web.app.J2eeStorysAction">
+      <forward name="success" path="/pages/app/J2eeStorys.jsp"/>
+    </action>
+    <action path="/J2eeStoryDetail" type="net.storyteller.web.app.J2eeStoryDetailAction">
+      <forward name="success" path="/pages/app/J2eeStoryDetail.jsp"/>
+    </action>
+    <action path="/J2eeStoryVP" name="manageJ2eeStoryForm" type="net.storyteller.web.J2eeStoryVPAction" input="/pages/app/J2eeStoryDetail.jsp">
+      <forward name="success" path="/CreatesValidNouns.do"/>
+    </action>
+    <action path="/CreatesValidNouns" type="net.storyteller.web.app.CreatesValidNounsAction">
+      <forward name="success" path="/J2eeStoryDetail.do"/>
+    </action>
+    <action path="/Nouns" type="net.storyteller.web.NounsAction">
+      <forward name="success" path="/pages/Nouns.jsp"/>
+    </action>
+    <action path="/NounDetail" type="net.storyteller.web.NounDetailAction">
+      <forward name="success" path="/pages/NounDetail.jsp"/>
+    </action>
+    <action path="/NounVP" name="manageNounForm" type="net.storyteller.web.NounVPAction" input="/pages/NounDetail.jsp">
+      <forward name="success" path="/NounDetail.do"/>
+    </action>
+    <action path="/DeleteNoun" type="net.storyteller.web.DeleteNounAction">
+      <forward name="success" path="/Nouns.do"/>
+    </action>
+    <action path="/DeleteJSPTemplate" type="net.storyteller.web.DeleteJspTemplateAction">
+      <forward name="success" path="/VerbDetail.do"/>
+    </action>
+    <action path="/JspTemplateDetail" type="net.storyteller.web.app.JSPTemplateDetailAction">
+      <forward name="success" path="/pages/app/JSPTemplateDetail.jsp"/>
+    </action>
+    <action path="/JSPTemplateVRP" name="JspTemplateForm" type="net.storyteller.web.JspTemplateVPAction" input="/pages/app/JSPTemplateDetail.jsp">
+      <forward name="success" path="/JspTemplateDetail.do"/>
+    </action>
+    <action path="/DeleteStrutsTemplate" type="net.storyteller.web.DeleteStrutsActionTemplateAction">
+      <forward name="success" path="/VerbDetail.do"/>
+    </action>
+    <action path="/StrutsActionTemplateDetail" type="net.storyteller.web.app.StrutsActionTemplateDetailAction">
+      <forward name="success" path="/pages/app/StrutsActionTemplateDetail.jsp"/>
+    </action>
+    <action path="/StrutsActionTemplateVPR" name="StrutsActionTemplateForm" type="net.storyteller.web.app.StrutsActionTemplateVPRAction" input="/pages/app/StrutsActionTemplateDetail.jsp">
+      <forward name="success" path="/StrutsActionTemplateDetail.do"/>
+    </action>
+    <action path="/Sentenses" type="net.storyteller.web.SentencesAction">
+      <forward name="success" path="/pages/app/Sentences.jsp"/>
+    </action>
+    <action path="/DeleteSentence" type="net.storyteller.web.DeleteSentenceAction">
+      <forward name="success" path="/Sentenses.do"/>
+    </action>
+    <action path="/SentenceVP" name="SentenceForm" type="net.storyteller.web.app.SentenceVPAction">
+      <forward name="success" path="/CreatesStrutsActionsFromSentence.do"/>
+    </action>
+    <action path="/CreatesStrutsActionsFromSentence" type="net.storyteller.web.app.CreatesStrutsActionsFromSentenceAction">
+      <forward name="success" path="/CreatesJSPFromSentence.do"/>
+    </action>
+    <action path="/CreatesJSPFromSentence" type="net.storyteller.web.app.CreatesJSPFromSentenceAction">
+      <forward name="success" path="/CreateActualFilesOfJSPsAndStrutsActionsOfASentence.do"/>
+    </action>
+    <action path="/CreateActualFilesOfJSPsAndStrutsActionsOfASentence" type="net.storyteller.web.app.CreateActualFilesOfJSPsAndStrutsActionsOfASentenceAction">
+      <forward name="success" path="/CreateStrutsConfigCodeOfASentence.do"/>
+    </action>
+    <action path="/StrutsConfigCodesOfSentencesOfAJ2eeProject" type="net.storyteller.web.app.StrutsConfigCodesOfSentencesOfAJ2eeProjectAction">
+      <forward name="success" path="/pages/StrutsConfigCodesOfSentencesOfAJ2eeProject.jsp"/>
+    </action>
+    <action path="/TemplateInputDetailAddingToVerb" type="net.storyteller.web.TemplateInputDetailAction">
+      <forward name="success" path="/pages/app/TemplateInputDetail.jsp"/>
+    </action>
+    <action path="/TemplateInputVPRVerb" name="TemplateInputForm" type="net.storyteller.web.TemplateInputVPAction" input="/pages/app/TemplateInputDetail.jsp">
+      <forward name="success" path="/TemplateInputDetailAddingToVerb.do"/>
+    </action>
+    <action path="/DeleteTemplateInput" type="net.storyteller.web.DeleteTemplateInputAction">
+      <forward name="success" path="/VerbDetail.do"/>
+    </action>
+    <action path="/DeleteJ2eeStory" type="net.storyteller.web.DeleteJ2eeStoryAction">
+      <forward name="success" path="/J2eeStorys.do"/>
+    </action>
+    <action path="/CreateStrutsConfigCodeOfASentence" type="net.storyteller.web.app.CreateStrutsConfigCodeOfASentenceAction"/>
+    <action path="/SystemCreatesNonnsAndAttrsFromCoreJarOfJ2eeStorys" type="net.storyteller.web.app.SystemCreatesNonnsAndAttrsFromCoreJarOfJ2eeStorysAction">
+      <forward name="success" path="/SystemCreatesSentencesOfAllVerbOfJ2eeProjects.do"/>
+    </action>
+    <action path="/CUNounNounClausesWithOneNounUses" type="net.storyteller.web.app.CUNounNounClausesWithOneNounUsesAction"/>
+    <action path="/SystemCreatesSentencesOfAllVerbOfJ2eeProjects" type="net.storyteller.web.app.SystemCreatesSentencesOfAllVerbOfJ2eeProjectsAction">
+      <forward name="success" path="/SystemCreaatesBeansOfNouns.do"/>
+    </action>
+    <action path="/StrutsConfigOfAJ2eeStory" type="net.storyteller.web.app.StrutsConfigOfAJ2eeStory">
+      <forward name="success" path="/pages/StrutsConfigOfAJ2eeStory.jsp"/>
+    </action>
+    <action path="/AttrUseVP" name="AttrUseForm" type="net.storyteller.web.app.AttrUseVPAction"/>
+    <action path="/UrlsOfBeansOfAJ2eeStoryByName" type="net.storyteller.web.app.UrlsOfBeansOfAJ2eeStoryByNameAction"/>
+    <action path="/UrlsOfJspsOfAJ2eeStoryByName" type="net.storyteller.web.app.UrlsOfJspsOfAJ2eeStoryByName"/>
+    <action path="/UrlsOfStrutsActionsOfAJ2eeStoryByName" type="net.storyteller.web.app.UrlsOfStrutsActionsOfAJ2eeStoryByNameAction"/>
+    <action path="/SystemCreaatesBeansOfNouns" type="net.storyteller.web.app.SystemCreaatesBeansOfNounAction"/>
+    <action path="/AndromdaCoreJarFileFormFileUploadAddingToJ2eeStory" name="AndromdaCoreJarFileForm" type="net.storyteller.web.app.AndromdaCoreJarFileFormFileUploadAddingToJ2eeStoryAction"/>
+    <action path="/IdOfAJ2eeStoryByName" type="net.storyteller.web.app.IdOfAJ2eeStoryByNameAction"/>
+    <action path="/DeleteAttrUse" type="net.storyteller.web.app.DeleteAttrUseAction"/>
+    <action path="/ShowSentence" type="net.storyteller.web.app.ShowSentenceAction">
+      <forward name="success" path="/pages/app/ShowSentence.jsp"/>
+    </action>
+    <action path="/ValidationRules" type="net.storyteller.web.app.ValidationRulesAction">
+      <forward name="success" path="/pages/app/ValidationRules.jsp"/>
+    </action>
+    <action path="/ValidationRuleVP" name="ValidationRuleForm" type="net.storyteller.web.app.PostValidationRuleVPAction"/>
+    <action path="/ValidationRuleChoiseVp" name="ValidationRuleChoiseForm" type="net.storyteller.web.app.PostValidationRuleChoiseVPAction"/>
+    <action path="/DeleteValidationRuleChoise" type="net.storyteller.web.app.DeleteValidationRuleChoiseAction"/>
+    <action path="/DisplayStrutsActionsOfJ2eeStory" type="net.storyteller.web.app.DisplayStrutsActionsOfJ2eeStoryAction"/>
+    <action path="/DisplayXmlOfTest" type="net.storyteller.web.app.DisplayXmlOfTestAction">
+      <forward name="success" path="/pages/app/DisplayXmlOfTest.jsp"/>
+    </action>
+    <action path="/StrutsConfigOfSentencesOfNonAllVerbsOfAJ2eeStory" type="net.storyteller.web.app.StrutsConfigOfSentencesOfNonAllVerbsOfAJ2eeStoryAction">
+      <forward name="success" path="/pages/StrutsConfigOfAJ2eeStory.jsp"/>
+    </action>
+    <action path="/UrlsOfStrutsActionsOfNonAllVerbOfAJ2eeStoryByName" type="net.storyteller.web.app.UrlsOfStrutsActionsOfNonAllVerbOfAJ2eeStoryByNameAction"/>
+    <action path="/UrlsOfJspsOfNonAllVerbAJ2eeStoryByName" type="net.storyteller.web.app.UrlsOfJspsOfNonAllVerbAJ2eeStoryByNameAction"/>
+    <action path="/ShowEstimationOfAJ2eeStory" type="net.storyteller.web.app.ShowEstimationOfAJ2eeStory">
+      <forward name="success" path="/pages/app/ShowEstimationOfAJ2eeStory.jsp"/>
+    </action>
+    <action path="/PostAttrVPAboutJapanese" name="AttrForm" type="net.storyteller.web.app.PostAttrVPAboutJapaneseAction"/>
+    <action path="/UpdateNamesOfAttrsAJ2eeProjectsFromCommonTranslations" type="net.storyteller.web.app.UpdateNamesOfAttrsAJ2eeProjectsFromCommonTranslations"/>
+    <action path="/CommonTranslations" type="net.storyteller.web.app.CommonTranslationsAction">
+      <forward name="success" path="/pages/app/CommonTranslations.jsp"/>
+    </action>
+    <action path="/PostCommonTranslationVP" name="CommonTranslationForm" type="net.storyteller.web.app.PostCommonTranslationVPAction"/>
+    <action path="/ShowJ2eeStoryAboutNouns" type="net.storyteller.web.app.ShowJ2eeStoryAboutNouns">
+      <forward name="success" path="/pages/app/ShowJ2eeStoryAboutNouns.jsp"/>
+    </action>
+    <action path="/CreateValidationRuleChoiseFromAttrsOfAJ2eeStory" type="net.storyteller.web.app.CreateValidationRuleChoiseFromAttrsOfAJ2eeStory"/>
+    <action path="/UpdateTemplateInputsFromTemplatesOfAVerb" type="net.storyteller.web.app.UpdateTemplateInputsFromTemplatesOfAVerb"/>
+    <action path="/PostNounDetailAboutJapanese" type="net.storyteller.web.app.PostNounDetailAboutJapaneseAction">
+      <forward name="success" path="/pages/app/PostNounDetailAboutJapanese.jsp"/>
+    </action>
+    <action path="/PostNounVPAboutJapanese" name="NounForm" type="net.storyteller.web.app.PostNounVPAboutJapaneseAction"/>
+    <action path="/PostValidationRuleVP" type="net.storyteller.web.PostValidationRuleVPAction"/>
+    <action path="/DisplayXmlOfNoun" type="net.storyteller.web.app.DisplayXmlOfNounAction">
+      <forward name="success" path="/pages/app/DisplayXmlOfNoun.jsp"/>
+    </action>
+    <action path="/ValidationRuleChoises" type="net.storyteller.web.ValidationRuleChoisesAction">
+      <forward name="success" path="/pages/app/ValidationRuleChoises.jsp"/>
+    </action>
+    <action path="/ShowNounXml" type="net.storyteller.web.app.ShowNounXmlAction">
+      <forward name="success" path="/pages/app/ShowNounXml.jsp"/>
+    </action>
+    <action path="/PostCommonTranslationDetail" type="net.storyteller.web.app.PostCommonTranslationDetailAction">
+      <forward name="success" path="/pages/app/PostCommonTranslationDetail.jsp"/>
+    </action>
+    <action path="/PostValidationRuleChoiseDetail" type="net.storyteller.web.PostValidationRuleChoiseDetailAction">
+      <forward name="success" path="/pages/app/PostValidationRuleChoiseDetail.jsp"/>
+    </action>
+    <action path="/PostValidationRuleChoiseVP" type="net.storyteller.web.PostValidationRuleChoiseVPAction"/>
+    <action path="/PostValidationRuleDetail" type="net.storyteller.web.PostValidationRuleDetailAction">
+      <forward name="success" path="/pages/app/PostValidationRuleDetail.jsp"/>
+    </action>
+    <action path="/PostAttrDetailAboutJapanese" type="net.storyteller.web.app.PostAttrDetailAboutJapaneseAction">
+      <forward name="success" path="/pages/app/PostAttrDetailAboutJapanese.jsp"/>
+    </action>
+    <action path="/PostBusinessCostDetail" type="net.storyteller.web.app.PostBusinessCostDetailAction">
+      <forward name="success" path="/pages/app/PostBusinessCostDetail.jsp"/>
+    </action>
+    <action path="/PostBusinessCostVP" name="BusinessCostForm" type="net.storyteller.web.app.PostBusinessCostVPAction"/>
+    <action path="/PostBuyingDetail" type="net.storyteller.web.app.PostBuyingDetailAction">
+      <forward name="success" path="/pages/app/PostBuyingDetail.jsp"/>
+    </action>
+    <action path="/PostBuyingVP" name="BuyingForm" type="net.storyteller.web.app.PostBuyingVPAction"/>
+    <action path="/PostClientDetail" type="net.storyteller.web.app.PostClientDetailAction">
+      <forward name="success" path="/pages/app/PostClientDetail.jsp"/>
+    </action>
+    <action path="/PostClientVP" name="ClientForm" type="net.storyteller.web.app.PostClientVPAction"/>
+    <action path="/PostCommonCostVP" type="net.storyteller.web.app.PostCommonCostVPAction"/>
+    <action path="/PostCommonCostDetail" type="net.storyteller.web.app.PostCommonCostDetailAction">
+      <forward name="success" path="/pages/app/PostCommonCostDetail.jsp"/>
+    </action>
+    <action path="/PostContributeDetail" type="net.storyteller.web.app.PostContributeDetailAction">
+      <forward name="success" path="/pages/app/PostContributeDetail.jsp"/>
+    </action>
+    <action path="/PostContributeVP" name="ContributeForm" type="net.storyteller.web.app.PostContributeVPAction"/>
+    <action path="/PostContributionTypeDetail" type="net.storyteller.web.app.PostContributionTypeDetailAction">
+      <forward name="success" path="/pages/app/PostContributionTypeDetail.jsp"/>
+    </action>
+    <action path="/PostContributionTypeVP" name="ContributionTypeForm" type="net.storyteller.web.app.PostContributionTypeVPAction"/>
+    <action path="/PostStaticDataDetail" type="net.storyteller.web.app.PostStaticDataDetailAction">
+      <forward name="success" path="/pages/app/PostStaticDataDetail.jsp"/>
+    </action>
+    <action path="/PostRoleVP" name="RoleForm" type="net.storyteller.web.app.PostRoleVPAction"/>
+    <action path="/PostStaticDataVP" name="StaticDataForm" type="net.storyteller.web.app.PostStaticDataVPAction"/>
+    <action path="/PostIntraUserDetail" type="net.storyteller.web.app.PostIntraUserDetailAction">
+      <forward name="success" path="/pages/app/PostIntraUserDetail.jsp"/>
+    </action>
+    <action path="/PostRoleDetail" type="net.storyteller.web.app.PostRoleDetailAction">
+      <forward name="success" path="/pages/app/PostRoleDetail.jsp"/>
+    </action>
+    <action path="/PostIntraUserVP" name="IntraUserForm" type="net.storyteller.web.app.PostIntraUserVPAction"/>
+    <action path="/PostTaskDetail" type="net.storyteller.web.app.PostTaskDetailAction">
+      <forward name="success" path="/pages/app/PostTaskDetail.jsp"/>
+    </action>
+    <action path="/PostTaskTemplateDetail" type="net.storyteller.web.app.PostTaskTemplateDetailAction">
+      <forward name="success" path="/pages/app/PostTaskTemplateDetail.jsp"/>
+    </action>
+    <action path="/PostTaskVP" name="TaskForm" type="net.storyteller.web.app.PostTaskVPAction"/>
+    <action path="/PostTaskTemplateVP" name="TaskTemplateForm" type="net.storyteller.web.app.PostTaskTemplateVPAction"/>
+    <action path="/AjaxDisplayBusinessCosts" type="net.storyteller.web.app.AjaxDisplayBusinessCostsAction">
+      <forward name="success" path="/pages/app/AjaxDisplayBusinessCosts.jsp"/>
+    </action>
+    <action path="/AjaxDisplayIntraUsers" type="net.storyteller.web.app.AjaxDisplayIntraUsersAction">
+      <forward name="success" path="/pages/app/AjaxDisplayIntraUsers.jsp"/>
+    </action>
+    <action path="/DeleteIntraUser" type="net.storyteller.web.app.DeleteIntraUserAction"/>
+    <action path="/PostOutOfPattenSentenceVP" name="SentenceForm" type="net.storyteller.web.app.PostOutOfPattenSentenceVPAction"/>
+    <action path="/AjaxDisplayBuyings" type="net.storyteller.web.app.AjaxDisplayBuyingsAction">
+      <forward name="success" path="/pages/app/AjaxDisplayBuyings.jsp"/>
+    </action>
+    <action path="/AjaxDisplayCommonCosts" type="net.storyteller.web.app.AjaxDisplayCommonCostsAction">
+      <forward name="success" path="/pages/app/AjaxDisplayCommonCosts.jsp"/>
+    </action>
+    <action path="/PostOutOfPattenSentenceDetail" type="net.storyteller.web.app.PostOutOfPattenSentenceDetailAction">
+      <forward name="success" path="/pages/app/PostOutOfPattenSentenceDetail.jsp"/>
+    </action>
+    <action path="/ShowJ2eeStoryXml" type="net.storyteller.web.app.ShowJ2eeStoryXmlAction">
+      <forward name="success" path="/pages/app/ShowJ2eeStoryXml.jsp"/>
+    </action>
+    <action path="/AjaxDisplayTaskTemplates" type="net.storyteller.web.app.AjaxDisplayTaskTemplatesAction">
+      <forward name="success" path="/pages/app/AjaxDisplayTaskTemplates.jsp"/>
+    </action>
+    <action path="/AjaxDisplayContributes" type="net.storyteller.web.app.AjaxDisplayContributesAction">
+      <forward name="success" path="/pages/app/AjaxDisplayContributes.jsp"/>
+    </action>
+    <action path="/AjaxDisplayOutOfPattenSentences" type="net.storyteller.web.app.AjaxDisplayOutOfPattenSentencesAction">
+      <forward name="success" path="/pages/app/AjaxDisplayOutOfPattenSentences.jsp"/>
+    </action>
+    <action path="/AjaxDisplayProfitDividients" type="net.storyteller.web.app.AjaxDisplayProfitDividientsAction">
+      <forward name="success" path="/pages/app/AjaxDisplayProfitDividients.jsp"/>
+    </action>
+    <action path="/AjaxDisplayContributionTypes" type="net.storyteller.web.app.AjaxDisplayContributionTypesAction">
+      <forward name="success" path="/pages/app/AjaxDisplayContributionTypes.jsp"/>
+    </action>
+    <action path="/DisplayXmlOfJ2eeStory" type="net.storyteller.web.app.DisplayXmlOfJ2eeStoryAction">
+      <forward name="success" path="/pages/app/DisplayXmlOfJ2eeStory.jsp"/>
+    </action>
+    <action path="/AjaxDisplayTests" type="net.storyteller.web.app.AjaxDisplayTestsAction">
+      <forward name="success" path="/pages/app/AjaxDisplayTests.jsp"/>
+    </action>
+    <action path="/Contributes" type="net.storyteller.web.app.ContributesAction">
+      <forward name="success" path="/pages/app/Contributes.jsp"/>
+    </action>
+    <action path="/ContributionTypes" type="net.storyteller.web.app.ContributionTypesAction">
+      <forward name="success" path="/pages/app/ContributionTypes.jsp"/>
+    </action>
+    <action path="/IntraUsers" type="net.storyteller.web.app.IntraUsersAction">
+      <forward name="success" path="/pages/app/IntraUsers.jsp"/>
+    </action>
+    <action path="/AjaxDisplayTasks" type="net.storyteller.web.app.AjaxDisplayTasksAction">
+      <forward name="success" path="/pages/app/AjaxDisplayTasks.jsp"/>
+    </action>
+    <action path="/AjaxDisplayClients" type="net.storyteller.web.app.AjaxDisplayClientsAction">
+      <forward name="success" path="/pages/app/AjaxDisplayClients.jsp"/>
+    </action>
+    <action path="/AjaxDisplayRoles" type="net.storyteller.web.app.AjaxDisplayRolesAction">
+      <forward name="success" path="/pages/app/AjaxDisplayRoles.jsp"/>
+    </action>
+    <action path="/AjaxDisplayStorytellerRoles" type="net.storyteller.web.app.AjaxDisplayStorytellerRolesAction">
+      <forward name="success" path="/pages/app/AjaxDisplayStorytellerRoles.jsp"/>
+    </action>
+    <action path="/DeleteEstimationChoise" type="net.storyteller.web.app.DeleteEstimationChoiseAction"/>
+    <action path="/PostEstimationVP" name="EstimationForm" type="net.storyteller.web.app.PostEstimationVPAction"/>
+    <action path="/UpdateTestFrom" type="net.storyteller.web.app.UpdateTestFromAction"/>
+    <action path="/PostEstimationChoiseVP" name="EstimationChoiseForm" type="net.storyteller.web.app.PostEstimationChoiseVPAction"/>
+    <action path="/Estimations" type="net.storyteller.web.app.EstimationsAction">
+      <forward name="success" path="/pages/app/Estimations.jsp"/>
+    </action>
+    <action path="/PostEstimationDetail" type="net.storyteller.web.app.PostEstimationDetailAction">
+      <forward name="success" path="/pages/app/PostEstimationDetail.jsp"/>
+    </action>
+    <action path="/AjaxDisplayTestsAboutEstimation" type="net.storyteller.web.app.AjaxDisplayTestsAboutEstimationAction">
+      <forward name="success" path="/pages/app/AjaxDisplayTestsAboutEstimation.jsp"/>
+    </action>
+    <action path="/ShowEstimation" type="net.storyteller.web.app.ShowEstimationAction">
+      <forward name="success" path="/pages/app/ShowEstimation.jsp"/>
+    </action>
+    <action path="/PostStorytellerRoleVP" name="StorytellerRoleForm" type="net.storyteller.web.app.PostStorytellerRoleVPAction"/>
+    <action path="/PDFShowEstimation" type="net.storyteller.web.app.PDFShowEstimationAction"/>
+    <action path="/AjaxDisplayEstimations" type="net.storyteller.web.app.AjaxDisplayEstimationsAction">
+      <forward name="success" path="/pages/app/AjaxDisplayEstimations.jsp"/>
+    </action>
+    <action path="/Tests" type="net.storyteller.web.app.TestsAction">
+      <forward name="success" path="/pages/app/Tests.jsp"/>
+    </action>
+    <action path="/UpdateEstimationChoiseFromAboutPrices" type="net.storyteller.web.app.UpdateEstimationChoiseFromAboutPricesAction"/>
+    <action path="/DeleteEstimation" type="net.storyteller.web.app.DeleteEstimationAction"/>
+    <action path="/AjaxDisplayEstimationChoises" type="net.storyteller.web.app.AjaxDisplayEstimationChoisesAction">
+      <forward name="success" path="/pages/app/AjaxDisplayEstimationChoises.jsp"/>
+    </action>
+    <action path="/PostEstimationChoiseDetail" type="net.storyteller.web.app.PostEstimationChoiseDetailAction">
+      <forward name="success" path="/pages/app/PostEstimationChoiseDetail.jsp"/>
+    </action>
+    <action path="/PostStorytellerRoleDetail" type="net.storyteller.web.app.PostStorytellerRoleDetailAction">
+      <forward name="success" path="/pages/app/PostStorytellerRoleDetail.jsp"/>
+    </action>
+    <action path="/PostRoleAssignDetail" type="net.storyteller.web.app.PostRoleAssignDetailAction">
+      <forward name="success" path="/pages/app/PostRoleAssignDetail.jsp"/>
+    </action>
+    <action path="/PostRoleAssignVP" name="RoleForm" type="net.storyteller.web.app.PostRoleAssignVPAction"/>
+    <action path="/Login" type="net.storyteller.web.app.LoginAction">
+      <forward name="success" path="/pages/app/Login.jsp"/>
+    </action>
+    <action path="/LoginPre" type="net.storyteller.web.app.LoginPreAction"/>
+    <action path="/PostTestDetail" type="net.storyteller.web.app.PostTestDetailAction">
+      <forward name="success" path="/pages/app/PostTestDetail.jsp"/>
+    </action>
+    <action path="/PostTestVP" name="TestForm" type="net.storyteller.web.app.PostTestVPAction"/>
+    <action path="/PostJ2eeStoryDetailAboutEstimation" type="net.storyteller.web.app.PostJ2eeStoryDetailAboutEstimationAction">
+      <forward name="success" path="/pages/app/PostJ2eeStoryDetailAboutEstimation.jsp"/>
+    </action>
+    <action path="/PostJ2eeStoryVPAboutEstimation" name="J2eeStoryForm" type="net.storyteller.web.app.PostJ2eeStoryVPAboutEstimationAction"/>
+    <action path="/PostEstimationChoiseVPForUpdate" name="EstimationChoiseForm" type="net.storyteller.web.app.PostEstimationChoiseVPForUpdateAction"/>
+    <action path="/PostEstimationVPForUpdate" name="EstimationForm" type="net.storyteller.web.app.PostEstimationVPForUpdateAction"/>
+    <action path="/PostEstimationDetailForUpdate" type="net.storyteller.web.app.PostEstimationDetailForUpdateAction">
+      <forward name="success" path="/pages/app/PostEstimationDetailForUpdate.jsp"/>
+    </action>
+    <action path="/PostEstimationChoiseDetailForUpdate" type="net.storyteller.web.app.PostEstimationChoiseDetailForUpdateAction">
+      <forward name="success" path="/pages/app/PostEstimationChoiseDetailForUpdate.jsp"/>
+    </action>
+    <action path="/PostJ2eeStoryDetailAboutContribute" type="net.storyteller.web.app.PostJ2eeStoryDetailAboutContributeAction">
+      <forward name="success" path="/pages/app/PostJ2eeStoryDetailAboutContribute.jsp"/>
+    </action>
+    <action path="/PostJ2eeStoryVPAboutClient" name="J2eeStoryForm" type="net.storyteller.web.app.PostJ2eeStoryVPAboutClientAction"/>
+    <action path="/PostJ2eeStoryVPAboutContribute" name="J2eeStoryForm" type="net.storyteller.web.app.PostJ2eeStoryVPAboutContributeAction"/>
+    <action path="/ShowJ2eeStoryForTests" type="net.storyteller.web.app.ShowJ2eeStoryForTestsAction">
+      <forward name="success" path="/pages/app/ShowJ2eeStoryForTests.jsp"/>
+    </action>
+    <action path="/PostJ2eeStoryDetailAboutClient" type="net.storyteller.web.app.PostJ2eeStoryDetailAboutClientAction">
+      <forward name="success" path="/pages/app/PostJ2eeStoryDetailAboutClient.jsp"/>
+    </action>
+    <action path="/UpdateEstimationFromForSummingup" type="net.storyteller.web.app.UpdateEstimationFromForSummingupAction"/>
+    <action path="/UpdateEstimationChoiseFromAboutMarketPrices" type="net.storyteller.web.app.UpdateEstimationChoiseFromAboutMarketPricesAction"/>
+    <action path="/UpdateEstimationChoiseFromFromVerbAndDiscount" type="net.storyteller.web.app.UpdateEstimationChoiseFromFromVerbAndDiscountAction"/>
+    <action path="/XlsExportOfEstimationChoise" type="net.storyteller.web.app.XlsExportOfEstimationChoiseAction"/>
+    <action path="/XlsExportOfEstimationChoiseForIntraUser" type="net.storyteller.web.app.XlsExportOfEstimationChoiseForIntraUserAction"/>
+    <action path="/Tests" type="net.storyteller.web.app.TestsAction">
+      <forward name="success" path="/pages/app/Tests.jsp"/>
+    </action>
+    <action path="/DeleteCommonTranslation" type="net.storyteller.web.app.DeleteCommonTranslationAction"/>
+    <action path="/PostTestVPForSummery" name="TestForm" type="net.storyteller.web.app.PostTestVPForSummeryAction"/>
+    <action path="/PostTestDetailForSummery" type="net.storyteller.web.app.PostTestDetailForSummeryAction">
+      <forward name="success" path="/pages/app/PostTestDetailForSummery.jsp"/>
+    </action>
+    <action path="/XlsExportOfTest" type="net.storyteller.web.app.XlsExportOfTestAction"/>
+    <action path="/XlsExportOfTaskTemplate" type="net.storyteller.web.app.XlsExportOfTaskTemplateAction"/>
+    <action path="/UpdateEstimationChoiseFromAtOnce" type="net.storyteller.web.app.UpdateEstimationChoiseFromAtOnceAction"/>
+    <action path="/UpdateEstimationFromFromVerbAndDiscount" type="net.storyteller.web.app.UpdateEstimationFromFromVerbAndDiscountAction"/>
+    <action path="/XlsExportOfCommonCost" type="net.storyteller.web.app.XlsExportOfCommonCostAction"/>
+    <action path="/XlsExportOfTask" type="net.storyteller.web.app.XlsExportOfTaskAction"/>
+    <action path="/XlsExportOfCommonTranslation" type="net.storyteller.web.app.XlsExportOfCommonTranslationAction"/>
+    <action path="/XlsExportOfContribute" type="net.storyteller.web.app.XlsExportOfContributeAction"/>
+    <action path="/XlsExportOfVerb" type="net.storyteller.web.app.XlsExportOfVerbAction"/>
+    <action path="/XlsExportOfJ2eeStory" type="net.storyteller.web.app.XlsExportOfJ2eeStoryAction"/>
+    <action path="/XlsExportOfSentence" type="net.storyteller.web.app.XlsExportOfSentenceAction"/>
+    <action path="/XlsExportOfComponey" type="net.storyteller.web.app.XlsExportOfComponeyAction"/>
+    <action path="/XlsExportOfClient" type="net.storyteller.web.app.XlsExportOfClientAction"/>
+    <action path="/XlsExportOfBusinessCost" type="net.storyteller.web.app.XlsExportOfBusinessCostAction"/>
+    <action path="/XlsExportOfIntraUser" type="net.storyteller.web.app.XlsExportOfIntraUserAction"/>
+    <action path="/XlsExportOfRole" type="net.storyteller.web.app.XlsExportOfRoleAction"/>
+    <action path="/UpdateTaskFromFromTaskTemplates" type="net.storyteller.web.app.UpdateTaskFromFromTaskTemplatesAction"/>
+    <action path="/UpdateJ2eeStoryFromForUpdatingTasksFromTaskTemplates" type="net.storyteller.web.app.UpdateJ2eeStoryFromForUpdatingTasksFromTaskTemplatesAction"/>
+    <action path="/PostBasecampAccountDetail" type="net.storyteller.web.app.PostBasecampAccountDetailAction">
+      <forward name="success" path="/pages/app/PostBasecampAccountDetail.jsp"/>
+    </action>
+    <action path="/AjaxDisplayBasecampAccounts" type="net.storyteller.web.app.AjaxDisplayBasecampAccountsAction">
+      <forward name="success" path="/pages/app/AjaxDisplayBasecampAccounts.jsp"/>
+    </action>
+    <action path="/AjaxDisplayBasecampTodos" type="net.storyteller.web.app.AjaxDisplayBasecampTodosAction">
+      <forward name="success" path="/pages/app/AjaxDisplayBasecampTodos.jsp"/>
+    </action>
+    <action path="/PostIncomePaymentVP" name="IncomePaymentForm" type="net.storyteller.web.app.PostIncomePaymentVPAction"/>
+    <action path="/PostBasecampTodoListDetail" type="net.storyteller.web.app.PostBasecampTodoListDetailAction">
+      <forward name="success" path="/pages/app/PostBasecampTodoListDetail.jsp"/>
+    </action>
+    <action path="/PostBasecampTodoDetail" type="net.storyteller.web.app.PostBasecampTodoDetailAction">
+      <forward name="success" path="/pages/app/PostBasecampTodoDetail.jsp"/>
+    </action>
+    <action path="/PostBasecampProjectDetail" type="net.storyteller.web.app.PostBasecampProjectDetailAction">
+      <forward name="success" path="/pages/app/PostBasecampProjectDetail.jsp"/>
+    </action>
+    <action path="/BasecampProjects" type="net.storyteller.web.app.BasecampProjectsAction">
+      <forward name="success" path="/pages/app/BasecampProjects.jsp"/>
+    </action>
+    <action path="/PostBasecampTodoVP" name="BasecampTodoForm" type="net.storyteller.web.app.PostBasecampTodoVPAction"/>
+    <action path="/BasecampTodoLists" type="net.storyteller.web.app.BasecampTodoListsAction">
+      <forward name="success" path="/pages/app/BasecampTodoLists.jsp"/>
+    </action>
+    <action path="/DeleteAccountSnapshot" type="net.storyteller.web.app.DeleteAccountSnapshotAction"/>
+    <action path="/UpdateAtOnceTaskActionFromBasecampAccounts" type="net.storyteller.web.app.UpdateAtOnceTaskActionFromBasecampAccountsAction"/>
+    <action path="/AjaxDisplayBasecampTodoLists" type="net.storyteller.web.app.AjaxDisplayBasecampTodoListsAction">
+      <forward name="success" path="/pages/app/AjaxDisplayBasecampTodoLists.jsp"/>
+    </action>
+    <action path="/UpdateAtOnceAccountSnapshotAction" type="net.storyteller.web.app.UpdateAtOnceAccountSnapshotActionAction"/>
+    <action path="/PostBasecampAccountVP" name="BasecampAccountForm" type="net.storyteller.web.app.PostBasecampAccountVPAction"/>
+    <action path="/PostBasecampProjectVP" name="BasecampProjectForm" type="net.storyteller.web.app.PostBasecampProjectVPAction"/>
+    <action path="/BasecampAccounts" type="net.storyteller.web.app.BasecampAccountsAction">
+      <forward name="success" path="/pages/app/BasecampAccounts.jsp"/>
+    </action>
+    <action path="/BasecampTodos" type="net.storyteller.web.app.BasecampTodosAction">
+      <forward name="success" path="/pages/app/BasecampTodos.jsp"/>
+    </action>
+    <action path="/UpdateAtOnceJ2eeStoryActionForCoverage" type="net.storyteller.web.app.UpdateAtOnceJ2eeStoryActionForCoverageAction"/>
+    <action path="/IncomePayments" type="net.storyteller.web.app.IncomePaymentsAction">
+      <forward name="success" path="/pages/app/IncomePayments.jsp"/>
+    </action>
+    <action path="/PostIncomePaymentDetail" type="net.storyteller.web.app.PostIncomePaymentDetailAction">
+      <forward name="success" path="/pages/app/PostIncomePaymentDetail.jsp"/>
+    </action>
+    <action path="/MailAboutJ2eeStoryForAlertingCoverage" type="net.storyteller.web.app.MailAboutJ2eeStoryForAlertingCoverageAction"/>
+    <action path="/AjaxDisplayBasecampProjects" type="net.storyteller.web.app.AjaxDisplayBasecampProjectsAction">
+      <forward name="success" path="/pages/app/AjaxDisplayBasecampProjects.jsp"/>
+    </action>
+    <action path="/PostBasecampTodoListVP" name="BasecampTodoForm" type="net.storyteller.web.app.PostBasecampTodoListVPAction"/>
+    <action path="/AccountSnapshots" type="net.storyteller.web.app.AccountSnapshotsAction">
+      <forward name="success" path="/pages/app/AccountSnapshots.jsp"/>
+    </action>
+    <action path="/DeleteTest" type="net.storyteller.web.app.DeleteTestAction"/>
+    <action path="/DeleteTask" type="net.storyteller.web.app.DeleteTaskAction"/>
+    <action path="/UpdateTestDebuged" type="net.storyteller.web.app.UpdateTestDebugedAction"/>
+    <action path="/UpdateTestChecked" type="net.storyteller.web.app.UpdateTestCheckedAction"/>
+    <action path="/UpdateTestNonChecked" type="net.storyteller.web.app.UpdateTestNonCheckedAction"/>
+    <action path="/UpdateTestNonDebuged" type="net.storyteller.web.app.UpdateTestNonDebugedAction"/>
+    <action path="/Tools" type="net.storyteller.web.app.ToolsAction">
+      <forward name="success" path="/pages/app/Tools.jsp"/>
+    </action>
+    <action path="/XlsExportOf##modelclass##ForIntraUser" type="net.storyteller.web.app.XlsExportOf##modelclass##ForIntraUserAction">
+      <forward name="success" path="/pages/app/XlsExportOf##modelclass##ForIntraUser.jsp"/>
+    </action>
+    <action path="/XlsExportOf##modelclass##" type="net.storyteller.web.app.XlsExportOf##modelclass##Action">
+      <forward name="success" path="/pages/app/XlsExportOf##modelclass##.jsp"/>
+    </action>
+    <action path="/AutoTrans" type="net.storyteller.web.utils.AutoTrans">
+      <forward name="success" path="/pages/app/AutoTrans.jsp"/>
+    </action>
+    <action path="/ShowTest" type="net.storyteller.web.app.ShowTestAction">
+      <forward name="success" path="/pages/app/ShowTest.jsp"></forward>	
+    </action>
+  </action-mappings>
+  <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+  <message-resources parameter="MessageResources"/>
+  <plug-in className="org.apache.struts.tiles.TilesPlugin">
+    <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml"/>
+    <set-property property="moduleAware" value="true"/>
+  </plug-in>
+  <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+    <set-property property="pathnames" value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+  </plug-in>
+</struts-config>

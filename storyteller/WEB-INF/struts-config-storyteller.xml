@@ -1,0 +1,2227 @@
+<?xml version="1.0"?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+  <data-sources>
+  </data-sources>
+  <form-beans>
+	  
+	    <form-bean name="manageAndromdaCoreJarFileForm" type="net.storyteller.model.crud.AndromdaCoreJarFileForm"/>
+	    <form-bean name="AndromdaCoreJarFileForm" type="net.storyteller.beans.AndromdaCoreJarFileForm"/>
+	  
+	    <form-bean name="manageAttrForm" type="net.storyteller.model.crud.AttrForm"/>
+	    <form-bean name="AttrForm" type="net.storyteller.beans.AttrForm"/>
+	  
+	    <form-bean name="manageAttrUseForm" type="net.storyteller.model.crud.AttrUseForm"/>
+	    <form-bean name="AttrUseForm" type="net.storyteller.beans.AttrUseForm"/>
+	  
+	    <form-bean name="manageComponeyForm" type="net.storyteller.model.crud.ComponeyForm"/>
+	    <form-bean name="ComponeyForm" type="net.storyteller.beans.ComponeyForm"/>
+	  
+	    <form-bean name="manageJ2eeStoryForm" type="net.storyteller.model.crud.J2eeStoryForm"/>
+	    <form-bean name="J2eeStoryForm" type="net.storyteller.beans.J2eeStoryForm"/>
+	  
+	    <form-bean name="manageJspForm" type="net.storyteller.model.crud.JspForm"/>
+	    <form-bean name="JspForm" type="net.storyteller.beans.JspForm"/>
+	  
+	    <form-bean name="manageJspTemplateForm" type="net.storyteller.model.crud.JspTemplateForm"/>
+	    <form-bean name="JspTemplateForm" type="net.storyteller.beans.JspTemplateForm"/>
+	  
+	    <form-bean name="manageNounClauseForm" type="net.storyteller.model.crud.NounClauseForm"/>
+	    <form-bean name="NounClauseForm" type="net.storyteller.beans.NounClauseForm"/>
+	  
+	    <form-bean name="manageNounForm" type="net.storyteller.model.crud.NounForm"/>
+	    <form-bean name="NounForm" type="net.storyteller.beans.NounForm"/>
+	  
+	    <form-bean name="manageNounUseForm" type="net.storyteller.model.crud.NounUseForm"/>
+	    <form-bean name="NounUseForm" type="net.storyteller.beans.NounUseForm"/>
+	  
+	    <form-bean name="managePostTemplateForm" type="net.storyteller.model.crud.PostTemplateForm"/>
+	    <form-bean name="PostTemplateForm" type="net.storyteller.beans.PostTemplateForm"/>
+	  
+	    <form-bean name="manageSentenceForm" type="net.storyteller.model.crud.SentenceForm"/>
+	    <form-bean name="SentenceForm" type="net.storyteller.beans.SentenceForm"/>
+	  
+	    <form-bean name="manageStaticDataForm" type="net.storyteller.model.crud.StaticDataForm"/>
+	    <form-bean name="StaticDataForm" type="net.storyteller.beans.StaticDataForm"/>
+	  
+	    <form-bean name="manageStorytellerForm" type="net.storyteller.model.crud.StorytellerForm"/>
+	    <form-bean name="StorytellerForm" type="net.storyteller.beans.StorytellerForm"/>
+	  
+	    <form-bean name="manageStrutsActionForm" type="net.storyteller.model.crud.StrutsActionForm"/>
+	    <form-bean name="StrutsActionForm" type="net.storyteller.beans.StrutsActionForm"/>
+	  
+	    <form-bean name="manageStrutsActionTemplateForm" type="net.storyteller.model.crud.StrutsActionTemplateForm"/>
+	    <form-bean name="StrutsActionTemplateForm" type="net.storyteller.beans.StrutsActionTemplateForm"/>
+	  
+	    <form-bean name="manageTemplateInputForm" type="net.storyteller.model.crud.TemplateInputForm"/>
+	    <form-bean name="TemplateInputForm" type="net.storyteller.beans.TemplateInputForm"/>
+	  
+	    <form-bean name="manageValidationRuleChoiseForm" type="net.storyteller.model.crud.ValidationRuleChoiseForm"/>
+	    <form-bean name="ValidationRuleChoiseForm" type="net.storyteller.beans.ValidationRuleChoiseForm"/>
+	  
+	    <form-bean name="manageValidationRuleForm" type="net.storyteller.model.crud.ValidationRuleForm"/>
+	    <form-bean name="ValidationRuleForm" type="net.storyteller.beans.ValidationRuleForm"/>
+	  
+	    <form-bean name="manageVerbForm" type="net.storyteller.model.crud.VerbForm"/>
+	    <form-bean name="VerbForm" type="net.storyteller.beans.VerbForm"/>
+	  
+	    <form-bean name="manageCommonTranslationForm" type="net.storyteller.model.crud.CommonTranslationForm"/>
+	    <form-bean name="CommonTranslationForm" type="net.storyteller.beans.CommonTranslationForm"/>
+	  
+	    <form-bean name="manageIntraUserForm" type="net.storyteller.model.crud.IntraUserForm"/>
+	    <form-bean name="IntraUserForm" type="net.storyteller.beans.IntraUserForm"/>
+	  
+	    <form-bean name="manageOutOfPattenSentenceForm" type="net.storyteller.model.crud.OutOfPattenSentenceForm"/>
+	    <form-bean name="OutOfPattenSentenceForm" type="net.storyteller.beans.OutOfPattenSentenceForm"/>
+	  
+	    <form-bean name="manageTestForm" type="net.storyteller.model.crud.TestForm"/>
+	    <form-bean name="TestForm" type="net.storyteller.beans.TestForm"/>
+	  
+	    <form-bean name="manageManualStepForm" type="net.storyteller.model.crud.ManualStepForm"/>
+	    <form-bean name="ManualStepForm" type="net.storyteller.beans.ManualStepForm"/>
+	  
+	    <form-bean name="manageStorytellerPageForm" type="net.storyteller.model.crud.StorytellerPageForm"/>
+	    <form-bean name="StorytellerPageForm" type="net.storyteller.beans.StorytellerPageForm"/>
+	  
+	    <form-bean name="manageBusinessCostForm" type="net.storyteller.model.crud.BusinessCostForm"/>
+	    <form-bean name="BusinessCostForm" type="net.storyteller.beans.BusinessCostForm"/>
+	  
+	    <form-bean name="manageBuyingForm" type="net.storyteller.model.crud.BuyingForm"/>
+	    <form-bean name="BuyingForm" type="net.storyteller.beans.BuyingForm"/>
+	  
+	    <form-bean name="manageClientForm" type="net.storyteller.model.crud.ClientForm"/>
+	    <form-bean name="ClientForm" type="net.storyteller.beans.ClientForm"/>
+	  
+	    <form-bean name="manageCommonCostForm" type="net.storyteller.model.crud.CommonCostForm"/>
+	    <form-bean name="CommonCostForm" type="net.storyteller.beans.CommonCostForm"/>
+	  
+	    <form-bean name="manageContributeForm" type="net.storyteller.model.crud.ContributeForm"/>
+	    <form-bean name="ContributeForm" type="net.storyteller.beans.ContributeForm"/>
+	  
+	    <form-bean name="manageContributionTypeForm" type="net.storyteller.model.crud.ContributionTypeForm"/>
+	    <form-bean name="ContributionTypeForm" type="net.storyteller.beans.ContributionTypeForm"/>
+	  
+	    <form-bean name="manageProfitDividientForm" type="net.storyteller.model.crud.ProfitDividientForm"/>
+	    <form-bean name="ProfitDividientForm" type="net.storyteller.beans.ProfitDividientForm"/>
+	  
+	    <form-bean name="manageRoleForm" type="net.storyteller.model.crud.RoleForm"/>
+	    <form-bean name="RoleForm" type="net.storyteller.beans.RoleForm"/>
+	  
+	    <form-bean name="manageTaskForm" type="net.storyteller.model.crud.TaskForm"/>
+	    <form-bean name="TaskForm" type="net.storyteller.beans.TaskForm"/>
+	  
+	    <form-bean name="manageTaskTemplateForm" type="net.storyteller.model.crud.TaskTemplateForm"/>
+	    <form-bean name="TaskTemplateForm" type="net.storyteller.beans.TaskTemplateForm"/>
+	  
+	    <form-bean name="manageViewCodeForm" type="net.storyteller.model.crud.ViewCodeForm"/>
+	    <form-bean name="ViewCodeForm" type="net.storyteller.beans.ViewCodeForm"/>
+	  
+	    <form-bean name="manageEstimationChoiseForm" type="net.storyteller.model.crud.EstimationChoiseForm"/>
+	    <form-bean name="EstimationChoiseForm" type="net.storyteller.beans.EstimationChoiseForm"/>
+	  
+	    <form-bean name="manageEstimationForm" type="net.storyteller.model.crud.EstimationForm"/>
+	    <form-bean name="EstimationForm" type="net.storyteller.beans.EstimationForm"/>
+	  
+	    <form-bean name="manageStorytellerRoleForm" type="net.storyteller.model.crud.StorytellerRoleForm"/>
+	    <form-bean name="StorytellerRoleForm" type="net.storyteller.beans.StorytellerRoleForm"/>
+	  
+	    <form-bean name="manageRoleAssignForm" type="net.storyteller.model.crud.RoleAssignForm"/>
+	    <form-bean name="RoleAssignForm" type="net.storyteller.beans.RoleAssignForm"/>
+	  
+	    <form-bean name="manageInterfaceSpecsForm" type="net.storyteller.model.crud.InterfaceSpecsForm"/>
+	    <form-bean name="InterfaceSpecsForm" type="net.storyteller.beans.InterfaceSpecsForm"/>
+	  
+	    <form-bean name="manageInterfaceSpecsReferenceForm" type="net.storyteller.model.crud.InterfaceSpecsReferenceForm"/>
+	    <form-bean name="InterfaceSpecsReferenceForm" type="net.storyteller.beans.InterfaceSpecsReferenceForm"/>
+	  
+	    <form-bean name="managePossibleDependanceForm" type="net.storyteller.model.crud.PossibleDependanceForm"/>
+	    <form-bean name="PossibleDependanceForm" type="net.storyteller.beans.PossibleDependanceForm"/>
+	  
+	    <form-bean name="manageBasecampAccountForm" type="net.storyteller.model.crud.BasecampAccountForm"/>
+	    <form-bean name="BasecampAccountForm" type="net.storyteller.beans.BasecampAccountForm"/>
+	  
+	    <form-bean name="manageBasecampProjectForm" type="net.storyteller.model.crud.BasecampProjectForm"/>
+	    <form-bean name="BasecampProjectForm" type="net.storyteller.beans.BasecampProjectForm"/>
+	  
+	    <form-bean name="manageBasecampTodoForm" type="net.storyteller.model.crud.BasecampTodoForm"/>
+	    <form-bean name="BasecampTodoForm" type="net.storyteller.beans.BasecampTodoForm"/>
+	  
+	    <form-bean name="manageBasecampTodoListForm" type="net.storyteller.model.crud.BasecampTodoListForm"/>
+	    <form-bean name="BasecampTodoListForm" type="net.storyteller.beans.BasecampTodoListForm"/>
+	  
+	    <form-bean name="manageAccountSnapshotForm" type="net.storyteller.model.crud.AccountSnapshotForm"/>
+	    <form-bean name="AccountSnapshotForm" type="net.storyteller.beans.AccountSnapshotForm"/>
+	  
+	    <form-bean name="manageIncomePaymentForm" type="net.storyteller.model.crud.IncomePaymentForm"/>
+	    <form-bean name="IncomePaymentForm" type="net.storyteller.beans.IncomePaymentForm"/>
+	  
+	    <form-bean name="manageMessageResourceForm" type="net.storyteller.model.crud.MessageResourceForm"/>
+	    <form-bean name="MessageResourceForm" type="net.storyteller.beans.MessageResourceForm"/>
+	  
+  </form-beans>
+  <global-exceptions>
+  </global-exceptions>
+  <global-forwards>
+  </global-forwards>
+  <action-mappings>
+  
+  		<action path="/GrepAndromdaCoreJarFileOnJ2eeStoryAction.java" type="net.storyteller.web.GrepAndromdaCoreJarFileOnJ2eeStoryAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepAndromdaCoreJarFileOnIdAction.java" type="net.storyteller.web.GrepAndromdaCoreJarFileOnIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetAndromdaCoreJarFileNonJ2eeStoryAction.java" type="net.storyteller.web.SetAndromdaCoreJarFileNonJ2eeStoryAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetAndromdaCoreJarFileNonIdAction.java" type="net.storyteller.web.SetAndromdaCoreJarFileNonIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetAndromdaCoreJarFileJ2eeStoryAction.java" type="net.storyteller.web.SetAndromdaCoreJarFileJ2eeStoryAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetAndromdaCoreJarFileIdAction.java" type="net.storyteller.web.SetAndromdaCoreJarFileIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfAndromdaCoreJarFileJ2eeStoryAction.java" type="net.storyteller.web.SetSelectionOfAndromdaCoreJarFileJ2eeStoryAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfAndromdaCoreJarFileIdAction.java" type="net.storyteller.web.SetSelectionOfAndromdaCoreJarFileIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+
+  	
+  
+  		<action path="/GrepAttrOnClasstypeAction.java" type="net.storyteller.web.GrepAttrOnClasstypeAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepAttrOnJapaneseAction.java" type="net.storyteller.web.GrepAttrOnJapaneseAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepAttrOnNounAction.java" type="net.storyteller.web.GrepAttrOnNounAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepAttrOnIdAction.java" type="net.storyteller.web.GrepAttrOnIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepAttrOnNameAction.java" type="net.storyteller.web.GrepAttrOnNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetAttrNonClasstypeAction.java" type="net.storyteller.web.SetAttrNonClasstypeAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetAttrNonJapaneseAction.java" type="net.storyteller.web.SetAttrNonJapaneseAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetAttrNonNounAction.java" type="net.storyteller.web.SetAttrNonNounAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetAttrNonIdAction.java" type="net.storyteller.web.SetAttrNonIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetAttrNonNameAction.java" type="net.storyteller.web.SetAttrNonNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetAttrClasstypeAction.java" type="net.storyteller.web.SetAttrClasstypeAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetAttrJapaneseAction.java" type="net.storyteller.web.SetAttrJapaneseAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetAttrNounAction.java" type="net.storyteller.web.SetAttrNounAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetAttrIdAction.java" type="net.storyteller.web.SetAttrIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetAttrNameAction.java" type="net.storyteller.web.SetAttrNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfAttrClasstypeAction.java" type="net.storyteller.web.SetSelectionOfAttrClasstypeAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfAttrJapaneseAction.java" type="net.storyteller.web.SetSelectionOfAttrJapaneseAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfAttrNounAction.java" type="net.storyteller.web.SetSelectionOfAttrNounAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfAttrIdAction.java" type="net.storyteller.web.SetSelectionOfAttrIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfAttrNameAction.java" type="net.storyteller.web.SetSelectionOfAttrNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+
+  	
+  
+  		<action path="/GrepAttrUseOnNounUseAction.java" type="net.storyteller.web.GrepAttrUseOnNounUseAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepAttrUseOnAttrAction.java" type="net.storyteller.web.GrepAttrUseOnAttrAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepAttrUseOnIdAction.java" type="net.storyteller.web.GrepAttrUseOnIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetAttrUseNonNounUseAction.java" type="net.storyteller.web.SetAttrUseNonNounUseAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetAttrUseNonAttrAction.java" type="net.storyteller.web.SetAttrUseNonAttrAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetAttrUseNonIdAction.java" type="net.storyteller.web.SetAttrUseNonIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetAttrUseNounUseAction.java" type="net.storyteller.web.SetAttrUseNounUseAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetAttrUseAttrAction.java" type="net.storyteller.web.SetAttrUseAttrAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetAttrUseIdAction.java" type="net.storyteller.web.SetAttrUseIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfAttrUseNounUseAction.java" type="net.storyteller.web.SetSelectionOfAttrUseNounUseAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfAttrUseAttrAction.java" type="net.storyteller.web.SetSelectionOfAttrUseAttrAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfAttrUseIdAction.java" type="net.storyteller.web.SetSelectionOfAttrUseIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+
+  	
+  
+  		<action path="/GrepComponeyOnAttacklistAction.java" type="net.storyteller.web.GrepComponeyOnAttacklistAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepComponeyOnIdAction.java" type="net.storyteller.web.GrepComponeyOnIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepComponeyOnResponsibleAction.java" type="net.storyteller.web.GrepComponeyOnResponsibleAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepComponeyOnNameAction.java" type="net.storyteller.web.GrepComponeyOnNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetComponeyNonAttacklistAction.java" type="net.storyteller.web.SetComponeyNonAttacklistAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetComponeyNonResponsibleAction.java" type="net.storyteller.web.SetComponeyNonResponsibleAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetComponeyNonIdAction.java" type="net.storyteller.web.SetComponeyNonIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetComponeyNonNameAction.java" type="net.storyteller.web.SetComponeyNonNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetComponeyAttacklistAction.java" type="net.storyteller.web.SetComponeyAttacklistAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetComponeyResponsibleAction.java" type="net.storyteller.web.SetComponeyResponsibleAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetComponeyIdAction.java" type="net.storyteller.web.SetComponeyIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetComponeyNameAction.java" type="net.storyteller.web.SetComponeyNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfComponeyAttacklistAction.java" type="net.storyteller.web.SetSelectionOfComponeyAttacklistAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfComponeyResponsibleAction.java" type="net.storyteller.web.SetSelectionOfComponeyResponsibleAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfComponeyIdAction.java" type="net.storyteller.web.SetSelectionOfComponeyIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfComponeyNameAction.java" type="net.storyteller.web.SetSelectionOfComponeyNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+
+  	
+  
+  		<action path="/GrepJ2eeStoryOnAndromdaCoreJarFileAction.java" type="net.storyteller.web.GrepJ2eeStoryOnAndromdaCoreJarFileAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepJ2eeStoryOnStrutsconfigcontentAction.java" type="net.storyteller.web.GrepJ2eeStoryOnStrutsconfigcontentAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepJ2eeStoryOnEnddateAction.java" type="net.storyteller.web.GrepJ2eeStoryOnEnddateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepJ2eeStoryOnPriceAction.java" type="net.storyteller.web.GrepJ2eeStoryOnPriceAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepJ2eeStoryOnRequiredteamhourAction.java" type="net.storyteller.web.GrepJ2eeStoryOnRequiredteamhourAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepJ2eeStoryOnRequiredstorytellerhourAction.java" type="net.storyteller.web.GrepJ2eeStoryOnRequiredstorytellerhourAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepJ2eeStoryOnStartdateAction.java" type="net.storyteller.web.GrepJ2eeStoryOnStartdateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepJ2eeStoryOnIdAction.java" type="net.storyteller.web.GrepJ2eeStoryOnIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepJ2eeStoryOnNameAction.java" type="net.storyteller.web.GrepJ2eeStoryOnNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJ2eeStoryNonAndromdaCoreJarFileAction.java" type="net.storyteller.web.SetJ2eeStoryNonAndromdaCoreJarFileAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJ2eeStoryNonStrutsconfigcontentAction.java" type="net.storyteller.web.SetJ2eeStoryNonStrutsconfigcontentAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJ2eeStoryNonEnddateAction.java" type="net.storyteller.web.SetJ2eeStoryNonEnddateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJ2eeStoryNonPriceAction.java" type="net.storyteller.web.SetJ2eeStoryNonPriceAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJ2eeStoryNonRequiredteamhourAction.java" type="net.storyteller.web.SetJ2eeStoryNonRequiredteamhourAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJ2eeStoryNonRequiredstorytellerhourAction.java" type="net.storyteller.web.SetJ2eeStoryNonRequiredstorytellerhourAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJ2eeStoryNonStartdateAction.java" type="net.storyteller.web.SetJ2eeStoryNonStartdateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJ2eeStoryNonIdAction.java" type="net.storyteller.web.SetJ2eeStoryNonIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJ2eeStoryNonNameAction.java" type="net.storyteller.web.SetJ2eeStoryNonNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJ2eeStoryAndromdaCoreJarFileAction.java" type="net.storyteller.web.SetJ2eeStoryAndromdaCoreJarFileAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJ2eeStoryStrutsconfigcontentAction.java" type="net.storyteller.web.SetJ2eeStoryStrutsconfigcontentAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJ2eeStoryEnddateAction.java" type="net.storyteller.web.SetJ2eeStoryEnddateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJ2eeStoryPriceAction.java" type="net.storyteller.web.SetJ2eeStoryPriceAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJ2eeStoryRequiredteamhourAction.java" type="net.storyteller.web.SetJ2eeStoryRequiredteamhourAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJ2eeStoryRequiredstorytellerhourAction.java" type="net.storyteller.web.SetJ2eeStoryRequiredstorytellerhourAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJ2eeStoryStartdateAction.java" type="net.storyteller.web.SetJ2eeStoryStartdateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJ2eeStoryIdAction.java" type="net.storyteller.web.SetJ2eeStoryIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJ2eeStoryNameAction.java" type="net.storyteller.web.SetJ2eeStoryNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfJ2eeStoryAndromdaCoreJarFileAction.java" type="net.storyteller.web.SetSelectionOfJ2eeStoryAndromdaCoreJarFileAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfJ2eeStoryStrutsconfigcontentAction.java" type="net.storyteller.web.SetSelectionOfJ2eeStoryStrutsconfigcontentAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfJ2eeStoryEnddateAction.java" type="net.storyteller.web.SetSelectionOfJ2eeStoryEnddateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfJ2eeStoryPriceAction.java" type="net.storyteller.web.SetSelectionOfJ2eeStoryPriceAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfJ2eeStoryRequiredteamhourAction.java" type="net.storyteller.web.SetSelectionOfJ2eeStoryRequiredteamhourAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfJ2eeStoryRequiredstorytellerhourAction.java" type="net.storyteller.web.SetSelectionOfJ2eeStoryRequiredstorytellerhourAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfJ2eeStoryStartdateAction.java" type="net.storyteller.web.SetSelectionOfJ2eeStoryStartdateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfJ2eeStoryIdAction.java" type="net.storyteller.web.SetSelectionOfJ2eeStoryIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfJ2eeStoryNameAction.java" type="net.storyteller.web.SetSelectionOfJ2eeStoryNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+
+  	
+  
+  		<action path="/GrepJspOnSentenceAction.java" type="net.storyteller.web.GrepJspOnSentenceAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepJspOnFilenameAction.java" type="net.storyteller.web.GrepJspOnFilenameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepJspOnCodeAction.java" type="net.storyteller.web.GrepJspOnCodeAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepJspOnIdAction.java" type="net.storyteller.web.GrepJspOnIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJspNonSentenceAction.java" type="net.storyteller.web.SetJspNonSentenceAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJspNonFilenameAction.java" type="net.storyteller.web.SetJspNonFilenameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJspNonCodeAction.java" type="net.storyteller.web.SetJspNonCodeAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJspNonIdAction.java" type="net.storyteller.web.SetJspNonIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJspSentenceAction.java" type="net.storyteller.web.SetJspSentenceAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJspFilenameAction.java" type="net.storyteller.web.SetJspFilenameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJspCodeAction.java" type="net.storyteller.web.SetJspCodeAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJspIdAction.java" type="net.storyteller.web.SetJspIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfJspSentenceAction.java" type="net.storyteller.web.SetSelectionOfJspSentenceAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfJspFilenameAction.java" type="net.storyteller.web.SetSelectionOfJspFilenameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfJspCodeAction.java" type="net.storyteller.web.SetSelectionOfJspCodeAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfJspIdAction.java" type="net.storyteller.web.SetSelectionOfJspIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+
+  	
+  
+  		<action path="/GrepJspTemplateOnNametemplateAction.java" type="net.storyteller.web.GrepJspTemplateOnNametemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepJspTemplateOnTemplateAction.java" type="net.storyteller.web.GrepJspTemplateOnTemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepJspTemplateOnVerbAction.java" type="net.storyteller.web.GrepJspTemplateOnVerbAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepJspTemplateOnIdAction.java" type="net.storyteller.web.GrepJspTemplateOnIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJspTemplateNonNametemplateAction.java" type="net.storyteller.web.SetJspTemplateNonNametemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJspTemplateNonTemplateAction.java" type="net.storyteller.web.SetJspTemplateNonTemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJspTemplateNonVerbAction.java" type="net.storyteller.web.SetJspTemplateNonVerbAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJspTemplateNonIdAction.java" type="net.storyteller.web.SetJspTemplateNonIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJspTemplateNametemplateAction.java" type="net.storyteller.web.SetJspTemplateNametemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJspTemplateTemplateAction.java" type="net.storyteller.web.SetJspTemplateTemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJspTemplateVerbAction.java" type="net.storyteller.web.SetJspTemplateVerbAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetJspTemplateIdAction.java" type="net.storyteller.web.SetJspTemplateIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfJspTemplateNametemplateAction.java" type="net.storyteller.web.SetSelectionOfJspTemplateNametemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfJspTemplateTemplateAction.java" type="net.storyteller.web.SetSelectionOfJspTemplateTemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfJspTemplateVerbAction.java" type="net.storyteller.web.SetSelectionOfJspTemplateVerbAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfJspTemplateIdAction.java" type="net.storyteller.web.SetSelectionOfJspTemplateIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+
+  	
+  
+  		<action path="/GrepNounClauseOnCodeAction.java" type="net.storyteller.web.GrepNounClauseOnCodeAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepNounClauseOnIdAction.java" type="net.storyteller.web.GrepNounClauseOnIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetNounClauseNonCodeAction.java" type="net.storyteller.web.SetNounClauseNonCodeAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetNounClauseNonIdAction.java" type="net.storyteller.web.SetNounClauseNonIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetNounClauseCodeAction.java" type="net.storyteller.web.SetNounClauseCodeAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetNounClauseIdAction.java" type="net.storyteller.web.SetNounClauseIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfNounClauseCodeAction.java" type="net.storyteller.web.SetSelectionOfNounClauseCodeAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfNounClauseIdAction.java" type="net.storyteller.web.SetSelectionOfNounClauseIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+
+  	
+  
+  		<action path="/GrepNounOnJapaneseAction.java" type="net.storyteller.web.GrepNounOnJapaneseAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepNounOnJ2eeStoryAction.java" type="net.storyteller.web.GrepNounOnJ2eeStoryAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepNounOnValidAction.java" type="net.storyteller.web.GrepNounOnValidAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepNounOnIdAction.java" type="net.storyteller.web.GrepNounOnIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepNounOnNameAction.java" type="net.storyteller.web.GrepNounOnNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetNounNonJapaneseAction.java" type="net.storyteller.web.SetNounNonJapaneseAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetNounNonJ2eeStoryAction.java" type="net.storyteller.web.SetNounNonJ2eeStoryAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetNounNonValidAction.java" type="net.storyteller.web.SetNounNonValidAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetNounNonIdAction.java" type="net.storyteller.web.SetNounNonIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetNounNonNameAction.java" type="net.storyteller.web.SetNounNonNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetNounJapaneseAction.java" type="net.storyteller.web.SetNounJapaneseAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetNounJ2eeStoryAction.java" type="net.storyteller.web.SetNounJ2eeStoryAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetNounValidAction.java" type="net.storyteller.web.SetNounValidAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetNounIdAction.java" type="net.storyteller.web.SetNounIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetNounNameAction.java" type="net.storyteller.web.SetNounNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfNounJapaneseAction.java" type="net.storyteller.web.SetSelectionOfNounJapaneseAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfNounJ2eeStoryAction.java" type="net.storyteller.web.SetSelectionOfNounJ2eeStoryAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfNounValidAction.java" type="net.storyteller.web.SetSelectionOfNounValidAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfNounIdAction.java" type="net.storyteller.web.SetSelectionOfNounIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfNounNameAction.java" type="net.storyteller.web.SetSelectionOfNounNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+
+  	
+  
+  		<action path="/GrepNounUseOnNounClauseAction.java" type="net.storyteller.web.GrepNounUseOnNounClauseAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepNounUseOnNounAction.java" type="net.storyteller.web.GrepNounUseOnNounAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepNounUseOnOforderAction.java" type="net.storyteller.web.GrepNounUseOnOforderAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepNounUseOnMutipleAction.java" type="net.storyteller.web.GrepNounUseOnMutipleAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepNounUseOnIdAction.java" type="net.storyteller.web.GrepNounUseOnIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetNounUseNonNounClauseAction.java" type="net.storyteller.web.SetNounUseNonNounClauseAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetNounUseNonNounAction.java" type="net.storyteller.web.SetNounUseNonNounAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetNounUseNonOforderAction.java" type="net.storyteller.web.SetNounUseNonOforderAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetNounUseNonMutipleAction.java" type="net.storyteller.web.SetNounUseNonMutipleAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetNounUseNonIdAction.java" type="net.storyteller.web.SetNounUseNonIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetNounUseNounClauseAction.java" type="net.storyteller.web.SetNounUseNounClauseAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetNounUseNounAction.java" type="net.storyteller.web.SetNounUseNounAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetNounUseOforderAction.java" type="net.storyteller.web.SetNounUseOforderAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetNounUseMutipleAction.java" type="net.storyteller.web.SetNounUseMutipleAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetNounUseIdAction.java" type="net.storyteller.web.SetNounUseIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfNounUseNounClauseAction.java" type="net.storyteller.web.SetSelectionOfNounUseNounClauseAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfNounUseNounAction.java" type="net.storyteller.web.SetSelectionOfNounUseNounAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfNounUseOforderAction.java" type="net.storyteller.web.SetSelectionOfNounUseOforderAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfNounUseMutipleAction.java" type="net.storyteller.web.SetSelectionOfNounUseMutipleAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfNounUseIdAction.java" type="net.storyteller.web.SetSelectionOfNounUseIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+
+  	
+  
+  		<action path="/GrepPostTemplateOnIdAction.java" type="net.storyteller.web.GrepPostTemplateOnIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetPostTemplateNonIdAction.java" type="net.storyteller.web.SetPostTemplateNonIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetPostTemplateIdAction.java" type="net.storyteller.web.SetPostTemplateIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfPostTemplateIdAction.java" type="net.storyteller.web.SetSelectionOfPostTemplateIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+
+  	
+  
+  		<action path="/GrepSentenceOnJ2eeStoryAction.java" type="net.storyteller.web.GrepSentenceOnJ2eeStoryAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepSentenceOnSecountobjectiveAction.java" type="net.storyteller.web.GrepSentenceOnSecountobjectiveAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepSentenceOnVerbAction.java" type="net.storyteller.web.GrepSentenceOnVerbAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepSentenceOnFirstobjectiveAction.java" type="net.storyteller.web.GrepSentenceOnFirstobjectiveAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepSentenceOnValidAction.java" type="net.storyteller.web.GrepSentenceOnValidAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepSentenceOnStrutsConfigCodeAction.java" type="net.storyteller.web.GrepSentenceOnStrutsConfigCodeAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepSentenceOnIdAction.java" type="net.storyteller.web.GrepSentenceOnIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepSentenceOnNameAction.java" type="net.storyteller.web.GrepSentenceOnNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSentenceNonJ2eeStoryAction.java" type="net.storyteller.web.SetSentenceNonJ2eeStoryAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSentenceNonSecountobjectiveAction.java" type="net.storyteller.web.SetSentenceNonSecountobjectiveAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSentenceNonVerbAction.java" type="net.storyteller.web.SetSentenceNonVerbAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSentenceNonFirstobjectiveAction.java" type="net.storyteller.web.SetSentenceNonFirstobjectiveAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSentenceNonStrutsConfigCodeAction.java" type="net.storyteller.web.SetSentenceNonStrutsConfigCodeAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSentenceNonValidAction.java" type="net.storyteller.web.SetSentenceNonValidAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSentenceNonIdAction.java" type="net.storyteller.web.SetSentenceNonIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSentenceNonNameAction.java" type="net.storyteller.web.SetSentenceNonNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSentenceJ2eeStoryAction.java" type="net.storyteller.web.SetSentenceJ2eeStoryAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSentenceSecountobjectiveAction.java" type="net.storyteller.web.SetSentenceSecountobjectiveAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSentenceVerbAction.java" type="net.storyteller.web.SetSentenceVerbAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSentenceFirstobjectiveAction.java" type="net.storyteller.web.SetSentenceFirstobjectiveAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSentenceStrutsConfigCodeAction.java" type="net.storyteller.web.SetSentenceStrutsConfigCodeAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSentenceValidAction.java" type="net.storyteller.web.SetSentenceValidAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSentenceIdAction.java" type="net.storyteller.web.SetSentenceIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSentenceNameAction.java" type="net.storyteller.web.SetSentenceNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfSentenceJ2eeStoryAction.java" type="net.storyteller.web.SetSelectionOfSentenceJ2eeStoryAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfSentenceSecountobjectiveAction.java" type="net.storyteller.web.SetSelectionOfSentenceSecountobjectiveAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfSentenceVerbAction.java" type="net.storyteller.web.SetSelectionOfSentenceVerbAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfSentenceFirstobjectiveAction.java" type="net.storyteller.web.SetSelectionOfSentenceFirstobjectiveAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfSentenceStrutsConfigCodeAction.java" type="net.storyteller.web.SetSelectionOfSentenceStrutsConfigCodeAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfSentenceValidAction.java" type="net.storyteller.web.SetSelectionOfSentenceValidAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfSentenceIdAction.java" type="net.storyteller.web.SetSelectionOfSentenceIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfSentenceNameAction.java" type="net.storyteller.web.SetSelectionOfSentenceNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+
+  	
+  
+  		<action path="/GrepStaticDataOnEclipserootAction.java" type="net.storyteller.web.GrepStaticDataOnEclipserootAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepStaticDataOnArpmaxAction.java" type="net.storyteller.web.GrepStaticDataOnArpmaxAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepStaticDataOnCrtmaxAction.java" type="net.storyteller.web.GrepStaticDataOnCrtmaxAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepStaticDataOnReportmailAction.java" type="net.storyteller.web.GrepStaticDataOnReportmailAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepStaticDataOnInforssurlAction.java" type="net.storyteller.web.GrepStaticDataOnInforssurlAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepStaticDataOnDocumentRequestTemplateAction.java" type="net.storyteller.web.GrepStaticDataOnDocumentRequestTemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepStaticDataOnDocumentArrivedReportTemplateAction.java" type="net.storyteller.web.GrepStaticDataOnDocumentArrivedReportTemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepStaticDataOnIdAction.java" type="net.storyteller.web.GrepStaticDataOnIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStaticDataNonEclipserootAction.java" type="net.storyteller.web.SetStaticDataNonEclipserootAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStaticDataNonArpmaxAction.java" type="net.storyteller.web.SetStaticDataNonArpmaxAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStaticDataNonCrtmaxAction.java" type="net.storyteller.web.SetStaticDataNonCrtmaxAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStaticDataNonReportmailAction.java" type="net.storyteller.web.SetStaticDataNonReportmailAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStaticDataNonInforssurlAction.java" type="net.storyteller.web.SetStaticDataNonInforssurlAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStaticDataNonDocumentRequestTemplateAction.java" type="net.storyteller.web.SetStaticDataNonDocumentRequestTemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStaticDataNonDocumentArrivedReportTemplateAction.java" type="net.storyteller.web.SetStaticDataNonDocumentArrivedReportTemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStaticDataNonIdAction.java" type="net.storyteller.web.SetStaticDataNonIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStaticDataEclipserootAction.java" type="net.storyteller.web.SetStaticDataEclipserootAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStaticDataArpmaxAction.java" type="net.storyteller.web.SetStaticDataArpmaxAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStaticDataCrtmaxAction.java" type="net.storyteller.web.SetStaticDataCrtmaxAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStaticDataReportmailAction.java" type="net.storyteller.web.SetStaticDataReportmailAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStaticDataInforssurlAction.java" type="net.storyteller.web.SetStaticDataInforssurlAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStaticDataDocumentRequestTemplateAction.java" type="net.storyteller.web.SetStaticDataDocumentRequestTemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStaticDataDocumentArrivedReportTemplateAction.java" type="net.storyteller.web.SetStaticDataDocumentArrivedReportTemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStaticDataIdAction.java" type="net.storyteller.web.SetStaticDataIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfStaticDataEclipserootAction.java" type="net.storyteller.web.SetSelectionOfStaticDataEclipserootAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfStaticDataArpmaxAction.java" type="net.storyteller.web.SetSelectionOfStaticDataArpmaxAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfStaticDataCrtmaxAction.java" type="net.storyteller.web.SetSelectionOfStaticDataCrtmaxAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfStaticDataReportmailAction.java" type="net.storyteller.web.SetSelectionOfStaticDataReportmailAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfStaticDataInforssurlAction.java" type="net.storyteller.web.SetSelectionOfStaticDataInforssurlAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfStaticDataDocumentRequestTemplateAction.java" type="net.storyteller.web.SetSelectionOfStaticDataDocumentRequestTemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfStaticDataDocumentArrivedReportTemplateAction.java" type="net.storyteller.web.SetSelectionOfStaticDataDocumentArrivedReportTemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfStaticDataIdAction.java" type="net.storyteller.web.SetSelectionOfStaticDataIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+
+  	
+  
+  		<action path="/GrepStorytellerOnMailAction.java" type="net.storyteller.web.GrepStorytellerOnMailAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepStorytellerOnIdAction.java" type="net.storyteller.web.GrepStorytellerOnIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepStorytellerOnNameAction.java" type="net.storyteller.web.GrepStorytellerOnNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStorytellerNonMailAction.java" type="net.storyteller.web.SetStorytellerNonMailAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStorytellerNonIdAction.java" type="net.storyteller.web.SetStorytellerNonIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStorytellerNonNameAction.java" type="net.storyteller.web.SetStorytellerNonNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStorytellerMailAction.java" type="net.storyteller.web.SetStorytellerMailAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStorytellerIdAction.java" type="net.storyteller.web.SetStorytellerIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStorytellerNameAction.java" type="net.storyteller.web.SetStorytellerNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfStorytellerMailAction.java" type="net.storyteller.web.SetSelectionOfStorytellerMailAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfStorytellerIdAction.java" type="net.storyteller.web.SetSelectionOfStorytellerIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfStorytellerNameAction.java" type="net.storyteller.web.SetSelectionOfStorytellerNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+
+  	
+  
+  		<action path="/GrepStrutsActionOnTargeteeactionAction.java" type="net.storyteller.web.GrepStrutsActionOnTargeteeactionAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepStrutsActionOnTargeteejspAction.java" type="net.storyteller.web.GrepStrutsActionOnTargeteejspAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepStrutsActionOnSentenceAction.java" type="net.storyteller.web.GrepStrutsActionOnSentenceAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepStrutsActionOnFilenameAction.java" type="net.storyteller.web.GrepStrutsActionOnFilenameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepStrutsActionOnCodeAction.java" type="net.storyteller.web.GrepStrutsActionOnCodeAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepStrutsActionOnIdAction.java" type="net.storyteller.web.GrepStrutsActionOnIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStrutsActionNonTargeteeactionAction.java" type="net.storyteller.web.SetStrutsActionNonTargeteeactionAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStrutsActionNonTargeteejspAction.java" type="net.storyteller.web.SetStrutsActionNonTargeteejspAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStrutsActionNonSentenceAction.java" type="net.storyteller.web.SetStrutsActionNonSentenceAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStrutsActionNonFilenameAction.java" type="net.storyteller.web.SetStrutsActionNonFilenameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStrutsActionNonCodeAction.java" type="net.storyteller.web.SetStrutsActionNonCodeAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStrutsActionNonIdAction.java" type="net.storyteller.web.SetStrutsActionNonIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStrutsActionTargeteeactionAction.java" type="net.storyteller.web.SetStrutsActionTargeteeactionAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStrutsActionTargeteejspAction.java" type="net.storyteller.web.SetStrutsActionTargeteejspAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStrutsActionSentenceAction.java" type="net.storyteller.web.SetStrutsActionSentenceAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStrutsActionFilenameAction.java" type="net.storyteller.web.SetStrutsActionFilenameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStrutsActionCodeAction.java" type="net.storyteller.web.SetStrutsActionCodeAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStrutsActionIdAction.java" type="net.storyteller.web.SetStrutsActionIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfStrutsActionTargeteeactionAction.java" type="net.storyteller.web.SetSelectionOfStrutsActionTargeteeactionAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfStrutsActionTargeteejspAction.java" type="net.storyteller.web.SetSelectionOfStrutsActionTargeteejspAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfStrutsActionSentenceAction.java" type="net.storyteller.web.SetSelectionOfStrutsActionSentenceAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfStrutsActionFilenameAction.java" type="net.storyteller.web.SetSelectionOfStrutsActionFilenameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfStrutsActionCodeAction.java" type="net.storyteller.web.SetSelectionOfStrutsActionCodeAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfStrutsActionIdAction.java" type="net.storyteller.web.SetSelectionOfStrutsActionIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+
+  	
+  
+  		<action path="/GrepStrutsActionTemplateOnJspTemplateAction.java" type="net.storyteller.web.GrepStrutsActionTemplateOnJspTemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepStrutsActionTemplateOnNametemplateAction.java" type="net.storyteller.web.GrepStrutsActionTemplateOnNametemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepStrutsActionTemplateOnTemplateAction.java" type="net.storyteller.web.GrepStrutsActionTemplateOnTemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepStrutsActionTemplateOnVerbAction.java" type="net.storyteller.web.GrepStrutsActionTemplateOnVerbAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepStrutsActionTemplateOnTargeteeactionAction.java" type="net.storyteller.web.GrepStrutsActionTemplateOnTargeteeactionAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepStrutsActionTemplateOnIdAction.java" type="net.storyteller.web.GrepStrutsActionTemplateOnIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStrutsActionTemplateNonJspTemplateAction.java" type="net.storyteller.web.SetStrutsActionTemplateNonJspTemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStrutsActionTemplateNonNametemplateAction.java" type="net.storyteller.web.SetStrutsActionTemplateNonNametemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStrutsActionTemplateNonTemplateAction.java" type="net.storyteller.web.SetStrutsActionTemplateNonTemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStrutsActionTemplateNonVerbAction.java" type="net.storyteller.web.SetStrutsActionTemplateNonVerbAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStrutsActionTemplateNonTargeteeactionAction.java" type="net.storyteller.web.SetStrutsActionTemplateNonTargeteeactionAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStrutsActionTemplateNonIdAction.java" type="net.storyteller.web.SetStrutsActionTemplateNonIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStrutsActionTemplateJspTemplateAction.java" type="net.storyteller.web.SetStrutsActionTemplateJspTemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStrutsActionTemplateNametemplateAction.java" type="net.storyteller.web.SetStrutsActionTemplateNametemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStrutsActionTemplateTemplateAction.java" type="net.storyteller.web.SetStrutsActionTemplateTemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStrutsActionTemplateVerbAction.java" type="net.storyteller.web.SetStrutsActionTemplateVerbAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStrutsActionTemplateTargeteeactionAction.java" type="net.storyteller.web.SetStrutsActionTemplateTargeteeactionAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetStrutsActionTemplateIdAction.java" type="net.storyteller.web.SetStrutsActionTemplateIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfStrutsActionTemplateJspTemplateAction.java" type="net.storyteller.web.SetSelectionOfStrutsActionTemplateJspTemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfStrutsActionTemplateNametemplateAction.java" type="net.storyteller.web.SetSelectionOfStrutsActionTemplateNametemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfStrutsActionTemplateTemplateAction.java" type="net.storyteller.web.SetSelectionOfStrutsActionTemplateTemplateAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfStrutsActionTemplateVerbAction.java" type="net.storyteller.web.SetSelectionOfStrutsActionTemplateVerbAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfStrutsActionTemplateTargeteeactionAction.java" type="net.storyteller.web.SetSelectionOfStrutsActionTemplateTargeteeactionAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfStrutsActionTemplateIdAction.java" type="net.storyteller.web.SetSelectionOfStrutsActionTemplateIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+
+  	
+  
+  		<action path="/GrepTemplateInputOnVerbAction.java" type="net.storyteller.web.GrepTemplateInputOnVerbAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepTemplateInputOnIdAction.java" type="net.storyteller.web.GrepTemplateInputOnIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepTemplateInputOnNameAction.java" type="net.storyteller.web.GrepTemplateInputOnNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetTemplateInputNonVerbAction.java" type="net.storyteller.web.SetTemplateInputNonVerbAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetTemplateInputNonIdAction.java" type="net.storyteller.web.SetTemplateInputNonIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetTemplateInputNonNameAction.java" type="net.storyteller.web.SetTemplateInputNonNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetTemplateInputVerbAction.java" type="net.storyteller.web.SetTemplateInputVerbAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetTemplateInputIdAction.java" type="net.storyteller.web.SetTemplateInputIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetTemplateInputNameAction.java" type="net.storyteller.web.SetTemplateInputNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfTemplateInputVerbAction.java" type="net.storyteller.web.SetSelectionOfTemplateInputVerbAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfTemplateInputIdAction.java" type="net.storyteller.web.SetSelectionOfTemplateInputIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfTemplateInputNameAction.java" type="net.storyteller.web.SetSelectionOfTemplateInputNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+
+  	
+  
+  		<action path="/ValidationRuleChoiseDetail" type="net.storyteller.web.ValidationRuleChoiseDetailAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/ValidationRuleChoiseVP" name="ValidationRuleChoiseForm" type="net.storyteller.web.ValidationRuleChoiseVPAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/DeleteValidationRuleChoise" type="net.storyteller.web.DeleteValidationRuleChoiseAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/ValidationRuleChoiseRSSExport" type="net.storyteller.web.ValidationRuleChoiseRSSExportAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/ValidationRuleChoiseInputRss" type="net.storyteller.web.ValidationRuleChoiseInputRssAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/SetSelectionOfValidationRuleChoiseActualcode" type="net.storyteller.web.SetSelectionOfValidationRuleChoiseActualcodeAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/SetSelectionOfValidationRuleChoiseErrormessage" type="net.storyteller.web.SetSelectionOfValidationRuleChoiseErrormessageAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/SetSelectionOfValidationRuleChoiseAttrUse" type="net.storyteller.web.SetSelectionOfValidationRuleChoiseAttrUseAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/SetSelectionOfValidationRuleChoiseValidationRule" type="net.storyteller.web.SetSelectionOfValidationRuleChoiseValidationRuleAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/SetValidationRuleChoiseActualcode" type="net.storyteller.web.SetValidationRuleChoiseActualcodeAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/SetValidationRuleChoiseErrormessage" type="net.storyteller.web.SetValidationRuleChoiseErrormessageAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/SetValidationRuleChoiseAttrUse" type="net.storyteller.web.SetValidationRuleChoiseAttrUseAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/SetValidationRuleChoiseValidationRule" type="net.storyteller.web.SetValidationRuleChoiseValidationRuleAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/SetValidationRuleChoiseNonActualcode" type="net.storyteller.web.SetValidationRuleChoiseNonActualcodeAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/SetValidationRuleChoiseNonErrormessage" type="net.storyteller.web.SetValidationRuleChoiseNonErrormessageAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/SetValidationRuleChoiseNonAttrUse" type="net.storyteller.web.SetValidationRuleChoiseNonAttrUseAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/SetValidationRuleChoiseNonValidationRule" type="net.storyteller.web.SetValidationRuleChoiseNonValidationRuleAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/CopyAValidationRuleChoiseFromAValidationRuleChoise" type="net.storyteller.web.CopyAValidationRuleChoiseFromAValidationRuleChoiseAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/XlsExportOfValidationRuleChoise" type="net.storyteller.web.XlsExportOfValidationRuleChoiseAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/GrepValidationRuleChoiseOnActualcode" type="net.storyteller.web.GrepValidationRuleChoiseOnActualcodeAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/GrepValidationRuleChoiseOnErrormessage" type="net.storyteller.web.GrepValidationRuleChoiseOnErrormessageAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/GrepValidationRuleChoiseOnAttrUse" type="net.storyteller.web.GrepValidationRuleChoiseOnAttrUseAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/GrepValidationRuleChoiseOnValidationRule" type="net.storyteller.web.GrepValidationRuleChoiseOnValidationRuleAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/GrepValidationRuleOnDefaulterrormessageAction.java" type="net.storyteller.web.GrepValidationRuleOnDefaulterrormessageAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepValidationRuleOnIdAction.java" type="net.storyteller.web.GrepValidationRuleOnIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepValidationRuleOnNameAction.java" type="net.storyteller.web.GrepValidationRuleOnNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetValidationRuleNonDefaulterrormessageAction.java" type="net.storyteller.web.SetValidationRuleNonDefaulterrormessageAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetValidationRuleNonIdAction.java" type="net.storyteller.web.SetValidationRuleNonIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetValidationRuleNonNameAction.java" type="net.storyteller.web.SetValidationRuleNonNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetValidationRuleIdAction.java" type="net.storyteller.web.SetValidationRuleIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetValidationRuleDefaulterrormessageAction.java" type="net.storyteller.web.SetValidationRuleDefaulterrormessageAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetValidationRuleNameAction.java" type="net.storyteller.web.SetValidationRuleNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfValidationRuleDefaulterrormessageAction.java" type="net.storyteller.web.SetSelectionOfValidationRuleDefaulterrormessageAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfValidationRuleIdAction.java" type="net.storyteller.web.SetSelectionOfValidationRuleIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfValidationRuleNameAction.java" type="net.storyteller.web.SetSelectionOfValidationRuleNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+
+  	
+  
+  		<action path="/GrepVerbOnTwoobjectsAction.java" type="net.storyteller.web.GrepVerbOnTwoobjectsAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepVerbOnNameAction.java" type="net.storyteller.web.GrepVerbOnNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepVerbOnIdAction.java" type="net.storyteller.web.GrepVerbOnIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/GrepVerbOnValidAction.java" type="net.storyteller.web.GrepVerbOnValidAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetVerbNonValidAction.java" type="net.storyteller.web.SetVerbNonValidAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetVerbNonTwoobjectsAction.java" type="net.storyteller.web.SetVerbNonTwoobjectsAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetVerbNonIdAction.java" type="net.storyteller.web.SetVerbNonIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetVerbNonNameAction.java" type="net.storyteller.web.SetVerbNonNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetVerbTwoobjectsAction.java" type="net.storyteller.web.SetVerbTwoobjectsAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetVerbValidAction.java" type="net.storyteller.web.SetVerbValidAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetVerbNameAction.java" type="net.storyteller.web.SetVerbNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetVerbIdAction.java" type="net.storyteller.web.SetVerbIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfVerbTwoobjectsAction.java" type="net.storyteller.web.SetSelectionOfVerbTwoobjectsAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfVerbValidAction.java" type="net.storyteller.web.SetSelectionOfVerbValidAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfVerbIdAction.java" type="net.storyteller.web.SetSelectionOfVerbIdAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+	<action path="/SetSelectionOfVerbNameAction.java" type="net.storyteller.web.SetSelectionOfVerbNameAction.javaAction">
+  <forward name="success" path="/" />
+</action>
+
+  	
+  
+  	
+  	
+  
+  		<action path="/PostValidationRuleVP" name="ValidationRuleForm" type="net.storyteller.web.PostValidationRuleVPAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostValidationRuleDetail" type="net.storyteller.web.PostValidationRuleDetailAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/ValidationRules" type="net.storyteller.web.ValidationRulesAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostValidationRuleChoiseVP" name="ValidationRuleChoiseForm" type="net.storyteller.web.PostValidationRuleChoiseVPAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostValidationRuleChoiseDetail" type="net.storyteller.web.PostValidationRuleChoiseDetailAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/ValidationRuleChoises" type="net.storyteller.web.ValidationRuleChoisesAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/ShowSentence" type="net.storyteller.web.ShowSentenceAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostAttrVPAboutJapanese" name="AttrForm" type="net.storyteller.web.app.PostAttrVPAboutJapaneseAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostAttrDetailAboutJapanese" type="net.storyteller.web.app.PostAttrDetailAboutJapaneseAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  	
+  	
+  
+  	
+  	
+  
+  	
+  	
+  
+  	
+  	
+  
+  		<action path="/CommonTranslations" type="net.storyteller.web.app.CommonTranslationsAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostCommonTranslationVP" name="CommonTranslationForm" type="net.storyteller.web.app.PostCommonTranslationVPAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostCommonTranslationDetail" type="net.storyteller.web.app.PostCommonTranslationDetailAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  	
+  	
+  
+  	
+  	
+  
+  		<action path="/PostNounVPAboutJapanese" name="NounForm" type="net.storyteller.web.app.PostNounVPAboutJapaneseAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostNounDetailAboutJapanese" type="net.storyteller.web.app.PostNounDetailAboutJapaneseAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  	
+  	
+  
+  	
+  	
+  
+  	
+  	
+  
+  	
+  	
+  
+  	
+  	
+  
+  	
+  	
+  
+  	
+  	
+  
+  	
+  	
+  
+  	
+  	
+  
+  	
+  	
+  
+  	
+  	
+  
+  		<action path="/DisplayXmlOfNoun" type="net.storyteller.web.app.DisplayXmlOfNounAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/ShowNounXml" type="net.storyteller.web.app.ShowNounXmlAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostBusinessCostVP" name="BusinessCostForm" type="net.storyteller.web.app.PostBusinessCostVPAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostBusinessCostDetail" type="net.storyteller.web.app.PostBusinessCostDetailAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostBuyingVP" name="BuyingForm" type="net.storyteller.web.app.PostBuyingVPAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostBuyingDetail" type="net.storyteller.web.app.PostBuyingDetailAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostClientVP" name="ClientForm" type="net.storyteller.web.app.PostClientVPAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostClientDetail" type="net.storyteller.web.app.PostClientDetailAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostCommonCostVP" name="CommonCostForm" type="net.storyteller.web.app.PostCommonCostVPAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostCommonCostDetail" type="net.storyteller.web.app.PostCommonCostDetailAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostContributeVP" name="ContributeForm" type="net.storyteller.web.app.PostContributeVPAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostContributeDetail" type="net.storyteller.web.app.PostContributeDetailAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostContributionTypeVP" name="ContributionTypeForm" type="net.storyteller.web.app.PostContributionTypeVPAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostContributionTypeDetail" type="net.storyteller.web.app.PostContributionTypeDetailAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostIntraUserVP" name="IntraUserForm" type="net.storyteller.web.app.PostIntraUserVPAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostIntraUserDetail" type="net.storyteller.web.app.PostIntraUserDetailAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostRoleVP" name="RoleForm" type="net.storyteller.web.app.PostRoleVPAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostRoleDetail" type="net.storyteller.web.app.PostRoleDetailAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostStaticDataVP" name="StaticDataForm" type="net.storyteller.web.app.PostStaticDataVPAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostStaticDataDetail" type="net.storyteller.web.app.PostStaticDataDetailAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostTaskVP" name="TaskForm" type="net.storyteller.web.app.PostTaskVPAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostTaskDetail" type="net.storyteller.web.app.PostTaskDetailAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostTaskTemplateVP" name="TaskTemplateForm" type="net.storyteller.web.app.PostTaskTemplateVPAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostTaskTemplateDetail" type="net.storyteller.web.app.PostTaskTemplateDetailAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/AjaxDisplayIntraUsers" type="net.storyteller.web.app.AjaxDisplayIntraUsersAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/AjaxDisplayBusinessCosts" type="net.storyteller.web.app.AjaxDisplayBusinessCostsAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/DeleteIntraUser" type="net.storyteller.web.app.DeleteIntraUserAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/DisplayXmlOfJ2eeStory" type="net.storyteller.web.app.DisplayXmlOfJ2eeStoryAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/ShowJ2eeStoryXml" type="net.storyteller.web.app.ShowJ2eeStoryXmlAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/IntraUsers" type="net.storyteller.web.app.IntraUsersAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/AjaxDisplayBuyings" type="net.storyteller.web.app.AjaxDisplayBuyingsAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/AjaxDisplayClients" type="net.storyteller.web.app.AjaxDisplayClientsAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/AjaxDisplayCommonCosts" type="net.storyteller.web.app.AjaxDisplayCommonCostsAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/AjaxDisplayContributes" type="net.storyteller.web.app.AjaxDisplayContributesAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/AjaxDisplayContributionTypes" type="net.storyteller.web.app.AjaxDisplayContributionTypesAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/ContributionTypes" type="net.storyteller.web.app.ContributionTypesAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/Contributes" type="net.storyteller.web.app.ContributesAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/AjaxDisplayOutOfPattenSentences" type="net.storyteller.web.app.AjaxDisplayOutOfPattenSentencesAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostOutOfPattenSentenceVP" name="OutOfPattenSentenceForm" type="net.storyteller.web.app.PostOutOfPattenSentenceVPAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostOutOfPattenSentenceDetail" type="net.storyteller.web.app.PostOutOfPattenSentenceDetailAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/AjaxDisplayProfitDividients" type="net.storyteller.web.app.AjaxDisplayProfitDividientsAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/AjaxDisplayRoles" type="net.storyteller.web.app.AjaxDisplayRolesAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/AjaxDisplayTasks" type="net.storyteller.web.app.AjaxDisplayTasksAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/AjaxDisplayTaskTemplates" type="net.storyteller.web.app.AjaxDisplayTaskTemplatesAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/AjaxDisplayTests" type="net.storyteller.web.app.AjaxDisplayTestsAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  	
+  	
+  
+  	
+  	
+  
+  		<action path="/DeleteEstimation" type="net.storyteller.web.app.DeleteEstimationAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/AjaxDisplayEstimations" type="net.storyteller.web.app.AjaxDisplayEstimationsAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/Estimations" type="net.storyteller.web.app.EstimationsAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PDFShowEstimation" type="net.storyteller.web.app.PDFShowEstimationAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/UpdateEstimationChoiseFromAboutPrices" type="net.storyteller.web.app.UpdateEstimationChoiseFromAboutPricesAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostEstimationChoiseVP" name="EstimationChoiseForm" type="net.storyteller.web.app.PostEstimationChoiseVPAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostEstimationChoiseDetail" type="net.storyteller.web.app.PostEstimationChoiseDetailAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/DeleteEstimationChoise" type="net.storyteller.web.app.DeleteEstimationChoiseAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/ Tests " type="net.storyteller.web.app. Tests Action">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/AjaxDisplayEstimationChoises" type="net.storyteller.web.app.AjaxDisplayEstimationChoisesAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/ShowEstimation" type="net.storyteller.web.app.ShowEstimationAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostEstimationVP" name="EstimationForm" type="net.storyteller.web.app.PostEstimationVPAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostEstimationDetail" type="net.storyteller.web.app.PostEstimationDetailAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/AjaxDisplayTestsAboutEstimation" type="net.storyteller.web.app.AjaxDisplayTestsAboutEstimationAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/UpdateTestFrom" type="net.storyteller.web.app.UpdateTestFromAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  	
+  	
+  
+  		<action path="/AjaxDisplayStorytellerRoles" type="net.storyteller.web.app.AjaxDisplayStorytellerRolesAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostStorytellerRoleVP" name="StorytellerRoleForm" type="net.storyteller.web.app.PostStorytellerRoleVPAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostStorytellerRoleDetail" type="net.storyteller.web.app.PostStorytellerRoleDetailAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  	
+  	
+  
+  		<action path="/PostRoleAssignVP" name="RoleAssignForm" type="net.storyteller.web.app.PostRoleAssignVPAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostRoleAssignDetail" type="net.storyteller.web.app.PostRoleAssignDetailAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/Login" type="net.storyteller.web.app.LoginAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/LoginPre" type="net.storyteller.web.app.LoginPreAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostTestVP" name="TestForm" type="net.storyteller.web.app.PostTestVPAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostTestDetail" type="net.storyteller.web.app.PostTestDetailAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostJ2eeStoryVPAboutEstimation" name="J2eeStoryForm" type="net.storyteller.web.app.PostJ2eeStoryVPAboutEstimationAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostJ2eeStoryDetailAboutEstimation" type="net.storyteller.web.app.PostJ2eeStoryDetailAboutEstimationAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  	
+  	
+  
+  	
+  	
+  
+  	
+  	
+  
+  		<action path="/PostEstimationVPForUpdate" name="EstimationForm" type="net.storyteller.web.app.PostEstimationVPForUpdateAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostEstimationDetailForUpdate" type="net.storyteller.web.app.PostEstimationDetailForUpdateAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostEstimationChoiseVPForUpdate" name="EstimationChoiseForm" type="net.storyteller.web.app.PostEstimationChoiseVPForUpdateAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostEstimationChoiseDetailForUpdate" type="net.storyteller.web.app.PostEstimationChoiseDetailForUpdateAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/ShowJ2eeStoryForTests" type="net.storyteller.web.app.ShowJ2eeStoryForTestsAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostJ2eeStoryVPAboutClient" name="J2eeStoryForm" type="net.storyteller.web.app.PostJ2eeStoryVPAboutClientAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostJ2eeStoryDetailAboutClient" type="net.storyteller.web.app.PostJ2eeStoryDetailAboutClientAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostJ2eeStoryVPAboutContribute" name="J2eeStoryForm" type="net.storyteller.web.app.PostJ2eeStoryVPAboutContributeAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostJ2eeStoryDetailAboutContribute" type="net.storyteller.web.app.PostJ2eeStoryDetailAboutContributeAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/UpdateEstimationFromForSummingup" type="net.storyteller.web.app.UpdateEstimationFromForSummingupAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/UpdateEstimationChoiseFromAboutMarketPrices" type="net.storyteller.web.app.UpdateEstimationChoiseFromAboutMarketPricesAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/UpdateEstimationChoiseFromFromVerbAndDiscount" type="net.storyteller.web.app.UpdateEstimationChoiseFromFromVerbAndDiscountAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/XlsExportOf##modelclass##" type="net.storyteller.web.app.XlsExportOf##modelclass##Action">
+  <forward name="success" path="" />
+</action>
+	<action path="/XlsExportOfEstimationChoise" type="net.storyteller.web.app.XlsExportOfEstimationChoiseAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/XlsExportOf##modelclass##ForIntraUser" type="net.storyteller.web.app.XlsExportOf##modelclass##ForIntraUserAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/XlsExportOfEstimationChoiseForIntraUser" type="net.storyteller.web.app.XlsExportOfEstimationChoiseForIntraUserAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/DeleteAttr" type="net.storyteller.web.app.DeleteAttrAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/DeleteNoun" type="net.storyteller.web.app.DeleteNounAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostTestVPForSummery" name="TestForm" type="net.storyteller.web.app.PostTestVPForSummeryAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostTestDetailForSummery" type="net.storyteller.web.app.PostTestDetailForSummeryAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/XlsExportOfTaskTemplate" type="net.storyteller.web.app.XlsExportOfTaskTemplateAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/UpdateEstimationChoiseFromAtOnce" type="net.storyteller.web.app.UpdateEstimationChoiseFromAtOnceAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/UpdateEstimationFromFromVerbAndDiscount" type="net.storyteller.web.app.UpdateEstimationFromFromVerbAndDiscountAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/XlsExportOfJ2eeStory" type="net.storyteller.web.app.XlsExportOfJ2eeStoryAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/XlsExportOfCommonTranslation" type="net.storyteller.web.app.XlsExportOfCommonTranslationAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/XlsExportOfBusinessCost" type="net.storyteller.web.app.XlsExportOfBusinessCostAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/XlsExportOfCommonCost" type="net.storyteller.web.app.XlsExportOfCommonCostAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/XlsExportOfComponey" type="net.storyteller.web.app.XlsExportOfComponeyAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/XlsExportOfContribute" type="net.storyteller.web.app.XlsExportOfContributeAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/XlsExportOfClient" type="net.storyteller.web.app.XlsExportOfClientAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/XlsExportOfIntraUser" type="net.storyteller.web.app.XlsExportOfIntraUserAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/XlsExportOfRole" type="net.storyteller.web.app.XlsExportOfRoleAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/XlsExportOfTask" type="net.storyteller.web.app.XlsExportOfTaskAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/XlsExportOfSentence" type="net.storyteller.web.app.XlsExportOfSentenceAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/XlsExportOfVerb" type="net.storyteller.web.app.XlsExportOfVerbAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/UpdateJ2eeStoryFromForUpdatingTasksFromTaskTemplates" type="net.storyteller.web.app.UpdateJ2eeStoryFromForUpdatingTasksFromTaskTemplatesAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/UpdateTaskFromFromTaskTemplates" type="net.storyteller.web.app.UpdateTaskFromFromTaskTemplatesAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/UpdateAtOnceJ2eeStoryActionForCoverage" type="net.storyteller.web.app.UpdateAtOnceJ2eeStoryActionForCoverageAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/MailAboutJ2eeStoryForAlertingCoverage" type="net.storyteller.web.app.MailAboutJ2eeStoryForAlertingCoverageAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  	
+  	
+  
+  	
+  	
+  
+  	
+  	
+  
+  	
+  	
+  
+  		<action path="/UpdateAtOnceTaskActionFromBasecampAccounts" type="net.storyteller.web.app.UpdateAtOnceTaskActionFromBasecampAccountsAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  	
+  	
+  
+  	
+  	
+  
+  	
+  	
+  
+  		<action path="/AjaxDisplayBasecampAccounts" type="net.storyteller.web.app.AjaxDisplayBasecampAccountsAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostBasecampAccountVP" name="BasecampAccountForm" type="net.storyteller.web.app.PostBasecampAccountVPAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostBasecampAccountDetail" type="net.storyteller.web.app.PostBasecampAccountDetailAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/AjaxDisplayBasecampProjects" type="net.storyteller.web.app.AjaxDisplayBasecampProjectsAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/BasecampProjects" type="net.storyteller.web.app.BasecampProjectsAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostBasecampProjectVP" name="BasecampProjectForm" type="net.storyteller.web.app.PostBasecampProjectVPAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostBasecampProjectDetail" type="net.storyteller.web.app.PostBasecampProjectDetailAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/BasecampAccounts" type="net.storyteller.web.app.BasecampAccountsAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/AjaxDisplayBasecampTodos" type="net.storyteller.web.app.AjaxDisplayBasecampTodosAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostBasecampTodoVP" name="BasecampTodoForm" type="net.storyteller.web.app.PostBasecampTodoVPAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostBasecampTodoDetail" type="net.storyteller.web.app.PostBasecampTodoDetailAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/BasecampTodos" type="net.storyteller.web.app.BasecampTodosAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/AjaxDisplayBasecampTodoLists" type="net.storyteller.web.app.AjaxDisplayBasecampTodoListsAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/BasecampTodoLists" type="net.storyteller.web.app.BasecampTodoListsAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostBasecampTodoListVP" name="BasecampTodoListForm" type="net.storyteller.web.app.PostBasecampTodoListVPAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostBasecampTodoListDetail" type="net.storyteller.web.app.PostBasecampTodoListDetailAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/IncomePayments" type="net.storyteller.web.app.IncomePaymentsAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/PostIncomePaymentVP" name="IncomePaymentForm" type="net.storyteller.web.app.PostIncomePaymentVPAction">
+  <forward name="success" path="" />
+</action>
+	<action path="/PostIncomePaymentDetail" type="net.storyteller.web.app.PostIncomePaymentDetailAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/DeleteAccountSnapshot" type="net.storyteller.web.app.DeleteAccountSnapshotAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/UpdateAtOnceAccountSnapshotAction" type="net.storyteller.web.app.UpdateAtOnceAccountSnapshotActionAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/AccountSnapshots" type="net.storyteller.web.app.AccountSnapshotsAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/XlsExportOfTest" type="net.storyteller.web.app.XlsExportOfTestAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/Tests" type="net.storyteller.web.app.TestsAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  		<action path="/DeleteCommonTranslation" type="net.storyteller.web.app.DeleteCommonTranslationAction">
+  <forward name="success" path="" />
+</action>
+
+  	
+  
+  </action-mappings>
+  <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+  <message-resources parameter="MessageResources"/>
+  <plug-in className="org.apache.struts.tiles.TilesPlugin">
+    <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml"/>
+    <set-property property="moduleAware" value="true"/>
+  </plug-in>
+  <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+    <set-property property="pathnames" value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+  </plug-in>
+</struts-config>
+
+

@@ -1,0 +1,27 @@
+<Context path="/nameofproject" reloadable="true" docBase="nameofproject" >
+
+    <Resource
+        name="jdbc/nameofproject"
+        auth="Container"
+        type="javax.sql.DataSource"
+        factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"
+        driverClassName="com.mysql.jdbc.Driver"
+        url="jdbc:mysql://localhost/nameofproject?useUnicode=true&amp;characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull&amp;autoReconnect=true"
+        username="nameofproject"
+        password="nameofproject"
+         removeAbandonedTimeout="60"
+         removeAbandoned="true"
+         logAbandoned="true"
+
+maxWait="70"
+maxActive="70"
+maxIdle="10000"
+validationQuery="SELECT VERSION()"
+testOnBorrow="true"
+testOnReturn="false"
+testWhileIdle="false"
+    />
+
+<!-- Extra info end -->
+<Logger className="org.apache.catalina.logger.SystemOutLogger" verbosity="4" timestamp="true"/>
+</Context>
