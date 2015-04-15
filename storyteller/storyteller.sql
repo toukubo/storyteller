@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 2015 年 3 月 30 日 21:38
+-- Generation Time: 2015 年 4 月 15 日 19:38
 -- サーバのバージョン： 5.6.21
 -- PHP Version: 5.6.3
 
@@ -328,7 +328,8 @@ CREATE TABLE IF NOT EXISTS `JSP` (
 `ID` int(11) NOT NULL,
   `CODE` varchar(10000) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `FILENAME` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `SENTENCE_FK` int(11) NOT NULL
+  `SENTENCE_FK` int(11) NOT NULL,
+  `MODIFIED` tinyint(4) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -413,7 +414,7 @@ INSERT INTO `NOUN` (`ID`, `VALID`, `NAME`, `JAPANESE`, `J2EE_STORY_FK`) VALUES
 CREATE TABLE IF NOT EXISTS `NOUN_CLAUSE` (
 `ID` int(11) NOT NULL,
   `CODE` varchar(10000) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- テーブルのデータのダンプ `NOUN_CLAUSE`
@@ -422,7 +423,8 @@ CREATE TABLE IF NOT EXISTS `NOUN_CLAUSE` (
 INSERT INTO `NOUN_CLAUSE` (`ID`, `CODE`) VALUES
 (1, ''),
 (2, ''),
-(3, '');
+(3, ''),
+(4, '');
 
 -- --------------------------------------------------------
 
@@ -436,7 +438,7 @@ CREATE TABLE IF NOT EXISTS `NOUN_USE` (
   `OFORDER` int(11) NOT NULL,
   `NOUN_FK` int(11) NOT NULL,
   `NOUN_CLAUSE_FK` int(11) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- テーブルのデータのダンプ `NOUN_USE`
@@ -444,7 +446,8 @@ CREATE TABLE IF NOT EXISTS `NOUN_USE` (
 
 INSERT INTO `NOUN_USE` (`ID`, `MUTIPLE`, `OFORDER`, `NOUN_FK`, `NOUN_CLAUSE_FK`) VALUES
 (1, 1, 1, 1, 2),
-(2, 1, 1, 2, 3);
+(2, 1, 1, 2, 3),
+(3, 0, 1, 1, 4);
 
 -- --------------------------------------------------------
 
@@ -485,16 +488,18 @@ CREATE TABLE IF NOT EXISTS `SENTENCE` (
   `FIRSTOBJECTIVE_FK` int(11) NOT NULL,
   `J2EE_STORY_FK` int(11) DEFAULT NULL,
   `JAPANESE` varchar(255) NOT NULL,
-  `MAINTEST_FK` int(11) DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+  `MAINTEST_FK` int(11) DEFAULT NULL,
+  `MODIFIED` tinyint(4) NOT NULL
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- テーブルのデータのダンプ `SENTENCE`
 --
 
-INSERT INTO `SENTENCE` (`ID`, `STRUTS_CONFIG_CODE`, `VALID`, `NAME`, `VERB_FK`, `SECOUNTOBJECTIVE_FK`, `FIRSTOBJECTIVE_FK`, `J2EE_STORY_FK`, `JAPANESE`, `MAINTEST_FK`) VALUES
-(1, '', 0, '', 6, NULL, 2, 1, '', NULL),
-(2, '', 0, '', 6, NULL, 3, 1, '', NULL);
+INSERT INTO `SENTENCE` (`ID`, `STRUTS_CONFIG_CODE`, `VALID`, `NAME`, `VERB_FK`, `SECOUNTOBJECTIVE_FK`, `FIRSTOBJECTIVE_FK`, `J2EE_STORY_FK`, `JAPANESE`, `MAINTEST_FK`, `MODIFIED`) VALUES
+(1, '', 0, '', 6, NULL, 2, 1, '', NULL, 0),
+(2, '', 0, '', 6, NULL, 3, 1, '', NULL, 0),
+(3, '	<action path="/##modelclass##Resource.java" type="net.nodepad.web.app.##modelclass##Resource.javaAction">\r\n  <forward name="success" path="" />\r\n</action>\r\n	<action path="/NodeResource.java" type="net.nodepad.web.app.NodeResource.javaAction">\r\n  <forward name="success" path="" />\r\n</action>\r\n', 0, '', 20, NULL, 4, 1, '', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -553,7 +558,15 @@ CREATE TABLE IF NOT EXISTS `STRUTS_ACTION` (
   `SENTENCE_FK` int(11) NOT NULL,
   `TARGETEEJSP_FK` int(11) DEFAULT NULL,
   `TARGETEEACTION_FK` int(11) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- テーブルのデータのダンプ `STRUTS_ACTION`
+--
+
+INSERT INTO `STRUTS_ACTION` (`ID`, `CODE`, `FILENAME`, `SENTENCE_FK`, `TARGETEEJSP_FK`, `TARGETEEACTION_FK`) VALUES
+(1, 'package ##packagename##.api.rest.api;\r\n\r\nimport org.springframework.web.bind.annotation.RestController;\r\n\r\nimport com.wordnik.swagger.annotations.Api;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport ##modelpackage##;\r\nimport org.springframework.http.HttpStatus;\r\nimport org.springframework.http.ResponseEntity;\r\nimport org.springframework.web.bind.annotation.*;\r\nimport ##packagename##.api.rest.dto.##modelclass##Dto;\r\nimport ##packagename##.api.rest.service.##modelclass##Service;\r\n\r\nimport java.util.List;\r\n\r\n@RestController\r\n@RequestMapping("/api/v1/##modelclass##s")\r\n@Api(value = "##modelclass## API")\r\npublic class ##modelclass##Resource {\r\n\r\n    @Autowired\r\n    private ##modelclass##Service ##modelobj##Service;\r\n\r\n    @RequestMapping(method = RequestMethod.GET)\r\n    public List<##modelclass##Dto> getAll##modelclass##s() {\r\n        return ##modelobj##Service.getAll##modelclass##s();\r\n    }\r\n\r\n    @RequestMapping(value = "/{id}", method = RequestMethod.GET)\r\n    public ##modelclass##Dto get##modelclass##(@PathVariable final String id) {\r\n        return ##modelobj##Service.get##modelclass##(id);\r\n    }\r\n\r\n    @RequestMapping(method = RequestMethod.POST)\r\n    public ResponseEntity<##modelclass##Dto> add##modelclass##(@RequestBody final ##modelclass##Dto ##modelobj##) {\r\n        ##modelclass##Dto created##modelclass## = ##modelobj##Service.create##modelclass##(##modelobj##);\r\n        return new ResponseEntity<>(created##modelclass##, HttpStatus.CREATED);\r\n    }\r\n\r\n    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)\r\n    public ResponseEntity delete##modelclass##(@PathVariable final String id) {\r\n        ##modelobj##Service.delete##modelclass##(id);\r\n        return new ResponseEntity<>(HttpStatus.OK);\r\n    }\r\n\r\n    @RequestMapping(value = "/{id}", method = RequestMethod.PATCH)\r\n    public ResponseEntity<##modelclass##Dto> update##modelclass##(@PathVariable final String id, @RequestBody final ##modelclass##Dto ##modelobj##) {\r\n        ##modelclass##Dto created##modelclass## = ##modelobj##Service.update##modelclass##(id, ##modelobj##);\r\n        return new ResponseEntity<>(created##modelclass##, HttpStatus.OK);\r\n    }\r\n}\r\n', '##modelclass##Resource.javaAction.java', 3, NULL, NULL),
+(2, 'package net.nodepad.web.app.api.rest.api;\r\n\r\nimport org.springframework.web.bind.annotation.RestController;\r\n\r\nimport com.wordnik.swagger.annotations.Api;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport net.nodepad.model.*;\r\nimport org.springframework.http.HttpStatus;\r\nimport org.springframework.http.ResponseEntity;\r\nimport org.springframework.web.bind.annotation.*;\r\nimport net.nodepad.web.app.api.rest.dto.NodeDto;\r\nimport net.nodepad.web.app.api.rest.service.NodeService;\r\n\r\nimport java.util.List;\r\n\r\n@RestController\r\n@RequestMapping("/api/v1/Nodes")\r\n@Api(value = "Node API")\r\npublic class NodeResource {\r\n\r\n    @Autowired\r\n    private NodeService ##modelobj##Service;\r\n\r\n    @RequestMapping(method = RequestMethod.GET)\r\n    public List<NodeDto> getAllNodes() {\r\n        return ##modelobj##Service.getAllNodes();\r\n    }\r\n\r\n    @RequestMapping(value = "/{id}", method = RequestMethod.GET)\r\n    public NodeDto getNode(@PathVariable final String id) {\r\n        return ##modelobj##Service.getNode(id);\r\n    }\r\n\r\n    @RequestMapping(method = RequestMethod.POST)\r\n    public ResponseEntity<NodeDto> addNode(@RequestBody final NodeDto ##modelobj##) {\r\n        NodeDto createdNode = ##modelobj##Service.createNode(##modelobj##);\r\n        return new ResponseEntity<>(createdNode, HttpStatus.CREATED);\r\n    }\r\n\r\n    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)\r\n    public ResponseEntity deleteNode(@PathVariable final String id) {\r\n        ##modelobj##Service.deleteNode(id);\r\n        return new ResponseEntity<>(HttpStatus.OK);\r\n    }\r\n\r\n    @RequestMapping(value = "/{id}", method = RequestMethod.PATCH)\r\n    public ResponseEntity<NodeDto> updateNode(@PathVariable final String id, @RequestBody final NodeDto ##modelobj##) {\r\n        NodeDto createdNode = ##modelobj##Service.updateNode(id, ##modelobj##);\r\n        return new ResponseEntity<>(createdNode, HttpStatus.OK);\r\n    }\r\n}\r\n', 'NodeResource.javaAction.java', 3, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -568,7 +581,7 @@ CREATE TABLE IF NOT EXISTS `STRUTS_ACTION_TEMPLATE` (
   `VERB_FK` int(11) NOT NULL,
   `TARGETEEACTION_FK` int(11) DEFAULT NULL,
   `JSP_TEMPLATE_FK` int(11) DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
 
 --
 -- テーブルのデータのダンプ `STRUTS_ACTION_TEMPLATE`
@@ -607,7 +620,8 @@ INSERT INTO `STRUTS_ACTION_TEMPLATE` (`ID`, `TEMPLATE`, `NAMETEMPLATE`, `VERB_FK
 (29, 'package ##packagename##;\r\n\r\nimport java.net.URL;\r\nimport java.util.Enumeration;\r\n\r\nimport java.util.Collection;\r\nimport java.util.Iterator;\r\nimport java.util.Vector;\r\n\r\nimport javax.servlet.http.HttpServletRequest;\r\nimport javax.servlet.http.HttpServletResponse;\r\n\r\n\r\nimport ##modelpackage##;\r\nimport ##modelcrudpackage##;\r\n\r\nimport net.enclosing.util.HibernateSession;\r\nimport net.enclosing.util.StringFullfiller;\r\n\r\n\r\nimport org.apache.commons.httpclient.HttpClient;\r\nimport org.apache.commons.httpclient.methods.GetMethod;\r\nimport org.apache.struts.action.Action;\r\nimport org.apache.struts.action.ActionForm;\r\nimport org.apache.struts.action.ActionForward;\r\nimport org.apache.struts.action.ActionMapping;\r\nimport org.hibernate.Criteria;\r\nimport org.hibernate.Session;\r\nimport org.hibernate.SessionFactory;\r\nimport org.hibernate.Transaction;\r\nimport org.hibernate.criterion.Restrictions;\r\nimport org.springframework.beans.factory.BeanFactory;\r\nimport org.springframework.web.context.support.WebApplicationContextUtils;\r\n\r\nimport churchillobjects.rss4j.RssChannel;\r\nimport churchillobjects.rss4j.RssChannelItem;\r\nimport churchillobjects.rss4j.RssDocument;\r\nimport churchillobjects.rss4j.parser.RssParser;\r\n\r\n\r\npublic class ##nameofsentence## extends Action{\r\n	public ActionForward execute(\r\n			ActionMapping mapping,\r\n			ActionForm form,\r\n			HttpServletRequest req,\r\n			HttpServletResponse res) throws Exception{\r\n		\r\n		\r\n		\r\n		\r\n		\r\n		return mapping.findForward("success");\r\n	}\r\n	\r\n	\r\n}\r\n', 'LoginPre', 12, NULL, NULL),
 (30, 'package ##packagename##;\r\n\r\nimport ##modelpackage##;\r\nimport ##beanpackage##;\r\n\r\nimport javax.servlet.http.HttpServletRequest;\r\nimport javax.servlet.http.HttpServletResponse;\r\n\r\nimport java.util.Iterator;\r\nimport java.util.Vector;\r\nimport org.apache.commons.beanutils.BeanUtils;\r\nimport org.apache.struts.action.Action;\r\nimport org.apache.struts.action.ActionForm;\r\nimport org.apache.struts.action.ActionForward;\r\nimport org.apache.struts.action.ActionMapping;\r\nimport org.hibernate.Criteria;\r\nimport org.hibernate.Session;\r\nimport org.hibernate.SessionFactory;\r\nimport org.hibernate.criterion.Restrictions;\r\nimport org.springframework.beans.factory.BeanFactory;\r\nimport org.springframework.web.context.support.WebApplicationContextUtils;\r\n\r\n\r\nimport net.enclosing.util.HibernateSession;\r\nimport net.storyteller.desktop.CopyProperties;\r\n\r\n\r\npublic class ##nameofsentence## extends Action{\r\n	public ActionForward execute(\r\n			ActionMapping mapping,\r\n			ActionForm form,\r\n			HttpServletRequest req,\r\n			HttpServletResponse res) throws Exception{\r\n\r\n\r\n\r\n		Session session = new HibernateSession().currentSession(this\r\n				.getServlet().getServletContext());\r\n\r\n                Vector vector = new Vector();\r\n		Criteria criteria = session.createCriteria(##modelclass##.class);\r\n		for (Iterator iter = criteria.list().iterator(); iter.hasNext();) {\r\n			##modelclass## ##modelobj## = (##modelclass##) iter.next();\r\n			vector.add(##modelobj##);\r\n		}\r\n		##modelclass## ##modelobj## = new ##modelclass##Impl();\r\n		##modelclass##Form ##modelobj##form = new ##modelclass##Form();\r\n		criteria = session.createCriteria(##modelclass##.class);\r\n\r\n\r\n		if (req.getAttribute("form")== null && req.getParameter("id")!=null){\r\n			criteria.add(Restrictions.idEq(Integer.valueOf(req\r\n					.getParameter("id"))));\r\n			##modelobj## = (##modelclass##) criteria.uniqueResult();\r\n			new CopyProperties(##modelobj##,##modelobj##form);\r\n		} else if(req.getAttribute("form")!=null){\r\n                        ##modelobj##form = (##modelclass##Form)req.getAttribute("form");\r\n			criteria.add(Restrictions.idEq(##modelobj##form.getId()));\r\n			##modelobj## = (##modelclass##) criteria.uniqueResult();\r\n		}\r\n		\r\n\r\n		req.setAttribute("model",##modelobj##);\r\n		req.setAttribute("form",##modelobj##form);\r\n		\r\n		\r\n		req.setAttribute("##modelobj##s",vector);\r\n		\r\n\r\n                if(req.getParameter("displayexport") !=null){\r\n     		    return mapping.findForward("displayexport");\r\n                }\r\n\r\n		return mapping.findForward("success");\r\n	}\r\n	\r\n	\r\n}', 'DisplayXmlOf##modelclass##', 17, NULL, 14),
 (32, 'package ##packagename##;\r\n\r\nimport ##modelpackage##;\r\nimport ##beanpackage##;\r\n\r\nimport java.io.File;\r\n\r\nimport javax.servlet.http.HttpServletRequest;\r\nimport javax.servlet.http.HttpServletResponse;\r\n\r\nimport net.enclosing.util.StringFullfiller;\r\nimport net.enclosing.util.HTTPGetRedirection;\r\nimport net.enclosing.util.HibernateSession;\r\n\r\nimport org.apache.commons.beanutils.BeanUtils;\r\nimport org.apache.commons.lang.StringUtils;\r\n\r\nimport org.apache.struts.action.Action;\r\nimport org.apache.struts.action.ActionForm;\r\nimport org.apache.struts.action.ActionForward;\r\nimport org.apache.struts.action.ActionMapping;\r\nimport org.hibernate.Criteria;\r\nimport org.hibernate.Session;\r\nimport org.hibernate.Transaction;\r\nimport org.hibernate.criterion.Restrictions;\r\n\r\n\r\n\r\nimport java.util.Random;\r\n\r\npublic class ##nameofsentence## extends Action{\r\n	public ActionForward execute(\r\n			ActionMapping mapping,\r\n			ActionForm form,\r\n			HttpServletRequest req,\r\n		Session session = new HibernateSession().currentSession(this.getServlet().getServletContext());\r\n		Criteria criteria = session.createCriteria(##modelclass##.class);\r\n		Random random = new Random();\r\n		int  i = 		random.nextInt(criteria.list().size());\r\n		req.setAttribute("id",new Integer(i));\r\n		req.setAttribute("museigen","true");\r\n\r\n		sessionFactory.close();\r\n		return mapping.findForward("success");\r\n	}\r\n	\r\n	\r\n}\r\n', 'Museigen##modelclass##', 18, NULL, NULL),
-(33, 'package ##packagename##;\r\n\r\nimport javax.servlet.http.HttpServletRequest;\r\nimport javax.servlet.http.HttpServletResponse;\r\n\r\nimport ##modelpackage##;\r\nimport ##beanpackage##;\r\n\r\nimport org.apache.struts.action.Action;\r\nimport org.apache.struts.action.ActionForm;\r\nimport org.apache.struts.action.ActionForward;\r\nimport org.apache.struts.action.ActionMapping;\r\nimport org.hibernate.Criteria;\r\nimport org.hibernate.Session;\r\nimport org.hibernate.SessionFactory;\r\nimport org.hibernate.criterion.Restrictions;\r\nimport org.springframework.beans.factory.BeanFactory;\r\nimport org.springframework.web.context.support.WebApplicationContextUtils;\r\n\r\nimport net.enclosing.util.HibernateSession;\r\n\r\npublic class ##nameofsentence## extends Action{\r\n	public ActionForward execute(\r\n			ActionMapping mapping,\r\n			ActionForm form,\r\n			HttpServletRequest req,\r\n			HttpServletResponse res) throws Exception{\r\n		\r\n		Session session = new HibernateSession().currentSession(this\r\n				.getServlet().getServletContext());\r\n\r\n\r\n		##modelclass## ##modelobj## = new ##modelclass##Impl();\r\n		Criteria criteria = session.createCriteria(##modelclass##.class);\r\n\r\n		if (req.getParameter("id") != null\r\n				&& !req.getParameter("id").equals("")) {\r\n			criteria.add(Restrictions.idEq(Integer.valueOf(req\r\n					.getParameter("id"))));\r\n			##modelobj## = (##modelclass##) criteria.uniqueResult();\r\n\r\n		} else if (req.getAttribute("id") != null\r\n				&& !req.getAttribute("id").equals("")) {\r\n			criteria.add(Restrictions.idEq(req.getAttribute("id")));\r\n			##modelobj## = (##modelclass##) criteria.uniqueResult();\r\n		}\r\n\r\n		req.setAttribute("##modelobj##",##modelobj##);\r\n		\r\n		\r\n		\r\n		return mapping.findForward("success");\r\n	}\r\n	\r\n	\r\n}', 'Show##modelclass##Xml', 17, NULL, 16);
+(33, 'package ##packagename##;\r\n\r\nimport javax.servlet.http.HttpServletRequest;\r\nimport javax.servlet.http.HttpServletResponse;\r\n\r\nimport ##modelpackage##;\r\nimport ##beanpackage##;\r\n\r\nimport org.apache.struts.action.Action;\r\nimport org.apache.struts.action.ActionForm;\r\nimport org.apache.struts.action.ActionForward;\r\nimport org.apache.struts.action.ActionMapping;\r\nimport org.hibernate.Criteria;\r\nimport org.hibernate.Session;\r\nimport org.hibernate.SessionFactory;\r\nimport org.hibernate.criterion.Restrictions;\r\nimport org.springframework.beans.factory.BeanFactory;\r\nimport org.springframework.web.context.support.WebApplicationContextUtils;\r\n\r\nimport net.enclosing.util.HibernateSession;\r\n\r\npublic class ##nameofsentence## extends Action{\r\n	public ActionForward execute(\r\n			ActionMapping mapping,\r\n			ActionForm form,\r\n			HttpServletRequest req,\r\n			HttpServletResponse res) throws Exception{\r\n		\r\n		Session session = new HibernateSession().currentSession(this\r\n				.getServlet().getServletContext());\r\n\r\n\r\n		##modelclass## ##modelobj## = new ##modelclass##Impl();\r\n		Criteria criteria = session.createCriteria(##modelclass##.class);\r\n\r\n		if (req.getParameter("id") != null\r\n				&& !req.getParameter("id").equals("")) {\r\n			criteria.add(Restrictions.idEq(Integer.valueOf(req\r\n					.getParameter("id"))));\r\n			##modelobj## = (##modelclass##) criteria.uniqueResult();\r\n\r\n		} else if (req.getAttribute("id") != null\r\n				&& !req.getAttribute("id").equals("")) {\r\n			criteria.add(Restrictions.idEq(req.getAttribute("id")));\r\n			##modelobj## = (##modelclass##) criteria.uniqueResult();\r\n		}\r\n\r\n		req.setAttribute("##modelobj##",##modelobj##);\r\n		\r\n		\r\n		\r\n		return mapping.findForward("success");\r\n	}\r\n	\r\n	\r\n}', 'Show##modelclass##Xml', 17, NULL, 16),
+(34, 'package ##packagename##.api.rest.api;\r\n\r\nimport org.springframework.web.bind.annotation.RestController;\r\n\r\nimport com.wordnik.swagger.annotations.Api;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport ##modelpackage##;\r\nimport org.springframework.http.HttpStatus;\r\nimport org.springframework.http.ResponseEntity;\r\nimport org.springframework.web.bind.annotation.*;\r\nimport ##packagename##.api.rest.dto.##modelclass##Dto;\r\nimport ##packagename##.api.rest.service.##modelclass##Service;\r\n\r\nimport java.util.List;\r\n\r\n@RestController\r\n@RequestMapping("/api/v1/##modelclass##s")\r\n@Api(value = "##modelclass## API")\r\npublic class ##modelclass##Resource {\r\n\r\n    @Autowired\r\n    private ##modelclass##Service ##modelobj##Service;\r\n\r\n    @RequestMapping(method = RequestMethod.GET)\r\n    public List<##modelclass##Dto> getAll##modelclass##s() {\r\n        return ##modelobj##Service.getAll##modelclass##s();\r\n    }\r\n\r\n    @RequestMapping(value = "/{id}", method = RequestMethod.GET)\r\n    public ##modelclass##Dto get##modelclass##(@PathVariable final String id) {\r\n        return ##modelobj##Service.get##modelclass##(id);\r\n    }\r\n\r\n    @RequestMapping(method = RequestMethod.POST)\r\n    public ResponseEntity<##modelclass##Dto> add##modelclass##(@RequestBody final ##modelclass##Dto ##modelobj##) {\r\n        ##modelclass##Dto created##modelclass## = ##modelobj##Service.create##modelclass##(##modelobj##);\r\n        return new ResponseEntity<>(created##modelclass##, HttpStatus.CREATED);\r\n    }\r\n\r\n    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)\r\n    public ResponseEntity delete##modelclass##(@PathVariable final String id) {\r\n        ##modelobj##Service.delete##modelclass##(id);\r\n        return new ResponseEntity<>(HttpStatus.OK);\r\n    }\r\n\r\n    @RequestMapping(value = "/{id}", method = RequestMethod.PATCH)\r\n    public ResponseEntity<##modelclass##Dto> update##modelclass##(@PathVariable final String id, @RequestBody final ##modelclass##Dto ##modelobj##) {\r\n        ##modelclass##Dto created##modelclass## = ##modelobj##Service.update##modelclass##(id, ##modelobj##);\r\n        return new ResponseEntity<>(created##modelclass##, HttpStatus.OK);\r\n    }\r\n}\r\n', '##modelclass##Resource.java', 20, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -619,7 +633,7 @@ CREATE TABLE IF NOT EXISTS `TEMPLATE_INPUT` (
 `ID` int(11) NOT NULL,
   `NAME` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `VERB_FK` int(11) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=131 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=146 DEFAULT CHARSET=utf8;
 
 --
 -- テーブルのデータのダンプ `TEMPLATE_INPUT`
@@ -755,7 +769,10 @@ INSERT INTO `TEMPLATE_INPUT` (`ID`, `NAME`, `VERB_FK`) VALUES
 (127, 'beanpackage', 17),
 (128, '##japanese##', 8),
 (129, '##japanese##', 9),
-(130, 'showattrs', 10);
+(130, 'showattrs', 10),
+(131, 'packagename', 20),
+(132, 'modelpackage', 20),
+(135, 'modelclass', 20);
 
 -- --------------------------------------------------------
 
@@ -830,7 +847,7 @@ CREATE TABLE IF NOT EXISTS `VERB` (
   `PROFILT` int(11) NOT NULL,
   `COST` int(11) NOT NULL,
   `PRICE` int(11) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
 --
 -- テーブルのデータのダンプ `VERB`
@@ -854,7 +871,9 @@ INSERT INTO `VERB` (`ID`, `TWOOBJECTS`, `VALID`, `NAME`, `JAPANESE`, `MARKET_AVE
 (15, 1, 1, 'Update', '', 0, 0, 0, 0, 0),
 (16, 0, 0, 'DisplayOf', '', 0, 0, 0, 0, 0),
 (17, 0, 1, 'DisplayXmlOf', '', 0, 0, 0, 0, 0),
-(18, 0, 1, 'MuseigenShow', '', 0, 0, 0, 0, 0);
+(18, 0, 1, 'MuseigenShow', '', 0, 0, 0, 0, 0),
+(19, 0, 0, 'test', 'test', 0, 0, 0, 0, 0),
+(20, 0, 0, 'RESTFul', 'RESTFul', 0, 0, 0, 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -1091,12 +1110,12 @@ MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `NOUN_CLAUSE`
 --
 ALTER TABLE `NOUN_CLAUSE`
-MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `NOUN_USE`
 --
 ALTER TABLE `NOUN_USE`
-MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `OUT_OF_PATTEN_SENTENCE`
 --
@@ -1111,7 +1130,7 @@ MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `SENTENCE`
 --
 ALTER TABLE `SENTENCE`
-MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `STATIC_DATA`
 --
@@ -1131,17 +1150,17 @@ MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `STRUTS_ACTION`
 --
 ALTER TABLE `STRUTS_ACTION`
-MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `STRUTS_ACTION_TEMPLATE`
 --
 ALTER TABLE `STRUTS_ACTION_TEMPLATE`
-MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=34;
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=35;
 --
 -- AUTO_INCREMENT for table `TEMPLATE_INPUT`
 --
 ALTER TABLE `TEMPLATE_INPUT`
-MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=131;
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=146;
 --
 -- AUTO_INCREMENT for table `TEST`
 --
@@ -1161,7 +1180,7 @@ MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `VERB`
 --
 ALTER TABLE `VERB`
-MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
