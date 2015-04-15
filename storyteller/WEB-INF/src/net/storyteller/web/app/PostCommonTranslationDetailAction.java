@@ -31,25 +31,25 @@ public class PostCommonTranslationDetailAction extends Action{
 		Session session = new HibernateSession().currentSession(this
 				.getServlet().getServletContext());
 
-
-		CommonTranslation commontranslation = new CommonTranslationImpl();
-		CommonTranslationForm commontranslationform = new CommonTranslationForm();
-		Criteria criteria = session.createCriteria(CommonTranslation.class);
-
-		if (req.getAttribute("form")== null && req.getParameter("id")!=null){
-			criteria.add(Restrictions.idEq(Integer.valueOf(req
-					.getParameter("id"))));
-			commontranslation = (CommonTranslation) criteria.uniqueResult();
-			new CopyProperties(commontranslation,commontranslationform);
-		} else if(req.getAttribute("form")!=null){
-                        commontranslationform = (CommonTranslationForm)req.getAttribute("form");
-			criteria.add(Restrictions.idEq(commontranslationform.getId()));
-			commontranslation = (CommonTranslation) criteria.uniqueResult();
-		}
-		
-
-		req.setAttribute("model",commontranslation);
-		req.setAttribute("form",commontranslationform);
+//
+//		CommonTranslation commontranslation = new CommonTranslationImpl();
+//		CommonTranslationForm commontranslationform = new CommonTranslationForm();
+//		Criteria criteria = session.createCriteria(CommonTranslation.class);
+//
+//		if (req.getAttribute("form")== null && req.getParameter("id")!=null){
+//			criteria.add(Restrictions.idEq(Integer.valueOf(req
+//					.getParameter("id"))));
+//			commontranslation = (CommonTranslation) criteria.uniqueResult();
+//			new CopyProperties(commontranslation,commontranslationform);
+//		} else if(req.getAttribute("form")!=null){
+//                        commontranslationform = (CommonTranslationForm)req.getAttribute("form");
+//			criteria.add(Restrictions.idEq(commontranslationform.getId()));
+//			commontranslation = (CommonTranslation) criteria.uniqueResult();
+//		}
+//		
+//
+//		req.setAttribute("model",commontranslation);
+//		req.setAttribute("form",commontranslationform);
 
 
                    

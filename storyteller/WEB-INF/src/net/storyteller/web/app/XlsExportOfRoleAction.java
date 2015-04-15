@@ -35,10 +35,10 @@ public class XlsExportOfRoleAction{
         	
          int x = 0;
                  sheet.addCell(new Label(x++, 0, "id"));
-        sheet.addCell(new Label(x++, 0, "内部ユーザー"));
-        sheet.addCell(new Label(x++, 0, "案件コスト"));
+        sheet.addCell(new Label(x++, 0, "蜀�Κ繝ｦ繝ｼ繧ｶ繝ｼ"));
+        sheet.addCell(new Label(x++, 0, "譯井ｻｶ繧ｳ繧ｹ繝�"));
         sheet.addCell(new Label(x++, 0, "taskTemplates"));
-        sheet.addCell(new Label(x++, 0, "名前"));
+        sheet.addCell(new Label(x++, 0, "蜷榊燕"));
 
 
 
@@ -47,7 +47,7 @@ public class XlsExportOfRoleAction{
         	int y= 1;
     		for (Iterator iter = vector.iterator(); iter.hasNext();) {
                       Role role = (Role) iter.next();
-    		            sheet.addCell(new DateTime(x++,y,role.getId().toString()));
+//    		            sheet.addCell(new DateTime(x++,y,role.getId().toString()));
 
         sheet.addCell(new Label(x++,y,role.getIntraUser().getName()));
 

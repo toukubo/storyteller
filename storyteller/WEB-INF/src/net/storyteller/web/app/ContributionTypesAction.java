@@ -33,41 +33,41 @@ public class ContributionTypesAction extends Action{
 			HttpServletResponse res) throws Exception{
 
 
-
-		Session session = new HibernateSession().currentSession(this
-				.getServlet().getServletContext());
-
-                Vector vector = new Vector();
-		Criteria criteria = session.createCriteria(ContributionType.class);
-		for (Iterator iter = criteria.list().iterator(); iter.hasNext();) {
-			ContributionType contributiontype = (ContributionType) iter.next();
-			vector.add(contributiontype);
-		}
-		ContributionType contributiontype = new ContributionTypeImpl();
-		ContributionTypeForm contributiontypeform = new ContributionTypeForm();
-		criteria = session.createCriteria(ContributionType.class);
-
-
-		if (req.getAttribute("form")== null && req.getParameter("id")!=null){
-			criteria.add(Restrictions.idEq(Integer.valueOf(req
-					.getParameter("id"))));
-			contributiontype = (ContributionType) criteria.uniqueResult();
-			new CopyProperties(contributiontype,contributiontypeform);
-		} else if(req.getAttribute("form")!=null){
-                        contributiontypeform = (ContributionTypeForm)req.getAttribute("form");
-			criteria.add(Restrictions.idEq(contributiontypeform.getId()));
-			contributiontype = (ContributionType) criteria.uniqueResult();
-		}
-		
-
-		req.setAttribute("model",contributiontype);
-		req.setAttribute("form",contributiontypeform);
-		
-		
-		req.setAttribute("contributiontypes",vector);
-
-
-                   
+//
+//		Session session = new HibernateSession().currentSession(this
+//				.getServlet().getServletContext());
+//
+//                Vector vector = new Vector();
+//		Criteria criteria = session.createCriteria(ContributionType.class);
+//		for (Iterator iter = criteria.list().iterator(); iter.hasNext();) {
+//			ContributionType contributiontype = (ContributionType) iter.next();
+//			vector.add(contributiontype);
+//		}
+//		ContributionType contributiontype = new ContributionTypeImpl();
+//		ContributionTypeForm contributiontypeform = new ContributionTypeForm();
+//		criteria = session.createCriteria(ContributionType.class);
+//
+//
+//		if (req.getAttribute("form")== null && req.getParameter("id")!=null){
+//			criteria.add(Restrictions.idEq(Integer.valueOf(req
+//					.getParameter("id"))));
+//			contributiontype = (ContributionType) criteria.uniqueResult();
+//			new CopyProperties(contributiontype,contributiontypeform);
+//		} else if(req.getAttribute("form")!=null){
+//                        contributiontypeform = (ContributionTypeForm)req.getAttribute("form");
+//			criteria.add(Restrictions.idEq(contributiontypeform.getId()));
+//			contributiontype = (ContributionType) criteria.uniqueResult();
+//		}
+//		
+//
+//		req.setAttribute("model",contributiontype);
+//		req.setAttribute("form",contributiontypeform);
+//		
+//		
+//		req.setAttribute("contributiontypes",vector);
+//
+//
+//                   
 
 		
 

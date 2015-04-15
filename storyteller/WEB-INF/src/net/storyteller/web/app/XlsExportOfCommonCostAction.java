@@ -60,7 +60,7 @@ public class XlsExportOfCommonCostAction{
 
         sheet.addCell(new Number(x++,y,commonCost.getHour()));
 
-        sheet.addCell(new DateTime(x++,y,commonCost.getId().toString()));
+//        sheet.addCell(new DateTime(x++,y,commonCost.getId().toString()));
 
         sheet.addCell(new Number(x++,y,commonCost.getValue()));
 

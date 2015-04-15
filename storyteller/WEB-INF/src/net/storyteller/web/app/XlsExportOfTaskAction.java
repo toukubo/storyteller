@@ -34,20 +34,20 @@ public class XlsExportOfTaskAction{
         	ws.setGCDisabled(true);
         	
          int x = 0;
-                 sheet.addCell(new Label(x++, 0, "名前"));
+                 sheet.addCell(new Label(x++, 0, "蜷榊燕"));
         sheet.addCell(new Label(x++, 0, "id"));
-        sheet.addCell(new Label(x++, 0, "済み"));
-        sheet.addCell(new Label(x++, 0, "開始日時"));
-        sheet.addCell(new Label(x++, 0, "終了日時"));
-        sheet.addCell(new Label(x++, 0, "時間"));
-        sheet.addCell(new Label(x++, 0, "内部ユーザー"));
-        sheet.addCell(new Label(x++, 0, "ストーリー"));
-        sheet.addCell(new Label(x++, 0, "承認済み"));
-        sheet.addCell(new Label(x++, 0, "アサイン済み"));
+        sheet.addCell(new Label(x++, 0, "貂医∩"));
+        sheet.addCell(new Label(x++, 0, "髢句ｧ区律譎�"));
+        sheet.addCell(new Label(x++, 0, "邨ゆｺ�律譎�"));
+        sheet.addCell(new Label(x++, 0, "譎る俣"));
+        sheet.addCell(new Label(x++, 0, "蜀�Κ繝ｦ繝ｼ繧ｶ繝ｼ"));
+        sheet.addCell(new Label(x++, 0, "繧ｹ繝医�繝ｪ繝ｼ"));
+        sheet.addCell(new Label(x++, 0, "謇ｿ隱肴ｸ医∩"));
+        sheet.addCell(new Label(x++, 0, "繧｢繧ｵ繧､繝ｳ貂医∩"));
         sheet.addCell(new Label(x++, 0, "TaskTemplate"));
-        sheet.addCell(new Label(x++, 0, "見積内訳"));
-        sheet.addCell(new Label(x++, 0, "サマリー"));
-        sheet.addCell(new Label(x++, 0, "注文数"));
+        sheet.addCell(new Label(x++, 0, "隕狗ｩ榊�險ｳ"));
+        sheet.addCell(new Label(x++, 0, "繧ｵ繝槭Μ繝ｼ"));
+        sheet.addCell(new Label(x++, 0, "豕ｨ譁�焚"));
 
 
 
@@ -58,7 +58,7 @@ public class XlsExportOfTaskAction{
                       Task task = (Task) iter.next();
     		            sheet.addCell(new Label(x++,y,task.getName()));
 
-        sheet.addCell(new DateTime(x++,y,task.getId().toString()));
+//        sheet.addCell(new DateTime(x++,y,task.getId().toString()));
 
 
         sheet.addCell(new DateTime(x++,y,task.getStartdate()));

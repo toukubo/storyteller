@@ -34,9 +34,9 @@ public class XlsExportOfCommonTranslationAction{
         	ws.setGCDisabled(true);
         	
          int x = 0;
-                 sheet.addCell(new Label(x++, 0, "名前"));
+                 sheet.addCell(new Label(x++, 0, "蜷榊燕"));
         sheet.addCell(new Label(x++, 0, "id"));
-        sheet.addCell(new Label(x++, 0, "日本語"));
+        sheet.addCell(new Label(x++, 0, "譌･譛ｬ隱�"));
 
 
 
@@ -47,7 +47,7 @@ public class XlsExportOfCommonTranslationAction{
                       CommonTranslation commonTranslation = (CommonTranslation) iter.next();
     		            sheet.addCell(new Label(x++,y,commonTranslation.getName()));
 
-        sheet.addCell(new DateTime(x++,y,commonTranslation.getId().toString()));
+//        sheet.addCell(new DateTime(x++,y,commonTranslation.getId().toString()));
 
         sheet.addCell(new Label(x++,y,commonTranslation.getJapanese()));
 

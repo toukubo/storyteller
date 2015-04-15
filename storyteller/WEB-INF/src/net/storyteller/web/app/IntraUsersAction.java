@@ -44,25 +44,25 @@ public class IntraUsersAction extends Action{
 			vector.add(intrauser);
 		}
 		IntraUser intrauser = new IntraUserImpl();
-		IntraUserForm intrauserform = new IntraUserForm();
+//		IntraUserForm intrauserform = new IntraUserForm();
 		criteria = session.createCriteria(IntraUser.class);
 
-
-		if (req.getAttribute("form")== null && req.getParameter("id")!=null){
-			criteria.add(Restrictions.idEq(Integer.valueOf(req
-					.getParameter("id"))));
-			intrauser = (IntraUser) criteria.uniqueResult();
-			new CopyProperties(intrauser,intrauserform);
-		} else if(req.getAttribute("form")!=null){
-                        intrauserform = (IntraUserForm)req.getAttribute("form");
-			criteria.add(Restrictions.idEq(intrauserform.getId()));
-			intrauser = (IntraUser) criteria.uniqueResult();
-		}
-		
-
-		req.setAttribute("model",intrauser);
-		req.setAttribute("form",intrauserform);
-		
+//
+//		if (req.getAttribute("form")== null && req.getParameter("id")!=null){
+//			criteria.add(Restrictions.idEq(Integer.valueOf(req
+//					.getParameter("id"))));
+//			intrauser = (IntraUser) criteria.uniqueResult();
+//			new CopyProperties(intrauser,intrauserform);
+//		} else if(req.getAttribute("form")!=null){
+////                        intrauserform = (IntraUserForm)req.getAttribute("form");
+//			criteria.add(Restrictions.idEq(intrauserform.getId()));
+//			intrauser = (IntraUser) criteria.uniqueResult();
+//		}
+//		
+//
+//		req.setAttribute("model",intrauser);
+//		req.setAttribute("form",intrauserform);
+//		
 		
 		req.setAttribute("intrausers",vector);
 

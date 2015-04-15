@@ -34,9 +34,9 @@ public class XlsExportOfClientAction{
         	ws.setGCDisabled(true);
         	
          int x = 0;
-                 sheet.addCell(new Label(x++, 0, "ストーリー"));
+                 sheet.addCell(new Label(x++, 0, "繧ｹ繝医�繝ｪ繝ｼ"));
         sheet.addCell(new Label(x++, 0, "id"));
-        sheet.addCell(new Label(x++, 0, "名前"));
+        sheet.addCell(new Label(x++, 0, "蜷榊燕"));
 
 
 
@@ -46,7 +46,7 @@ public class XlsExportOfClientAction{
     		for (Iterator iter = vector.iterator(); iter.hasNext();) {
                       Client client = (Client) iter.next();
     		    
-        sheet.addCell(new DateTime(x++,y,client.getId().toString()));
+//        sheet.addCell(new DateTime(x++,y,client.getId().toString()));
 
         sheet.addCell(new Label(x++,y,client.getName()));
 

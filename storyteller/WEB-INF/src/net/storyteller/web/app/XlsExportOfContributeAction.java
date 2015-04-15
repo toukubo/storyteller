@@ -35,15 +35,15 @@ public class XlsExportOfContributeAction{
         	
          int x = 0;
                  sheet.addCell(new Label(x++, 0, "id"));
-        sheet.addCell(new Label(x++, 0, "貢献タイプ"));
+        sheet.addCell(new Label(x++, 0, "雋｢迪ｮ繧ｿ繧､繝�"));
         sheet.addCell(new Label(x++, 0, "validyearstart"));
         sheet.addCell(new Label(x++, 0, "validmonthstart"));
-        sheet.addCell(new Label(x++, 0, "内部ユーザー"));
+        sheet.addCell(new Label(x++, 0, "蜀�Κ繝ｦ繝ｼ繧ｶ繝ｼ"));
         sheet.addCell(new Label(x++, 0, "validmonthend"));
-        sheet.addCell(new Label(x++, 0, "ストーリー"));
-        sheet.addCell(new Label(x++, 0, "ポイント"));
+        sheet.addCell(new Label(x++, 0, "繧ｹ繝医�繝ｪ繝ｼ"));
+        sheet.addCell(new Label(x++, 0, "繝昴う繝ｳ繝�"));
         sheet.addCell(new Label(x++, 0, "validyearend"));
-        sheet.addCell(new Label(x++, 0, "承認済み"));
+        sheet.addCell(new Label(x++, 0, "謇ｿ隱肴ｸ医∩"));
 
 
 
@@ -52,7 +52,7 @@ public class XlsExportOfContributeAction{
         	int y= 1;
     		for (Iterator iter = vector.iterator(); iter.hasNext();) {
                       Contribute contribute = (Contribute) iter.next();
-    		            sheet.addCell(new DateTime(x++,y,contribute.getId().toString()));
+//    		            sheet.addCell(new DateTime(x++,y,contribute.getId().toString()));
 
         sheet.addCell(new Label(x++,y,contribute.getContributionType().getName()));
 

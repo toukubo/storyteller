@@ -34,9 +34,9 @@ public class XlsExportOfIntraUserAction{
         	ws.setGCDisabled(true);
         	
          int x = 0;
-                 sheet.addCell(new Label(x++, 0, "名前"));
+                 sheet.addCell(new Label(x++, 0, "蜷榊燕"));
         sheet.addCell(new Label(x++, 0, "id"));
-        sheet.addCell(new Label(x++, 0, "アカウント"));
+        sheet.addCell(new Label(x++, 0, "繧｢繧ｫ繧ｦ繝ｳ繝�"));
         sheet.addCell(new Label(x++, 0, "costperhour"));
         sheet.addCell(new Label(x++, 0, "asdebugger"));
         sheet.addCell(new Label(x++, 0, "asresponsible"));
@@ -61,7 +61,7 @@ public class XlsExportOfIntraUserAction{
                       IntraUser intraUser = (IntraUser) iter.next();
     		            sheet.addCell(new Label(x++,y,intraUser.getName()));
 
-        sheet.addCell(new DateTime(x++,y,intraUser.getId().toString()));
+//        sheet.addCell(new DateTime(x++,y,intraUser.getId().toString()));
 
         sheet.addCell(new Label(x++,y,intraUser.getAccount()));
 

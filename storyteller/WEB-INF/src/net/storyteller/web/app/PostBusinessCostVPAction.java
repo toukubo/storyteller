@@ -42,8 +42,8 @@ public class PostBusinessCostVPAction extends Action{
 		businessCostform.setJ2eeStory(null);
 		Integer intraUserInt = businessCostform.getIntraUser();
 		businessCostform.setIntraUser(null);
-		Integer roleInt = businessCostform.getRole();
-		businessCostform.setRole(null);
+//		Integer roleInt = businessCostform.getRole();
+//		businessCostform.setRole(null);
 		Integer storytellerRoleInt = businessCostform.getStorytellerRole();
 		businessCostform.setStorytellerRole(null);
 

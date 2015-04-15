@@ -34,12 +34,12 @@ public class XlsExportOfBusinessCostAction{
         	ws.setGCDisabled(true);
         	
          int x = 0;
-                 sheet.addCell(new Label(x++, 0, "ストーリー"));
-        sheet.addCell(new Label(x++, 0, "時間単価"));
-        sheet.addCell(new Label(x++, 0, "内部ユーザー"));
+                 sheet.addCell(new Label(x++, 0, "繧ｹ繝医�繝ｪ繝ｼ"));
+        sheet.addCell(new Label(x++, 0, "譎る俣蜊倅ｾ｡"));
+        sheet.addCell(new Label(x++, 0, "蜀�Κ繝ｦ繝ｼ繧ｶ繝ｼ"));
         sheet.addCell(new Label(x++, 0, "id"));
-        sheet.addCell(new Label(x++, 0, "値"));
-        sheet.addCell(new Label(x++, 0, "時間"));
+        sheet.addCell(new Label(x++, 0, "蛟､"));
+        sheet.addCell(new Label(x++, 0, "譎る俣"));
         sheet.addCell(new Label(x++, 0, "storytellerRole"));
 
 
@@ -55,7 +55,7 @@ public class XlsExportOfBusinessCostAction{
 
         sheet.addCell(new Label(x++,y,businessCost.getIntraUser().getName()));
 
-        sheet.addCell(new DateTime(x++,y,businessCost.getId().toString()));
+//        sheet.addCell(new DateTime(x++,y,businessCost.getId().toString()));
 
         sheet.addCell(new Number(x++,y,businessCost.getValue()));
 

@@ -34,11 +34,11 @@ public class XlsExportOfVerbAction{
         	ws.setGCDisabled(true);
         	
          int x = 0;
-                 sheet.addCell(new Label(x++, 0, "名前"));
+                 sheet.addCell(new Label(x++, 0, "蜷榊燕"));
         sheet.addCell(new Label(x++, 0, "id"));
-        sheet.addCell(new Label(x++, 0, "有効"));
+        sheet.addCell(new Label(x++, 0, "譛牙柑"));
         sheet.addCell(new Label(x++, 0, "twoobjects"));
-        sheet.addCell(new Label(x++, 0, "日本語"));
+        sheet.addCell(new Label(x++, 0, "譌･譛ｬ隱�"));
         sheet.addCell(new Label(x++, 0, "strutsActionTemplates"));
         sheet.addCell(new Label(x++, 0, "jspTemplates"));
         sheet.addCell(new Label(x++, 0, "sentences"));
@@ -59,7 +59,7 @@ public class XlsExportOfVerbAction{
                       Verb verb = (Verb) iter.next();
     		            sheet.addCell(new Label(x++,y,verb.getName()));
 
-        sheet.addCell(new DateTime(x++,y,verb.getId().toString()));
+//        sheet.addCell(new DateTime(x++,y,verb.getId().toString()));
 
 
 

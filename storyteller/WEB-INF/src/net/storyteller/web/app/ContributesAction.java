@@ -33,47 +33,47 @@ public class ContributesAction extends Action{
 			HttpServletResponse res) throws Exception{
 
 
-
-		Session session = new HibernateSession().currentSession(this
-				.getServlet().getServletContext());
-
-                Vector vector = new Vector();
-		Criteria criteria = session.createCriteria(Contribute.class);
-		for (Iterator iter = criteria.list().iterator(); iter.hasNext();) {
-			Contribute contribute = (Contribute) iter.next();
-			vector.add(contribute);
-		}
-		Contribute contribute = new ContributeImpl();
-		ContributeForm contributeform = new ContributeForm();
-		criteria = session.createCriteria(Contribute.class);
-
-
-		if (req.getAttribute("form")== null && req.getParameter("id")!=null){
-			criteria.add(Restrictions.idEq(Integer.valueOf(req
-					.getParameter("id"))));
-			contribute = (Contribute) criteria.uniqueResult();
-			new CopyProperties(contribute,contributeform);
-		} else if(req.getAttribute("form")!=null){
-                        contributeform = (ContributeForm)req.getAttribute("form");
-			criteria.add(Restrictions.idEq(contributeform.getId()));
-			contribute = (Contribute) criteria.uniqueResult();
-		}
-		
-
-		req.setAttribute("model",contribute);
-		req.setAttribute("form",contributeform);
-		
-		
-		req.setAttribute("contributes",vector);
-
-
-                  Criteria criteriaContributionType= session.createCriteria(ContributionType.class);
-			req.setAttribute("ContributionTypes", criteriaContributionType.list());
-
-Criteria criteriaIntraUser= session.createCriteria(IntraUser.class);
-			req.setAttribute("IntraUsers", criteriaIntraUser.list());
-
- 
+//
+//		Session session = new HibernateSession().currentSession(this
+//				.getServlet().getServletContext());
+//
+//                Vector vector = new Vector();
+//		Criteria criteria = session.createCriteria(Contribute.class);
+//		for (Iterator iter = criteria.list().iterator(); iter.hasNext();) {
+//			Contribute contribute = (Contribute) iter.next();
+//			vector.add(contribute);
+//		}
+//		Contribute contribute = new ContributeImpl();
+//		ContributeForm contributeform = new ContributeForm();
+//		criteria = session.createCriteria(Contribute.class);
+//
+//
+//		if (req.getAttribute("form")== null && req.getParameter("id")!=null){
+//			criteria.add(Restrictions.idEq(Integer.valueOf(req
+//					.getParameter("id"))));
+//			contribute = (Contribute) criteria.uniqueResult();
+//			new CopyProperties(contribute,contributeform);
+//		} else if(req.getAttribute("form")!=null){
+//                        contributeform = (ContributeForm)req.getAttribute("form");
+//			criteria.add(Restrictions.idEq(contributeform.getId()));
+//			contribute = (Contribute) criteria.uniqueResult();
+//		}
+//		
+//
+//		req.setAttribute("model",contribute);
+//		req.setAttribute("form",contributeform);
+//		
+//		
+//		req.setAttribute("contributes",vector);
+//
+//
+//                  Criteria criteriaContributionType= session.createCriteria(ContributionType.class);
+//			req.setAttribute("ContributionTypes", criteriaContributionType.list());
+//
+//Criteria criteriaIntraUser= session.createCriteria(IntraUser.class);
+//			req.setAttribute("IntraUsers", criteriaIntraUser.list());
+//
+// 
 
 		
 

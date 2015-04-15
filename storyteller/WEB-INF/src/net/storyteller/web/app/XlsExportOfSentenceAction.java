@@ -34,17 +34,17 @@ public class XlsExportOfSentenceAction{
         	ws.setGCDisabled(true);
         	
          int x = 0;
-                 sheet.addCell(new Label(x++, 0, "名前"));
+                 sheet.addCell(new Label(x++, 0, "蜷榊燕"));
         sheet.addCell(new Label(x++, 0, "id"));
-        sheet.addCell(new Label(x++, 0, "有効"));
+        sheet.addCell(new Label(x++, 0, "譛牙柑"));
         sheet.addCell(new Label(x++, 0, "strutsConfigCode"));
-        sheet.addCell(new Label(x++, 0, "第一目的語"));
-        sheet.addCell(new Label(x++, 0, "動詞"));
-        sheet.addCell(new Label(x++, 0, "第二目的語"));
-        sheet.addCell(new Label(x++, 0, "ストーリー"));
+        sheet.addCell(new Label(x++, 0, "隨ｬ荳�逶ｮ逧�ｪ�"));
+        sheet.addCell(new Label(x++, 0, "蜍戊ｩ�"));
+        sheet.addCell(new Label(x++, 0, "隨ｬ莠檎岼逧�ｪ�"));
+        sheet.addCell(new Label(x++, 0, "繧ｹ繝医�繝ｪ繝ｼ"));
         sheet.addCell(new Label(x++, 0, "strutsActions"));
         sheet.addCell(new Label(x++, 0, "jsp"));
-        sheet.addCell(new Label(x++, 0, "日本語"));
+        sheet.addCell(new Label(x++, 0, "譌･譛ｬ隱�"));
         sheet.addCell(new Label(x++, 0, "normal"));
         sheet.addCell(new Label(x++, 0, "maintest"));
         sheet.addCell(new Label(x++, 0, "interfaceSpecsReferences"));
@@ -58,16 +58,16 @@ public class XlsExportOfSentenceAction{
                       Sentence sentence = (Sentence) iter.next();
     		            sheet.addCell(new Label(x++,y,sentence.getName()));
 
-        sheet.addCell(new DateTime(x++,y,sentence.getId().toString()));
+//        sheet.addCell(new DateTime(x++,y,sentence.getId().toString()));
 
 
         sheet.addCell(new Label(x++,y,sentence.getStrutsConfigCode()));
 
-        sheet.addCell(new Label(x++,y,sentence.getFirstobjective().getName()));
+//        sheet.addCell(new Label(x++,y,sentence.getFirstobjective().getName()));
 
         sheet.addCell(new Label(x++,y,sentence.getVerb().getName()));
 
-        sheet.addCell(new Label(x++,y,sentence.getSecountobjective().getName()));
+//        sheet.addCell(new Label(x++,y,sentence.getSecountobjective().getName()));
 
         sheet.addCell(new Label(x++,y,sentence.getJ2eeStory().getName()));
 
@@ -76,7 +76,7 @@ public class XlsExportOfSentenceAction{
         sheet.addCell(new Label(x++,y,sentence.getJapanese()));
 
 
-        sheet.addCell(new Label(x++,y,sentence.getMaintest().getName()));
+//        sheet.addCell(new Label(x++,y,sentence.getMaintest().getName()));
 
 
 
