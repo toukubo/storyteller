@@ -113,12 +113,12 @@ public class CreatesStrutsActionsFromSentenceAction extends Action{
 								action = getAttrAction(session,attrfilename);
 								String attrcode = code.toString();
 								attrfilename  = attrfilename .replaceAll("##Attr##",attr.getName().substring(0,1).toUpperCase() + attr.getName().substring(1));
-								attrcode = attrcode.replaceAll("##nameofsentence##",attrfilename +"Action");
+								attrcode = attrcode.replaceAll("##nameofsentence##",attrfilename +"");
 								attrcode = attrcode.replaceAll("##attr##",attr.getName());
 								attrcode = attrcode.replaceAll("##attrjapanese##",attr.getJapanese());
 								attrcode = attrcode.replaceAll("##Attr##",attr.getName().substring(0,1).toUpperCase() + attr.getName().substring(1));
 								action.setCode(attrcode);
-								action.setFilename(attrfilename +"Action.java");
+								action.setFilename(attrfilename +".java");
 								action.setSentence(sentence);
 								session.saveOrUpdate(action);
 							}
@@ -131,7 +131,7 @@ public class CreatesStrutsActionsFromSentenceAction extends Action{
 								String attrfilename = filename.replaceAll("##attr##",attr.getName().substring(0,1).toUpperCase() + attr.getName().substring(1));
 								String attrcode = code.toString();
 								attrfilename  = attrfilename .replaceAll("##Attr##",attr.getName().substring(0,1).toUpperCase() + attr.getName().substring(1));
-								attrcode = attrcode.replaceAll("##nameofsentence##",attrfilename +"Action");
+								attrcode = attrcode.replaceAll("##nameofsentence##",attrfilename +"");
 								attrcode = attrcode.replaceAll("##attr##",attr.getName());
 								attrcode = attrcode.replaceAll("##attrjapanese##",attr.getJapanese());
 								attrcode = attrcode.replaceAll("##Attr##",attr.getName().substring(0,1).toUpperCase() + attr.getName().substring(1));
@@ -139,15 +139,15 @@ public class CreatesStrutsActionsFromSentenceAction extends Action{
 								builder.append("\r\n");
 							}
 							action.setCode(builder.toString());
-							action.setFilename(filename +"Action.java");
+							action.setFilename(filename +".java");
 							action.setSentence(sentence);
 							session.saveOrUpdate(action);
 						}
 					}else{
 						action = getAction(session, filename);
-						code = code.replaceAll("##nameofsentence##",filename+"Action");
+						code = code.replaceAll("##nameofsentence##",filename+"");
 						action.setCode(code);
-						action.setFilename(filename+"Action.java");
+						action.setFilename(filename+".java");
 						action.setSentence(sentence);
 						session.saveOrUpdate(action);
 					}
@@ -166,7 +166,7 @@ public class CreatesStrutsActionsFromSentenceAction extends Action{
 		StrutsAction action;
 		Criteria criteria2 = session.createCriteria(StrutsAction.class);
 		criteria2.add(Restrictions.eq("filename",
-				new String(filename+"Action.java")));
+				new String(filename+".java")));
 		if(criteria2.uniqueResult() == null){
 			action = new StrutsActionImpl();
 		}else{
@@ -177,7 +177,7 @@ public class CreatesStrutsActionsFromSentenceAction extends Action{
 
 	private StrutsAction getAttrAction(Session session, String attrfilename) {
 		Criteria criteria2 = session.createCriteria(StrutsAction.class);
-		criteria2.add(Restrictions.eq("filename",new String(attrfilename+"Action.java")));
+		criteria2.add(Restrictions.eq("filename",new String(attrfilename+".java")));
 		StrutsAction action = null;
 		if(criteria2.uniqueResult() == null){
 			action = new StrutsActionImpl();								

@@ -55,6 +55,13 @@ this.y = y;
 public int getY(){
 return this.y;
 }
+private boolean master;
+public void setMaster(boolean master){
+this.master = master;
+}
+public boolean isMaster(){
+return this.master;
+}
 FormFile formFile = null;
 public void setFormFile(FormFile formFile){
 this.formFile = formFile;
@@ -62,5 +69,6 @@ this.formFile = formFile;
 public FormFile getFormFile(){
 return this.formFile;
 }
-public void reset(org.apache.struts.action.ActionMapping mapping, javax.servlet.http.HttpServletRequest request){}
+public void reset(org.apache.struts.action.ActionMapping mapping, javax.servlet.http.HttpServletRequest request){	master =false;
+}
 }

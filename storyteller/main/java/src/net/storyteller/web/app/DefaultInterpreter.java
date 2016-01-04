@@ -27,7 +27,7 @@ public class DefaultInterpreter implements Interpreter {
 			if (sentence.getVerb().getName().equals("ALL")) {
 				return "net." + sentence.getJ2eeStory().getName() + ".web";
 			} else {
-				return "net." + sentence.getJ2eeStory().getName() + ".web.app";
+				return getSpecialPackageName(sentence)!=null?getSpecialPackageName(sentence):"net." + sentence.getJ2eeStory().getName() + ".web.app";
 			}
 		} else if (templatename.equals("beanpackage")) {
 			return "net." + sentence.getJ2eeStory().getName() + ".beans.*";
@@ -410,6 +410,13 @@ public class DefaultInterpreter implements Interpreter {
 		return builder.toString();
 	}
 	
+	private String getSpecialPackageName(Sentence sentence) {
+		if(sentence.getJ2eeStory().getName().equals("nodepad")){
+			return "com.theuniversalgraph";
+		}
+		return null;
+	}
+
 	private void interpretXlslistattr(StringBuilder builder, Attr attr,Noun noun){
 		if (attr.getClasstype().equalsIgnoreCase("Collection")) {
 //			y = this.interpretToCollectionForPDF(builder, attr, noun, requestURI,y);
