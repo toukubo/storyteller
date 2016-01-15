@@ -3,25 +3,177 @@
   <groupId>jp.storyteller</groupId>
   <artifactId>desktop</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
   <build>
-    <sourceDirectory>main/java/src</sourceDirectory>
+<!--    <sourceDirectory>webapp/WEB-INF/src</sourceDirectory>
     <resources>
       <resource>
-        <directory>main/java/src</directory>
+        <directory>webapp/WEB-INF/src</directory>
         <excludes>
           <exclude>**/*.java</exclude>
         </excludes>
       </resource>
-    </resources>
+    </resources>-->
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.1</version>
         <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
+          <source>1.7</source>
+          <target>1.7</target>
         </configuration>
       </plugin>
     </plugins>
   </build>
+  <properties>
+    <struts.version>1.2.2</struts.version>
+    <hibernate.version>3.0.5</hibernate.version>
+    <spring.version>1.2.7</spring.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>2.5</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-beanutils</groupId>
+      <artifactId>commons-beanutils</artifactId>
+      <version>1.8.3</version>
+    </dependency>
+    <dependency>
+      <groupId>struts</groupId>
+      <artifactId>struts</artifactId>
+      <version>${struts.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate</artifactId>
+      <version>${hibernate.version}</version>
+    </dependency>
+    <!-- Spring -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-hibernate</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <version>2.4</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-digester</groupId>
+      <artifactId>commons-digester</artifactId>
+      <version>1.7</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-validator</groupId>
+      <artifactId>commons-validator</artifactId>
+      <version>1.1.4</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-httpclient</groupId>
+      <artifactId>commons-httpclient</artifactId>
+      <version>3.0.1</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.transaction</groupId>
+      <artifactId>jta</artifactId>
+      <version>1.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>enclosing</groupId>
+      <artifactId>util</artifactId>
+      <version>1.0</version>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/net.enclosing.util.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>storyteller</groupId>
+      <artifactId>core</artifactId>
+      <version>1.0</version>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/storyteller-core-1.0.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>storyteller</groupId>
+      <artifactId>common</artifactId>
+      <version>1.0</version>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/storyteller-common-1.0.jar</systemPath>
+    </dependency>
+   <!-- <dependency>
+      <groupId>jexcelapi</groupId>
+      <artifactId>jxl</artifactId>
+      <version>2.4.2</version>
+    </dependency>-->
+    <dependency>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+      <version>1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>rss4j</groupId>
+      <artifactId>rss4j</artifactId>
+      <version>0.92</version>
+    </dependency>
+    <dependency>
+      <groupId>com.lowagie</groupId>
+      <artifactId>itext</artifactId>
+      <version>1.4</version>
+    </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.6</version>
+    </dependency>
+    <dependency>
+      <groupId>com.cj.jshintmojo</groupId>
+      <artifactId>jshint-maven-plugin</artifactId>
+      <version>1.3.0</version>
+    </dependency>
+    <dependency>
+      <groupId>net.sourceforge.jexcelapi</groupId>
+      <artifactId>jxl</artifactId>
+      <version>2.6.12</version>
+    </dependency>
+
+
+  </dependencies>
+
 </project>

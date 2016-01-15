@@ -1,0 +1,7 @@
+Criteria criteria##crinum## = session.createCriteria(##modelclass##.class);
+if(req.getParameter("id")!=null && !req.getParameter("id").equals("")){
+	criteria.add(Restrictions.idEq(Integer.valueOf(req.getParameter("id"))));
+}else{
+	criteria.add(Restrictions.idEq(req.getAttribute("id")));
+}
+##modelclass## ##modelobj## = (##modelclass##)criteria.uniqueResult();

@@ -1,2 +1,0 @@
-Criteria criteria##crinum## = session.createCriteria(##modelclass##.class);
-List list##crinum## = criteria##crinum##.list();

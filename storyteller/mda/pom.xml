@@ -484,13 +484,13 @@
             </plugins>
         </pluginManagement>
     </build>
-    <modules>
+<!--    <modules>
         <module>mda</module>
         <module>common</module>
         <module>core</module>
         <module>web</module>
         <module>workflow</module>
-    </modules>
+    </modules>-->
     <properties>
         <!--
             Change this to generate to the correct MDA database mappings,
@@ -698,7 +698,7 @@
                 </property>
             </activation>
             <properties>
-                <jdbc.driver.jar>${jboss_home}/server/default/lib/mysql-connector-java-3.1.12-bin.jar</jdbc.driver.jar>
+                <jdbc.driver.jar>mysql-connector-java-3.1.12-bin.jar</jdbc.driver.jar>
                 <jdbc.driver>com.mysql.jdbc.Driver</jdbc.driver>
                 <jdbc.url>jdbc:mysql://localhost/storyteller</jdbc.url>
                 <jdbc.username>storyteller</jdbc.username>
