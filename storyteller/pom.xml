@@ -5,7 +5,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <build>
-    <finalName>ROOT</finalName>
+    <finalName>STORYTELLER</finalName>
   <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -165,9 +165,9 @@
       <version>2.6.12</version>
     </dependency>
     <dependency>
-      <groupId>commons-logging</groupId>
-      <artifactId>commons-logging</artifactId>
-      <version>1.0.4</version>
+      <groupId>commons-el</groupId>
+      <artifactId>commons-el</artifactId>
+      <version>1.0</version>
     </dependency>
   </dependencies>
 
