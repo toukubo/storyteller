@@ -5,16 +5,8 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <build>
-<!--    <sourceDirectory>webapp/WEB-INF/src</sourceDirectory>
-    <resources>
-      <resource>
-        <directory>webapp/WEB-INF/src</directory>
-        <excludes>
-          <exclude>**/*.java</exclude>
-        </excludes>
-      </resource>
-    </resources>-->
-    <plugins>
+    <finalName>ROOT</finalName>
+  <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.1</version>
