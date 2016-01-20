@@ -1,15 +1,9 @@
 package net.storyteller.web.app;
 
-import java.util.Iterator;
-
-import net.storyteller.model.Attr;
-import net.storyteller.model.AttrUse;
-import net.storyteller.model.Noun;
-import net.storyteller.model.NounUse;
-import net.storyteller.model.Sentence;
-
+import net.storyteller.model.*;
 import org.apache.commons.lang.StringUtils;
 
+import java.util.Iterator;
 
 
 public class DefaultInterpreter implements Interpreter {
@@ -23,6 +17,8 @@ public class DefaultInterpreter implements Interpreter {
 			return nounUse.getNoun().getName();
 		} else if (templatename.equals("modelobj")) {
 			return getObjFromClass(noun.getName());
+		} else if(templatename.equals("modelclassUp")){
+			return getUpperCaseFromClass(noun.getName());
 		} else if (templatename.equals("packagename")) {
 			if (sentence.getVerb().getName().equals("ALL")) {
 				return "net." + sentence.getJ2eeStory().getName() + ".web";
@@ -406,6 +402,42 @@ public class DefaultInterpreter implements Interpreter {
 			builder.append(sentence.getJ2eeStory().getName());
 		}else if(templatename.equalsIgnoreCase("nameofsentence")){
 			builder.append(sentence.getName());
+		} else if(templatename.equals("attributes")){
+			for (Iterator iterator = noun.getAttrs().iterator(); iterator
+					.hasNext(); ) {
+				Attr attr = (Attr) iterator.next();
+				this.interpretLocalFields(attr, builder);
+			}
+		} else if(templatename.equals("attributes->")){
+			for (Iterator iterator = noun.getAttrs().iterator(); iterator
+					.hasNext();) {
+				Attr attr = (Attr) iterator.next();
+				this.interpretPostfix(attr, builder, getObjFromClass(noun.getName()));
+			}
+		} else if(templatename.equals("attributeslookup")){
+			for (Iterator iterator = noun.getAttrs().iterator(); iterator
+					.hasNext();) {
+				Attr attr = (Attr) iterator.next();
+				this.interpretLookUp(attr, builder, getObjFromClass(noun.getName()));
+			}
+		} else if(templatename.equals("attributesjsonnew")){
+			for (Iterator iterator = noun.getAttrs().iterator(); iterator
+					.hasNext();) {
+				Attr attr = (Attr) iterator.next();
+				this.interpretJsonNew(attr, builder, getObjFromClass(noun.getName()));
+			}
+		} else if(templatename.equals("attributesjsonadd")){
+			for (Iterator iterator = noun.getAttrs().iterator(); iterator
+					.hasNext();) {
+				Attr attr = (Attr) iterator.next();
+				this.interpretJsonAdd(attr, builder, getObjFromClass(noun.getName()));
+			}
+		} else if(templatename.equals("attributesfprintf")) {
+			for (Iterator iterator = noun.getAttrs().iterator(); iterator
+					.hasNext();) {
+				Attr attr = (Attr) iterator.next();
+				this.interpretfprintF(attr, builder, getObjFromClass(noun.getName()));
+			}
 		}
 		return builder.toString();
 	}
@@ -940,6 +972,95 @@ public class DefaultInterpreter implements Interpreter {
 		}
 
 	}
+
+	public void interpretLocalFields(Attr attr, StringBuilder builder){
+		builder.append(attr.getClasstype() + " " + attr.getName() + ";" + "\r\n");
+	}
+
+	public void interpretPostfix(Attr attr, StringBuilder builder, String objname){
+		builder.append(objname + "->" + attr.getName() + " = ");
+		String attrType = attr.getClasstype();
+		if("boolean".equals(attrType)){
+			builder.append("false");
+		} else if("int32_t".equals(attrType)){
+			builder.append("0");
+		} else if("USTRING".equals(attrType)){
+			builder.append(attr.getName());
+		} else {
+			builder.append("NULL");
+		}
+
+		builder.append(";\r\n");
+	}
+
+	public void interpretLookUp(Attr attr, StringBuilder builder, String objname){
+		String attrName = attr.getName();
+		if(!(objname + "ID").equals(attrName)) {
+			builder.append("value = json_lookup_value(" + objname + "_tree, \"" + attr.getName() + "\");\n");
+			builder.append("if (value != NULL)\n");
+			String attrType = attr.getClasstype();
+			String type = "";
+			if ("boolean".equals(attrType)) {
+				type = "is_true";
+			} else if ("int32_t".equals(attrType)) {
+				type = "get_integer";
+			}
+			if (!"STRING".equals(attrType)) {
+				builder.append(objname + "->" + attrName + " = json_" + type + "(value);\n");
+			} else {
+				String objAndAttr =  objname + "->" + attrName;
+				builder.append("{\n      if (" + objAndAttr + " != NULL)\n" +
+						"      free(" + objAndAttr + ");\n" + objAndAttr + " = strdup(json_get_string(value));\n" +
+						"  }\r\n");
+
+			}
+		}
+	}
+
+	public void interpretJsonNew(Attr attr, StringBuilder builder, String objname){
+		String attrType = attr.getClasstype();
+		String attrName = attr.getName();
+		builder.append("JSONTree* " + attrName + " = json_new_");
+		if("boolean".equals(attrType)){
+			builder.append("boolean");
+		} else if("int32_t".equals(attrType)){
+			builder.append("integer");
+		} else if("USTRING".equals(attrType) || "STRING".equals(attrType)){
+			builder.append("string");
+		}
+		builder.append("(" + objname + "->" + attrName + ");\r\n");
+	}
+
+	public void interpretJsonAdd(Attr attr, StringBuilder builder, String objname){
+		String attrName = attr.getName();
+		builder.append("json_add_value(" + objname + "_tree, " + "\"" + (attrName.contains("ID") ? "id" : attrName) +
+				"\", " +
+				attrName +
+				");\r\n");
+	}
+
+	public void interpretfprintF(Attr attr, StringBuilder builder, String objname){
+		String attrName = attr.getName();
+		String attrType = attr.getClasstype();
+		boolean isStringType = "STRING".equals(attrType);
+		if(isStringType) {
+			builder.append("if(" + objname + "->" + attrName + "!= NULL)\r\n");
+		}
+		builder.append("fprintf(f, " + "\"%s  " + attrName + "= ");
+		if("boolean".equals(attrType)){
+			builder.append("%s" + "\\" + "n\", margin, boolean_to_string(" + objname + "->" + attrName + "));\r\n");
+		} else if("int32_t".equals(attrType)){
+			builder.append("%d\\n\", margin, " + objname + "->" + attrName + ");\r\n");
+		} else if("USTRING".equals(attrType) || isStringType){
+			builder.append("\\\"%s\\\"\\n\", margin, " + objname + "->" + attrName + ");\r\n");
+		}
+
+		if(isStringType){
+			builder.append("else fprintf(f, \"%s  " + attrName + " = NULL\\n\", margin);\r\n");
+		}
+
+	}
+
 	public static String getJapaneseOrEnglish(Attr attr){
 		if(StringUtils.isNotBlank(attr.getJapanese())){
 			return attr.getJapanese();
@@ -951,6 +1072,12 @@ public class DefaultInterpreter implements Interpreter {
 	public static String getObjFromClass(String string){
 		return string.substring(0, 1).toLowerCase() + string.substring(1);
 	}
+
+	public static String getUpperCaseFromClass(String string){
+		return string.toUpperCase();
+	}
+
+
 	
 	
 	
