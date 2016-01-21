@@ -438,6 +438,8 @@ public class DefaultInterpreter implements Interpreter {
 				Attr attr = (Attr) iterator.next();
 				this.interpretfprintF(attr, builder, getObjFromClass(noun.getName()));
 			}
+		} else if (templatename.equals("storyname")) {
+            return sentence.getJ2eeStory().getName();
 		}
 		return builder.toString();
 	}
