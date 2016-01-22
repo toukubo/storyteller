@@ -439,8 +439,6 @@ public class DefaultInterpreter implements Interpreter {
 				Attr attr = (Attr) iterator.next();
 				this.interpretfprintF(attr, builder, getObjFromClass(noun.getName()));
 			}
-		} else if (templatename.equals("storyname")) {
-            return sentence.getJ2eeStory().getName();
 		} else if (templatename.equals("angular.attribute.resolve")) {
             this.interpretAngularAttributeResolve(noun.getAttrs(), builder);
         } else if (templatename.equals("angular.attribute.array")) {
