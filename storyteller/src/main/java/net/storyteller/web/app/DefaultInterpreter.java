@@ -3,6 +3,7 @@ package net.storyteller.web.app;
 import net.storyteller.model.*;
 import org.apache.commons.lang.StringUtils;
 
+import java.util.Collection;
 import java.util.Iterator;
 
 
@@ -440,7 +441,24 @@ public class DefaultInterpreter implements Interpreter {
 			}
 		} else if (templatename.equals("storyname")) {
             return sentence.getJ2eeStory().getName();
-		}
+		} else if (templatename.equals("angular.attribute.resolve")) {
+            this.interpretAngularAttributeResolve(noun.getAttrs(), builder);
+        } else if (templatename.equals("angular.attribute.array")) {
+            for (Object attrObj : noun.getAttrs()) {
+                Attr attr = (Attr) attrObj;
+                String classType = attr.getClasstype();
+                if (classType.contains("Array")) {
+                    String listType = parseListTypeForAngular(classType);
+                    if (!"".equals(listType)) {
+                        builder.append("\tvm.").append(attr.getName()).append("s").append(" = [];\n");
+                    }
+                }
+            }
+        } else if (templatename.equals("angular.form.edit.properties")) {
+            this.interpretAngularHtmlForm(noun, "EditInfo", builder);
+        } else if (templatename.equals("angular.form.add.properties")) {
+            this.interpretAngularHtmlForm(noun, "AddInfo", builder);
+        }
 		return builder.toString();
 	}
 	
@@ -1062,6 +1080,69 @@ public class DefaultInterpreter implements Interpreter {
 		}
 
 	}
+
+    private void interpretAngularAttributeResolve(Collection attrs, StringBuilder builder) {
+        boolean containResolve = false;
+        for (Object attrObj : attrs) {
+            Attr attr = (Attr) attrObj;
+            String classType = attr.getClasstype();
+            if (classType.contains("Array")) {
+                String listType = parseListTypeForAngular(classType);
+                if (!"".equals(listType)) {
+                    if (!containResolve) {
+                        builder.append("resolve: {\n");
+                        containResolve = true;
+                    }
+                    builder.append("\t\t").append(attr.getName()).append(": function(").append(listType).append("Service {\n");
+                    builder.append("\t\t\treturn ").append(listType).append("Service.get();\n");
+                    builder.append("\t\t}\n");
+                }
+            }
+        }
+        if (containResolve) {
+            builder.append("\t}");
+        }
+    }
+
+    private String parseListTypeForAngular(String classType) {
+        int start = classType.indexOf("<");
+        int end = classType.indexOf(">");
+        if (start != end) {
+            return classType.substring(start + 1, end);
+        } else {
+            return "";
+        }
+    }
+
+    private void interpretAngularHtmlForm(Noun noun, String infoServiceName, StringBuilder builder) {
+        String nounObj = getObjFromClass(noun.getName());
+        for (Object attrObj : noun.getAttrs()) {
+            Attr attr = (Attr) attrObj;
+            String attrName = attr.getName();
+            String classType = attr.getClasstype();
+
+            String listType = parseListTypeForAngular(classType);
+            builder.append("\t<md-list-item class=\"md-1-line\">\n");
+            builder.append("\t<div class=\"md-list-item-text\">\n");
+            builder.append("\t\t").append(attrName.substring(0, 1).toUpperCase()).append(attrName.substring(1, attrName.length())).append("\n");
+            builder.append("\t</div>\n");
+            if (classType.contains("Array")) {
+                if (!"".equals(listType)) {
+                    builder.append("\t<md-select ng-model=\"").append(attrName).append(infoServiceName).append(".").append(nounObj)
+                            .append(".").append(listType.toLowerCase()).append(".name\">\n");
+                    builder.append("\t<md-option ng-repeat=\"").append(listType.toLowerCase()).append(" in ").append(nounObj)
+                            .append(infoServiceName).append(".").append(attrName).append("\" value=\"{{").append(attrName).append(".name}}\">\n");
+                    builder.append("\t\t{{").append(attrName).append(".name}}\n");
+                    builder.append("\t</md-option>\n");
+                    builder.append("\t</md-select>\n");
+                }
+            } else {
+                builder.append("\t<input type=\"text\" ng-model=\"").append(nounObj).append(infoServiceName).append(".").append(nounObj).append(".").append(attr.getName()).append("\n");
+            }
+            builder.append("\t<md-divider></md-divider>\n");
+            builder.append("\t</md-list-item>\n");
+        }
+    }
 
 	public static String getJapaneseOrEnglish(Attr attr){
 		if(StringUtils.isNotBlank(attr.getJapanese())){
