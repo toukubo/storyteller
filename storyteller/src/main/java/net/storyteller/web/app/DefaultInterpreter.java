@@ -3,8 +3,7 @@ package net.storyteller.web.app;
 import net.storyteller.model.*;
 import org.apache.commons.lang.StringUtils;
 
-import java.util.Collection;
-import java.util.Iterator;
+import java.util.*;
 
 
 public class DefaultInterpreter implements Interpreter {
@@ -440,7 +439,7 @@ public class DefaultInterpreter implements Interpreter {
 				this.interpretfprintF(attr, builder, getObjFromClass(noun.getName()));
 			}
 		} else if (templatename.equals("angular.attribute.resolve")) {
-            this.interpretAngularAttributeResolve(noun.getAttrs(), builder);
+            this.interpretAngularAttributeResolve(noun, builder);
         } else if (templatename.equals("angular.attribute.array")) {
             for (Object attrObj : noun.getAttrs()) {
                 Attr attr = (Attr) attrObj;
@@ -456,7 +455,14 @@ public class DefaultInterpreter implements Interpreter {
             this.interpretAngularHtmlForm(noun, "EditInfo", builder);
         } else if (templatename.equals("angular.form.add.properties")) {
             this.interpretAngularHtmlForm(noun, "AddInfo", builder);
-        }
+        } else if (templatename.equals("angular.class.controller.list.attribute")) {
+            builder.append("\t/** @ngInject */\n");
+            String listArguments = this.findAndPrintFuncArguments(noun);
+            builder.append("\tfunction ").append(nounUse.getNoun().getName()).append("s").append("Controller(toastr, ")
+                    .append(listArguments).append(") {\n");
+            this.printControllerWithListAssignments(noun, builder);
+            builder.append("\t}");
+		}
 		return builder.toString();
 	}
 	
@@ -1079,23 +1085,19 @@ public class DefaultInterpreter implements Interpreter {
 
 	}
 
-    private void interpretAngularAttributeResolve(Collection attrs, StringBuilder builder) {
+    private void interpretAngularAttributeResolve(Noun noun, StringBuilder builder) {
         boolean containResolve = false;
-        for (Object attrObj : attrs) {
-            Attr attr = (Attr) attrObj;
-            String classType = attr.getClasstype();
-            if (classType.contains("Array")) {
-                String listType = parseListTypeForAngular(classType);
-                if (!"".equals(listType)) {
-                    if (!containResolve) {
-                        builder.append("resolve: {\n");
-                        containResolve = true;
-                    }
-                    builder.append("\t\t").append(attr.getName()).append(": function(").append(listType).append("Service {\n");
-                    builder.append("\t\t\treturn ").append(listType).append("Service.get();\n");
-                    builder.append("\t\t}\n");
-                }
+        Map<String, String> listAttributes = findAngularListTypesWithNames(noun);
+        for (Map.Entry<String, String> listTypeEntry : listAttributes.entrySet()) {
+            String attributeName = listTypeEntry.getKey();
+            String attributeType = listTypeEntry.getValue();
+            if (!containResolve) {
+                builder.append("resolve: {\n");
+                containResolve = true;
             }
+            builder.append("\t\t").append(attributeName).append(": function(").append(attributeType).append("Service {\n");
+            builder.append("\t\t\treturn ").append(attributeType).append("Service.get();\n");
+            builder.append("\t\t}\n");
         }
         if (containResolve) {
             builder.append("\t}");
@@ -1140,6 +1142,91 @@ public class DefaultInterpreter implements Interpreter {
             builder.append("\t<md-divider></md-divider>\n");
             builder.append("\t</md-list-item>\n");
         }
+    }
+
+    private Map<String, String> findAngularListTypesWithNames(Noun noun) {
+        Map<String, String> listTypes = new HashMap<>();
+        for (Object attrObj : noun.getAttrs()) {
+            Attr attr = (Attr) attrObj;
+            String classType = attr.getClasstype();
+            String listType = parseListTypeForAngular(classType);
+            if (classType.contains("Array")) {
+                if (!"".equals(listType)) {
+                    listTypes.put(attr.getName(), listType);
+                }
+            }
+        }
+        return listTypes;
+    }
+
+    private String findAndPrintFuncArguments(Noun noun) {
+        Map<String, String> listTypes = findAngularListTypesWithNames(noun);
+        return StringUtils.join(listTypes.keySet().iterator(), ", ");
+    }
+
+    private void printControllerWithListAssignments(Noun noun, StringBuilder builder) {
+        Map<String, String> listAttributes = findAngularListTypesWithNames(noun);
+        if (!listAttributes.isEmpty()) {
+            builder.append("\t\tvar vm = this;\n");
+            for (Map.Entry<String, String> listTypeEntry : listAttributes.entrySet()) {
+                String attributeName = listTypeEntry.getKey();
+                builder.append("\t\tvm.").append(attributeName).append(" = ")
+                        .append(attributeName).append(".plain().").append(attributeName).append(";\n");
+                builder.append("\t\tvm.").append(getObjFromClass(noun.getName())).append("s = extract")
+                        .append(noun.getName()).append("s(vm.").append(attributeName).append(");\n");
+
+            }
+            for (Map.Entry<String, String> listTypeEntry : listAttributes.entrySet()) {
+                String attributeName = listTypeEntry.getKey();
+                String attributeType = listTypeEntry.getValue();
+
+                String assignMethodName = "assign" + attributeType + "Name";
+                String[] assignMethodArguments = {noun.getName().toLowerCase() + "s", attributeType.toLowerCase() + "Name"};
+                String assignMethodBody = generateAssignMethod(assignMethodArguments);
+                builder.append(printJsFunctionWithBody(assignMethodName, assignMethodArguments, assignMethodBody));
+
+                String extractMethodName = "extract" + noun.getName() + "s";
+                String[] extractMethodArguments = {attributeName};
+                String extractMethodBody =
+                        generateExtractMethod(extractMethodArguments, noun.getName().toLowerCase(), assignMethodName);
+                builder.append(printJsFunctionWithBody(extractMethodName, extractMethodArguments, extractMethodBody));
+            }
+        }
+    }
+
+    private String generateExtractMethod(String[] assignMethodArguments, String nounName, String assignMethodName) {
+        String firstArg = assignMethodArguments[0];
+        String variable = firstArg.substring(0, 2);
+        String localVariable = "_" + nounName.substring(0, 2);
+
+        return "\t\t\tvar result = [];\n" +
+                "\t\t\tfor (var i = 0; i < " + firstArg + ".length; i++) {\n" +
+                "\t\t\t\tvar " + variable + " = " + firstArg + "[i];\n" +
+                "\t\t\t\tvar " + localVariable + " = " + assignMethodName +
+                "(" + variable + "." + nounName + "s, " + variable + ".name);\n" +
+                "\t\t\t\tresult = result.concat(" + localVariable + ");\n" +
+                "\t\t\t}\n" +
+                "\t\t\treturn result;\n";
+    }
+
+    private String generateAssignMethod(String[] assignMethodArguments) {
+        String firstArg = assignMethodArguments[0];
+        String firstArgWithoutS = firstArg.substring(0, firstArg.length()-1);
+        String secondArg = assignMethodArguments[1];
+
+        return "\t\t\tvar result = [];\n" +
+                "\t\t\tfor (var i = 0; i < " + firstArg + ".length; i++) {\n" +
+                "\t\t\t\tvar " + firstArgWithoutS + " = " + firstArg + "[i];\n" +
+                "\t\t\t\t" + firstArgWithoutS + "." + secondArg + " = " + secondArg + ";\n" +
+                "\t\t\t\tresult.push(" + firstArgWithoutS + ");\n" +
+                "\t\t\t}\n" +
+                "\t\t\treturn result;\n";
+    }
+
+    private String printJsFunctionWithBody(String methodName, String[] methodArguments, String methodBody) {
+        return "\n\t\tfunction " + methodName + "(" + StringUtils.join(methodArguments, ", ") + ") {\n" +
+                methodBody +
+                "\t\t}\n";
     }
 
 	public static String getJapaneseOrEnglish(Attr attr){
