@@ -1,0 +1,27 @@
+<Context path="/storyteller" reloadable="true" docBase="storyteller" >
+<!-- Extra info begin -->
+
+    <ResourceLink
+            name="jdbc/storyteller"
+        auth="Container"
+        type="javax.sql.DataSource"
+        factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"
+        driverClassName="com.mysql.jdbc.Driver"
+        url="jdbc:mysql://localhost:3306/storyteller?zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true"
+        username="storyteller"
+        password="storyteller"
+         removeAbandonedTimeout="60"
+         removeAbandoned="true"
+         logAbandoned="true"
+
+maxWait="10000"
+maxActive="40"
+maxIdle="40"
+validationQuery="SELECT VERSION()"
+testOnBorrow="true"
+testOnReturn="false"
+testWhileIdle="false"
+
+    />
+	<Logger className="org.apache.catalina.logger.SystemOutLogger" verbosity="4" timestamp="true"/>
+</Context>
