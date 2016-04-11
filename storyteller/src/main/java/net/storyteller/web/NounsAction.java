@@ -21,6 +21,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import net.enclosing.util.HibernateSession;
 import net.enclosing.util.JSONUtil;
 import net.storyteller.model.Noun;
+import net.storyteller.model.NounImpl;
 
 
 public class NounsAction extends Action {
@@ -47,7 +48,7 @@ public class NounsAction extends Action {
 			noun = (Noun) criteria2.uniqueResult();
 		}
 
-		req.setAttribute("noun", noun);
+		req.setAttribute("noun", noun==null?new NounImpl():noun);
 
 		req.setAttribute("nouns", vector);
 
