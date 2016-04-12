@@ -1,5 +1,7 @@
 package net.storyteller.web.app;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -16,6 +18,9 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
+
+import static net.storyteller.web.util.HttpUtil.isAcceptJSON;
+import static net.storyteller.web.util.JSONResponseUtil.writeResponseAsJSON;
 
 public class ShowJ2eeStoryAboutNouns extends Action{
 	public ActionForward execute(
@@ -38,8 +43,13 @@ public class ShowJ2eeStoryAboutNouns extends Action{
 		Criteria criteriaNoun = session.createCriteria(Noun.class);
 		criteriaNoun.add(Restrictions.eq("j2eeStory", j2eeStory));
 		criteriaNoun.addOrder(Order.asc("name"));
-		req.setAttribute("Nouns", criteriaNoun.list());
+		List nouns = criteriaNoun.list();
+		req.setAttribute("Nouns", nouns);
 		
+		if ( isAcceptJSON(req)) {
+			writeResponseAsJSON(res, nouns);
+			return null;			
+		}
 		
 		return mapping.findForward("success");
 	}
