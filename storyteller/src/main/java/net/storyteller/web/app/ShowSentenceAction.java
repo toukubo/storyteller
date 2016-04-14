@@ -9,10 +9,16 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import net.storyteller.model.json.AttrJson;
+import net.storyteller.model.json.NounJson;
+import net.storyteller.model.json.SentenceJson;
+import net.storyteller.model.json.VerbJson;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.SerializationConfig;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
@@ -61,16 +67,10 @@ public class ShowSentenceAction extends Action{
 //		req.setAttribute("Nouns", nouns);
 		
 		if ( isAcceptJSON(req)) {
-//			writeResponseAsJSON(res,"hogehoge");
-//			System.err.println(sentence.getName());
 			NounUse nounUse = (NounUse)sentence.getFirstobjective().getOfuse().iterator().next();
 			Noun noun = nounUse.getNoun();
-			StringBuilder builder = new StringBuilder();
-			builder.append("{");
-			builder.append("\"name\":\""+ noun.getName() +"\",");
-			builder.append("\"attrs\":[");
-			List<Attr> attrs = new ArrayList<Attr>();
-			
+			List<AttrJson> attrs = new ArrayList<AttrJson>();
+
 			if(nounUse.getAttrUses().size()>0){
 				Iterator it = nounUse.getAttrUses().iterator();
 				while (it.hasNext()) {
@@ -78,32 +78,30 @@ public class ShowSentenceAction extends Action{
 					Attr attr = attrUse.getAttr();
 //					AttrValueObject value = new AttrValueObject();
 //					new CopyProperties(attr,value);
-					attrs.add(attr);
+					attrs.add(new AttrJson(attr.getName(), attr.getClasstype()));
 				}
 			}else{
-				attrs.addAll(noun.getAttrs());
+				Iterator it = noun.getAttrs().iterator();
+				while (it.hasNext()) {
+					Attr attr = (Attr)it.next();
+					attrs.add(new AttrJson(attr.getName(), attr.getClasstype()));
+				}
 			}
-			Iterator iterator = attrs.iterator();
-			while (iterator.hasNext()) {
-				Attr attr = (Attr) iterator.next();
-				System.err.println(attr.getName());
-				builder.append("{");
-				builder.append("\"name\":\""+attr.getName()+"\",");
-				builder.append("\"type\":\""+attr.getClasstype()+"\"");
 
-				System.err.println("-------------------------------------------------------------------");
-				builder.append("}");
-				builder.append(",");
-			}
-			int index = builder.lastIndexOf(",");
-			builder.deleteCharAt(index);
-//			noun.setAttrs(attrs);
-			builder.append("]");
-			builder.append("}");
-			builder.append("\r\n");
+			NounJson nounJson = new NounJson(noun.getName(), attrs);
+			VerbJson verbJson = new VerbJson(sentence.getVerb().getName());
+			SentenceJson sentenceJson = new SentenceJson(sentence.getName(), nounJson, verbJson);
+
+			ObjectMapper mapper = new ObjectMapper();
+			String jsonInString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(sentenceJson);
+
+//			writeResponseAsJSON(res,"hogehoge");
+//			System.err.println(sentence.getName());
+
+
 			res.setContentType(JSONResponseUtil.APPLICATION_JSON);
 			res.setStatus(HttpServletResponse.SC_OK);
-			res.getWriter().print(builder.toString());
+			res.getWriter().print(jsonInString);
 			res.flushBuffer();
 			return null;			
 		}
