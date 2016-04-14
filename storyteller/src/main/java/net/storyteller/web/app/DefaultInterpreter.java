@@ -462,10 +462,26 @@ public class DefaultInterpreter implements Interpreter {
                     .append(listArguments).append(") {\n");
             this.printControllerWithListAssignments(noun, builder);
             builder.append("\t}");
-		}
+		} else if ( templatename.equals("rail.controller.params")) {
+			builder.append(this.rubyParamsString(noun));
+		} else if ( templatename.equals("rail.controller.shortresp.fields")) {
+			builder.append(this.rubyParamsString(noun));			
+		}		
 		return builder.toString();
 	}
 	
+	private String rubyParamsString(Noun noun) {
+		Collection<Attr> attrs = noun.getAttrs();
+		StringBuilder params = new StringBuilder();
+		for (Attr attr : attrs) {
+			params.append(':'+attr.getName() + ',');
+		}
+		params.deleteCharAt(params.length()-1);
+		return params.toString();
+		//":name, :sleepFreq, :awakeFreq, :buzzer, :account_id, \\";
+	}
+	
+
 	private String getSpecialPackageName(Sentence sentence) {
 		if(sentence.getJ2eeStory().getName().equals("nodepad")){
 			return "com.theuniversalgraph";
