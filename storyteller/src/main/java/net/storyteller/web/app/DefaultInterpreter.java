@@ -441,9 +441,10 @@ public class DefaultInterpreter implements Interpreter {
 				this.interpretfprintF(attr, builder, getObjFromClass(noun.getName()));
 			}
 		} else if (templatename.equals("angular.attribute.resolve")) {
-            this.interpretAngularAttributeResolve(noun, builder);
+            this.interpretAngularAttributeResolve(noun, nounUse, builder);
         } else if (templatename.equals("angular.attribute.array")) {
-            for (Object attrObj : noun.getAttrs()) {
+        	Collection<Attr> attrs = getAttrOrAttrUse(noun, nounUse);
+            for (Object attrObj : attrs) {
                 Attr attr = (Attr) attrObj;
                 String classType = attr.getClasstype();
                 if (classType.contains("Array")) {
@@ -454,15 +455,15 @@ public class DefaultInterpreter implements Interpreter {
                 }
             }
         } else if (templatename.equals("angular.form.edit.properties")) {
-            this.interpretAngularHtmlForm(noun, "EditInfo", builder);
+            this.interpretAngularHtmlForm(noun, nounUse, "EditInfo", builder);
         } else if (templatename.equals("angular.form.add.properties")) {
-            this.interpretAngularHtmlForm(noun, "AddInfo", builder);
+            this.interpretAngularHtmlForm(noun, nounUse, "AddInfo", builder);
         } else if (templatename.equals("angular.class.controller.list.attribute")) {
             builder.append("\t/** @ngInject */\n");
-            String listArguments = this.findAndPrintFuncArguments(noun);
+            String listArguments = this.findAndPrintFuncArguments(noun,nounUse);
             builder.append("\tfunction ").append(nounUse.getNoun().getName()).append("s").append("Controller(toastr, ")
                     .append(listArguments).append(") {\n");
-            this.printControllerWithListAssignments(noun, builder);
+            this.printControllerWithListAssignments(noun, nounUse, builder);
             builder.append("\t}");
 		} else if ( templatename.equals("rail.controller.params")) {
 			builder.append(this.railsParamsString(noun));
@@ -1118,9 +1119,9 @@ public class DefaultInterpreter implements Interpreter {
 
 	}
 
-    private void interpretAngularAttributeResolve(Noun noun, StringBuilder builder) {
+    private void interpretAngularAttributeResolve(Noun noun, NounUse nounUse, StringBuilder builder) {
         boolean containResolve = false;
-        Map<String, String> listAttributes = findAngularListTypesWithNames(noun);
+        Map<String, String> listAttributes = findAngularListTypesWithNames(noun,nounUse);
         for (Map.Entry<String, String> listTypeEntry : listAttributes.entrySet()) {
             String attributeName = listTypeEntry.getKey();
             String attributeType = listTypeEntry.getValue();
@@ -1147,9 +1148,10 @@ public class DefaultInterpreter implements Interpreter {
         }
     }
 
-    private void interpretAngularHtmlForm(Noun noun, String infoServiceName, StringBuilder builder) {
+    private void interpretAngularHtmlForm(Noun noun, NounUse nounUse, String infoServiceName, StringBuilder builder) {
         String nounObj = getObjFromClass(noun.getName());
-        for (Object attrObj : noun.getAttrs()) {
+        Collection<Attr> attrs = getAttrOrAttrUse(noun, nounUse);
+        for (Object attrObj : attrs) {
             Attr attr = (Attr) attrObj;
             String attrName = attr.getName();
             String classType = attr.getClasstype();
@@ -1177,10 +1179,10 @@ public class DefaultInterpreter implements Interpreter {
         }
     }
 
-    private Map<String, String> findAngularListTypesWithNames(Noun noun) {
+    private Map<String, String> findAngularListTypesWithNames(Noun noun, NounUse nounUse) {
         Map<String, String> listTypes = new HashMap<>();
-        for (Object attrObj : noun.getAttrs()) {
-            Attr attr = (Attr) attrObj;
+        Collection<Attr> attrs = getAttrOrAttrUse(noun,nounUse);
+        for (Attr attr : attrs) {
             String classType = attr.getClasstype();
             String listType = parseListTypeForAngular(classType);
             if (classType.contains("Array")) {
@@ -1192,13 +1194,26 @@ public class DefaultInterpreter implements Interpreter {
         return listTypes;
     }
 
-    private String findAndPrintFuncArguments(Noun noun) {
-        Map<String, String> listTypes = findAngularListTypesWithNames(noun);
+    private Collection<Attr> getAttrOrAttrUse(Noun noun,NounUse nounUse) {
+		Collection<AttrUse> attrUses = nounUse.getAttrUses();
+		if ( nounUse != null && nounUse.getOforder() ==1 &&  attrUses != null && attrUses.size() > 0 ) {
+			Collection<Attr> attrs = new ArrayList<Attr>();			
+			for (AttrUse attrUse : attrUses) {
+				attrs.add(attrUse.getAttr());
+			}
+			return attrs;
+		} else {
+			return noun.getAttrs();
+		}
+	}
+
+	private String findAndPrintFuncArguments(Noun noun, NounUse nounUse) {
+        Map<String, String> listTypes = findAngularListTypesWithNames(noun,nounUse);
         return StringUtils.join(listTypes.keySet().iterator(), ", ");
     }
 
-    private void printControllerWithListAssignments(Noun noun, StringBuilder builder) {
-        Map<String, String> listAttributes = findAngularListTypesWithNames(noun);
+    private void printControllerWithListAssignments(Noun noun, NounUse nounUse, StringBuilder builder) {
+        Map<String, String> listAttributes = findAngularListTypesWithNames(noun,nounUse);
         if (!listAttributes.isEmpty()) {
             builder.append("\t\tvar vm = this;\n");
             for (Map.Entry<String, String> listTypeEntry : listAttributes.entrySet()) {
