@@ -1,5 +1,0 @@
-##ofloop##
-Criteria criteria##crinum## = session.createCriteria(##modelclass##.class);
-##ofcrit##
-##modelclass## ##modelobj## = (Customer)criteria##crinum##.uniqueResult();
-
