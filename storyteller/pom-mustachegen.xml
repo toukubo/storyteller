@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.getsecual</groupId>
+	<artifactId>mustachegen</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	
+	
+	<properties>
+		<template.directory>./src/main/webapp/client/template/mda</template.directory>
+		<template.context.directory>./src/main/webapp/client/template/mda</template.context.directory>
+		<output.directory>.</output.directory>				
+	</properties>
+		
+	 <build>
+        <plugins>
+            <plugin>
+                <groupId>com.github.sviperll</groupId>
+                <artifactId>mustache-maven-plugin</artifactId>
+                <version>0.20</version>
+                <inherited>false</inherited>
+                <configuration>
+                    <!-- encoding for reading and writing files -->
+                    <encoding>UTF-8</encoding>
+
+                    <contexts>
+                        <context>
+                            <!-- file with field values to put into templates -->
+                            <file>${template.context.directory}/nouns.json</file>
+
+                            <!-- Type of context file. Supported values: json, properties -->
+                            <type>json</type>
+
+                            <templates>
+                                <template>
+                                    <inputFile>${template.directory}/nouns.mustache</inputFile>
+                                    <outputFile>${output.directory}/nouns.txt</outputFile>
+                                </template>
+                            </templates>
+                        </context>
+                    </contexts>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>generate</id>
+                        <goals>
+                            <goal>render</goal>
+                        </goals>
+                        <!-- binded with generate-resources phase by default -->
+                        <!--
+                            <phase>generate-resources</phase>
+                        -->
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
