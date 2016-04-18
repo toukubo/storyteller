@@ -22,19 +22,16 @@
                 <configuration>
                     <!-- encoding for reading and writing files -->
                     <encoding>UTF-8</encoding>
-
                     <contexts>
                         <context>
                             <!-- file with field values to put into templates -->
-                            <file>${template.context.directory}/nouns.json</file>
-
+                            <file>${template_context_file}</file>
                             <!-- Type of context file. Supported values: json, properties -->
                             <type>json</type>
-
                             <templates>
                                 <template>
-                                    <inputFile>${template.directory}/nouns.mustache</inputFile>
-                                    <outputFile>${output.directory}/nouns.txt</outputFile>
+                                    <inputFile>${template_file}</inputFile>
+                                    <outputFile>${output_file}</outputFile>
                                 </template>
                             </templates>
                         </context>
