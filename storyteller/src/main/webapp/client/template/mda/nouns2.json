@@ -1,0 +1,1815 @@
+{
+  "nouns": [
+    {
+      "id": 21,
+      "valid": true,
+      "name": "Account",
+      "japanese": "",
+      "attrs": [
+        {
+          "name": "status",
+          "classtype": "Integer",
+          "id": 487,
+          "japanese": ""
+        },
+        {
+          "name": "updatedAt",
+          "classtype": "Date",
+          "id": 486,
+          "japanese": ""
+        },
+        {
+          "name": "createdAt",
+          "classtype": "Date",
+          "id": 485,
+          "japanese": ""
+        },
+        {
+          "name": "address",
+          "classtype": "String",
+          "id": 182,
+          "japanese": ""
+        },
+        {
+          "name": "id",
+          "classtype": "Integer",
+          "id": 183,
+          "japanese": ""
+        },
+        {
+          "name": "gmoMemberId",
+          "classtype": "String",
+          "id": 184,
+          "japanese": ""
+        },
+        {
+          "name": "currentPatternId",
+          "classtype": "Integer",
+          "id": 185,
+          "japanese": ""
+        },
+        {
+          "name": "lock",
+          "classtype": "Boolean",
+          "id": 186,
+          "japanese": ""
+        },
+        {
+          "name": "accountID",
+          "classtype": "String",
+          "id": 187,
+          "japanese": ""
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "valid": true,
+      "name": "Adminuser",
+      "japanese": "",
+      "attrs": [
+        {
+          "name": "updatedAt",
+          "classtype": "Date",
+          "id": 493,
+          "japanese": ""
+        },
+        {
+          "name": "createdAt",
+          "classtype": "Date",
+          "id": 492,
+          "japanese": ""
+        },
+        {
+          "name": "lastSignInAt",
+          "classtype": "Date",
+          "id": 491,
+          "japanese": ""
+        },
+        {
+          "name": "currentSignInAt",
+          "classtype": "Date",
+          "id": 490,
+          "japanese": ""
+        },
+        {
+          "name": "rememberCreatedAt",
+          "classtype": "Date",
+          "id": 489,
+          "japanese": ""
+        },
+        {
+          "name": "resetPasswordSentAt",
+          "classtype": "Date",
+          "id": 488,
+          "japanese": ""
+        },
+        {
+          "name": "signInCount",
+          "classtype": "Integer",
+          "id": 370,
+          "japanese": ""
+        },
+        {
+          "name": "resetPasswordToken",
+          "classtype": "String",
+          "id": 369,
+          "japanese": ""
+        },
+        {
+          "name": "email",
+          "classtype": "String",
+          "id": 368,
+          "japanese": ""
+        },
+        {
+          "name": "encryptedPassword",
+          "classtype": "String",
+          "id": 367,
+          "japanese": ""
+        },
+        {
+          "name": "id",
+          "classtype": "Integer",
+          "id": 366,
+          "japanese": ""
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "valid": true,
+      "name": "Companytoken",
+      "japanese": "",
+      "attrs": [
+        {
+          "name": "updatedAt",
+          "classtype": "Date",
+          "id": 495,
+          "japanese": ""
+        },
+        {
+          "name": "createdAt",
+          "classtype": "Date",
+          "id": 494,
+          "japanese": ""
+        },
+        {
+          "name": "passwordDigest",
+          "classtype": "String",
+          "id": 373,
+          "japanese": ""
+        },
+        {
+          "name": "id",
+          "classtype": "Integer",
+          "id": 372,
+          "japanese": ""
+        },
+        {
+          "name": "name",
+          "classtype": "String",
+          "id": 371,
+          "japanese": ""
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "valid": true,
+      "name": "ConfigurationChange",
+      "japanese": "",
+      "attrs": []
+    },
+    {
+      "id": 61,
+      "valid": true,
+      "name": "Contactmail",
+      "japanese": "",
+      "attrs": [
+        {
+          "name": "updatedAt",
+          "classtype": "Date",
+          "id": 497,
+          "japanese": ""
+        },
+        {
+          "name": "createdAt",
+          "classtype": "Date",
+          "id": 496,
+          "japanese": ""
+        },
+        {
+          "name": "supportTitle",
+          "classtype": "String",
+          "id": 381,
+          "japanese": ""
+        },
+        {
+          "name": "osver",
+          "classtype": "String",
+          "id": 380,
+          "japanese": ""
+        },
+        {
+          "name": "appver",
+          "classtype": "String",
+          "id": 379,
+          "japanese": ""
+        },
+        {
+          "name": "ownername",
+          "classtype": "String",
+          "id": 378,
+          "japanese": ""
+        },
+        {
+          "name": "ownermail",
+          "classtype": "String",
+          "id": 377,
+          "japanese": ""
+        },
+        {
+          "name": "sentfrom",
+          "classtype": "String",
+          "id": 376,
+          "japanese": ""
+        },
+        {
+          "name": "sendto",
+          "classtype": "String",
+          "id": 375,
+          "japanese": ""
+        },
+        {
+          "name": "id",
+          "classtype": "Integer",
+          "id": 374,
+          "japanese": ""
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "valid": true,
+      "name": "Faq",
+      "japanese": "",
+      "attrs": [
+        {
+          "name": "updatedAt",
+          "classtype": "Date",
+          "id": 499,
+          "japanese": ""
+        },
+        {
+          "name": "createdAt",
+          "classtype": "Date",
+          "id": 498,
+          "japanese": ""
+        },
+        {
+          "name": "isValid",
+          "classtype": "Boolean",
+          "id": 383,
+          "japanese": ""
+        },
+        {
+          "name": "id",
+          "classtype": "Integer",
+          "id": 382,
+          "japanese": ""
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "valid": true,
+      "name": "Faqcategory",
+      "japanese": "",
+      "attrs": [
+        {
+          "name": "updatedAt",
+          "classtype": "Date",
+          "id": 501,
+          "japanese": ""
+        },
+        {
+          "name": "createdAt",
+          "classtype": "Date",
+          "id": 500,
+          "japanese": ""
+        },
+        {
+          "name": "category",
+          "classtype": "String",
+          "id": 386,
+          "japanese": ""
+        },
+        {
+          "name": "id",
+          "classtype": "Integer",
+          "id": 385,
+          "japanese": ""
+        },
+        {
+          "name": "comment",
+          "classtype": "String",
+          "id": 384,
+          "japanese": ""
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "valid": true,
+      "name": "Gateway",
+      "japanese": "",
+      "attrs": [
+        {
+          "name": "awakeFreq",
+          "classtype": "int32_t",
+          "id": 66,
+          "japanese": ""
+        },
+        {
+          "name": "buzzer",
+          "classtype": "boolean",
+          "id": 67,
+          "japanese": ""
+        },
+        {
+          "name": "gatewayID",
+          "classtype": "USTRING",
+          "id": 68,
+          "japanese": ""
+        },
+        {
+          "name": "secret",
+          "classtype": "STRING",
+          "id": 70,
+          "japanese": ""
+        },
+        {
+          "name": "sleepFreq",
+          "classtype": "int32_t",
+          "id": 71,
+          "japanese": ""
+        },
+        {
+          "name": "updatedAt",
+          "classtype": "Date",
+          "id": 510,
+          "japanese": ""
+        },
+        {
+          "name": "createdAt",
+          "classtype": "Date",
+          "id": 509,
+          "japanese": ""
+        },
+        {
+          "name": "notifySent",
+          "classtype": "Date",
+          "id": 508,
+          "japanese": ""
+        },
+        {
+          "name": "newaf",
+          "classtype": "Integer",
+          "id": 507,
+          "japanese": ""
+        },
+        {
+          "name": "newwifi",
+          "classtype": "Integer",
+          "id": 506,
+          "japanese": ""
+        },
+        {
+          "name": "newmcu",
+          "classtype": "Integer",
+          "id": 505,
+          "japanese": ""
+        },
+        {
+          "name": "ste",
+          "classtype": "Date",
+          "id": 504,
+          "japanese": ""
+        },
+        {
+          "name": "st",
+          "classtype": "String",
+          "id": 503,
+          "japanese": ""
+        },
+        {
+          "name": "playRetry",
+          "classtype": "Integer",
+          "id": 502,
+          "japanese": ""
+        },
+        {
+          "name": "name",
+          "classtype": "String",
+          "id": 209,
+          "japanese": ""
+        },
+        {
+          "name": "id",
+          "classtype": "Integer",
+          "id": 210,
+          "japanese": ""
+        },
+        {
+          "name": "voiceAct",
+          "classtype": "Boolean",
+          "id": 211,
+          "japanese": ""
+        },
+        {
+          "name": "buzAct",
+          "classtype": "Boolean",
+          "id": 212,
+          "japanese": ""
+        },
+        {
+          "name": "buzTO",
+          "classtype": "Integer",
+          "id": 213,
+          "japanese": ""
+        },
+        {
+          "name": "wifiTO",
+          "classtype": "Integer",
+          "id": 214,
+          "japanese": ""
+        },
+        {
+          "name": "bleTO",
+          "classtype": "Integer",
+          "id": 215,
+          "japanese": ""
+        },
+        {
+          "name": "otawifi",
+          "classtype": "String",
+          "id": 216,
+          "japanese": ""
+        },
+        {
+          "name": "otaaf",
+          "classtype": "String",
+          "id": 217,
+          "japanese": ""
+        },
+        {
+          "name": "ble",
+          "classtype": "String",
+          "id": 218,
+          "japanese": ""
+        },
+        {
+          "name": "otamcu",
+          "classtype": "String",
+          "id": 219,
+          "japanese": ""
+        },
+        {
+          "name": "dhcp",
+          "classtype": "Boolean",
+          "id": 220,
+          "japanese": ""
+        },
+        {
+          "name": "mac",
+          "classtype": "String",
+          "id": 221,
+          "japanese": ""
+        },
+        {
+          "name": "gw",
+          "classtype": "String",
+          "id": 222,
+          "japanese": ""
+        },
+        {
+          "name": "dns",
+          "classtype": "String",
+          "id": 223,
+          "japanese": ""
+        },
+        {
+          "name": "netmask",
+          "classtype": "String",
+          "id": 224,
+          "japanese": ""
+        },
+        {
+          "name": "pskkey",
+          "classtype": "String",
+          "id": 225,
+          "japanese": ""
+        },
+        {
+          "name": "ipaddress",
+          "classtype": "String",
+          "id": 226,
+          "japanese": ""
+        },
+        {
+          "name": "security",
+          "classtype": "Integer",
+          "id": 227,
+          "japanese": ""
+        },
+        {
+          "name": "ssid",
+          "classtype": "String",
+          "id": 228,
+          "japanese": ""
+        },
+        {
+          "name": "light",
+          "classtype": "Boolean",
+          "id": 229,
+          "japanese": ""
+        },
+        {
+          "name": "accountId",
+          "classtype": "Integer",
+          "id": 230,
+          "japanese": ""
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "valid": true,
+      "name": "Gatewaytrail",
+      "japanese": "",
+      "attrs": [
+        {
+          "name": "updatedAt",
+          "classtype": "Date",
+          "id": 512,
+          "japanese": ""
+        },
+        {
+          "name": "createdAt",
+          "classtype": "Date",
+          "id": 511,
+          "japanese": ""
+        },
+        {
+          "name": "gatewayId",
+          "classtype": "Integer",
+          "id": 397,
+          "japanese": ""
+        },
+        {
+          "name": "voiceAct",
+          "classtype": "Boolean",
+          "id": 396,
+          "japanese": ""
+        },
+        {
+          "name": "buzAct",
+          "classtype": "Boolean",
+          "id": 395,
+          "japanese": ""
+        },
+        {
+          "name": "buzTO",
+          "classtype": "Integer",
+          "id": 394,
+          "japanese": ""
+        },
+        {
+          "name": "bleTO",
+          "classtype": "Integer",
+          "id": 393,
+          "japanese": ""
+        },
+        {
+          "name": "wifiTO",
+          "classtype": "Integer",
+          "id": 392,
+          "japanese": ""
+        },
+        {
+          "name": "otaaf",
+          "classtype": "String",
+          "id": 391,
+          "japanese": ""
+        },
+        {
+          "name": "otawifi",
+          "classtype": "String",
+          "id": 390,
+          "japanese": ""
+        },
+        {
+          "name": "otamcu",
+          "classtype": "String",
+          "id": 389,
+          "japanese": ""
+        },
+        {
+          "name": "buzzer",
+          "classtype": "Boolean",
+          "id": 388,
+          "japanese": ""
+        },
+        {
+          "name": "id",
+          "classtype": "Integer",
+          "id": 387,
+          "japanese": ""
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "valid": true,
+      "name": "Group",
+      "japanese": "",
+      "attrs": [
+        {
+          "name": "userManageable",
+          "classtype": "Boolean",
+          "id": 517,
+          "japanese": ""
+        },
+        {
+          "name": "updatedAt",
+          "classtype": "Date",
+          "id": 516,
+          "japanese": ""
+        },
+        {
+          "name": "createdAt",
+          "classtype": "Date",
+          "id": 515,
+          "japanese": ""
+        },
+        {
+          "name": "groupManageable",
+          "classtype": "Boolean",
+          "id": 514,
+          "japanese": ""
+        },
+        {
+          "name": "securitySettable",
+          "classtype": "Boolean",
+          "id": 513,
+          "japanese": ""
+        },
+        {
+          "name": "name",
+          "classtype": "String",
+          "id": 242,
+          "japanese": ""
+        },
+        {
+          "name": "owner",
+          "classtype": "Boolean",
+          "id": 243,
+          "japanese": ""
+        },
+        {
+          "name": "id",
+          "classtype": "Integer",
+          "id": 244,
+          "japanese": ""
+        },
+        {
+          "name": "alertstoppable",
+          "classtype": "Boolean",
+          "id": 245,
+          "japanese": ""
+        },
+        {
+          "name": "sms",
+          "classtype": "Boolean",
+          "id": 246,
+          "japanese": ""
+        },
+        {
+          "name": "call",
+          "classtype": "Boolean",
+          "id": 247,
+          "japanese": ""
+        },
+        {
+          "name": "push",
+          "classtype": "Boolean",
+          "id": 248,
+          "japanese": ""
+        },
+        {
+          "name": "admin",
+          "classtype": "Boolean",
+          "id": 249,
+          "japanese": ""
+        },
+        {
+          "name": "lockable",
+          "classtype": "Boolean",
+          "id": 250,
+          "japanese": ""
+        },
+        {
+          "name": "accountId",
+          "classtype": "Integer",
+          "id": 251,
+          "japanese": ""
+        },
+        {
+          "name": "email",
+          "classtype": "Boolean",
+          "id": 252,
+          "japanese": ""
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "valid": true,
+      "name": "NearBy",
+      "japanese": "",
+      "attrs": []
+    },
+    {
+      "id": 24,
+      "valid": true,
+      "name": "NotificationMethod",
+      "japanese": "",
+      "attrs": []
+    },
+    {
+      "id": 20,
+      "valid": true,
+      "name": "NotificationMethodGroup",
+      "japanese": "",
+      "attrs": []
+    },
+    {
+      "id": 65,
+      "valid": true,
+      "name": "Pattern",
+      "japanese": "",
+      "attrs": [
+        {
+          "name": "updatedAt",
+          "classtype": "Date",
+          "id": 519,
+          "japanese": ""
+        },
+        {
+          "name": "createdAt",
+          "classtype": "Date",
+          "id": 518,
+          "japanese": ""
+        },
+        {
+          "name": "accountId",
+          "classtype": "Integer",
+          "id": 400,
+          "japanese": ""
+        },
+        {
+          "name": "id",
+          "classtype": "Integer",
+          "id": 399,
+          "japanese": ""
+        },
+        {
+          "name": "name",
+          "classtype": "String",
+          "id": 398,
+          "japanese": ""
+        }
+      ]
+    },
+    {
+      "id": 66,
+      "valid": true,
+      "name": "Patternlock",
+      "japanese": "",
+      "attrs": [
+        {
+          "name": "updatedAt",
+          "classtype": "Date",
+          "id": 521,
+          "japanese": ""
+        },
+        {
+          "name": "createdAt",
+          "classtype": "Date",
+          "id": 520,
+          "japanese": ""
+        },
+        {
+          "name": "patternId",
+          "classtype": "Integer",
+          "id": 404,
+          "japanese": ""
+        },
+        {
+          "name": "sensorId",
+          "classtype": "Integer",
+          "id": 403,
+          "japanese": ""
+        },
+        {
+          "name": "lock",
+          "classtype": "Integer",
+          "id": 402,
+          "japanese": ""
+        },
+        {
+          "name": "id",
+          "classtype": "Integer",
+          "id": 401,
+          "japanese": ""
+        }
+      ]
+    },
+    {
+      "id": 67,
+      "valid": true,
+      "name": "Plan",
+      "japanese": "",
+      "attrs": [
+        {
+          "name": "updatedAt",
+          "classtype": "Date",
+          "id": 523,
+          "japanese": ""
+        },
+        {
+          "name": "createdAt",
+          "classtype": "Date",
+          "id": 522,
+          "japanese": ""
+        },
+        {
+          "name": "price",
+          "classtype": "Integer",
+          "id": 409,
+          "japanese": ""
+        },
+        {
+          "name": "comments",
+          "classtype": "String",
+          "id": 408,
+          "japanese": ""
+        },
+        {
+          "name": "plan",
+          "classtype": "String",
+          "id": 407,
+          "japanese": ""
+        },
+        {
+          "name": "months",
+          "classtype": "Integer",
+          "id": 406,
+          "japanese": ""
+        },
+        {
+          "name": "id",
+          "classtype": "Integer",
+          "id": 405,
+          "japanese": ""
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "valid": true,
+      "name": "Property",
+      "japanese": "",
+      "attrs": [
+        {
+          "name": "updatedAt",
+          "classtype": "Date",
+          "id": 525,
+          "japanese": ""
+        },
+        {
+          "name": "createdAt",
+          "classtype": "Date",
+          "id": 524,
+          "japanese": ""
+        },
+        {
+          "name": "key",
+          "classtype": "String",
+          "id": 412,
+          "japanese": ""
+        },
+        {
+          "name": "id",
+          "classtype": "Integer",
+          "id": 411,
+          "japanese": ""
+        },
+        {
+          "name": "value",
+          "classtype": "String",
+          "id": 410,
+          "japanese": ""
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "valid": true,
+      "name": "PublicUser",
+      "japanese": "一般ユーザー",
+      "attrs": []
+    },
+    {
+      "id": 18,
+      "valid": true,
+      "name": "ReferralCode",
+      "japanese": "",
+      "attrs": []
+    },
+    {
+      "id": 69,
+      "valid": true,
+      "name": "Role",
+      "japanese": "",
+      "attrs": [
+        {
+          "name": "updatedAt",
+          "classtype": "Date",
+          "id": 527,
+          "japanese": ""
+        },
+        {
+          "name": "createdAt",
+          "classtype": "Date",
+          "id": 526,
+          "japanese": ""
+        },
+        {
+          "name": "id",
+          "classtype": "Integer",
+          "id": 414,
+          "japanese": ""
+        },
+        {
+          "name": "name",
+          "classtype": "String",
+          "id": 413,
+          "japanese": ""
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "valid": true,
+      "name": "Schema",
+      "japanese": "",
+      "attrs": []
+    },
+    {
+      "id": 23,
+      "valid": true,
+      "name": "SecualAlert",
+      "japanese": "",
+      "attrs": [
+        {
+          "name": "unnotified",
+          "classtype": "boolean",
+          "id": 63,
+          "japanese": ""
+        },
+        {
+          "name": "events",
+          "classtype": "Collection",
+          "id": 64,
+          "japanese": ""
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "valid": true,
+      "name": "SecualEvent",
+      "japanese": "",
+      "attrs": []
+    },
+    {
+      "id": 71,
+      "valid": true,
+      "name": "Secualevent",
+      "japanese": "",
+      "attrs": [
+        {
+          "name": "updatedAt",
+          "classtype": "Date",
+          "id": 529,
+          "japanese": ""
+        },
+        {
+          "name": "createdAt",
+          "classtype": "Date",
+          "id": 528,
+          "japanese": ""
+        },
+        {
+          "name": "confirmed",
+          "classtype": "Boolean",
+          "id": 421,
+          "japanese": ""
+        },
+        {
+          "name": "eventType",
+          "classtype": "Integer",
+          "id": 420,
+          "japanese": ""
+        },
+        {
+          "name": "nearby",
+          "classtype": "Boolean",
+          "id": 419,
+          "japanese": ""
+        },
+        {
+          "name": "sensorId",
+          "classtype": "Integer",
+          "id": 418,
+          "japanese": ""
+        },
+        {
+          "name": "accountId",
+          "classtype": "Integer",
+          "id": 417,
+          "japanese": ""
+        },
+        {
+          "name": "id",
+          "classtype": "Integer",
+          "id": 416,
+          "japanese": ""
+        },
+        {
+          "name": "name",
+          "classtype": "String",
+          "id": 415,
+          "japanese": ""
+        }
+      ]
+    },
+    {
+      "id": 72,
+      "valid": true,
+      "name": "Sensor",
+      "japanese": "",
+      "attrs": [
+        {
+          "name": "lD",
+          "classtype": "Date",
+          "id": 532,
+          "japanese": ""
+        },
+        {
+          "name": "updatedAt",
+          "classtype": "Date",
+          "id": 531,
+          "japanese": ""
+        },
+        {
+          "name": "createdAt",
+          "classtype": "Date",
+          "id": 530,
+          "japanese": ""
+        },
+        {
+          "name": "gatewayId",
+          "classtype": "Integer",
+          "id": 445,
+          "japanese": ""
+        },
+        {
+          "name": "ble",
+          "classtype": "String",
+          "id": 444,
+          "japanese": ""
+        },
+        {
+          "name": "pTm",
+          "classtype": "Integer",
+          "id": 443,
+          "japanese": ""
+        },
+        {
+          "name": "lTm",
+          "classtype": "Integer",
+          "id": 442,
+          "japanese": ""
+        },
+        {
+          "name": "gRg",
+          "classtype": "Integer",
+          "id": 441,
+          "japanese": ""
+        },
+        {
+          "name": "saRt",
+          "classtype": "Integer",
+          "id": 440,
+          "japanese": ""
+        },
+        {
+          "name": "seThZ",
+          "classtype": "Integer",
+          "id": 439,
+          "japanese": ""
+        },
+        {
+          "name": "seThY",
+          "classtype": "Integer",
+          "id": 438,
+          "japanese": ""
+        },
+        {
+          "name": "seThX",
+          "classtype": "Integer",
+          "id": 437,
+          "japanese": ""
+        },
+        {
+          "name": "tsdZ",
+          "classtype": "Integer",
+          "id": 436,
+          "japanese": ""
+        },
+        {
+          "name": "tsdY",
+          "classtype": "Integer",
+          "id": 435,
+          "japanese": ""
+        },
+        {
+          "name": "tsdX",
+          "classtype": "Integer",
+          "id": 434,
+          "japanese": ""
+        },
+        {
+          "name": "id",
+          "classtype": "Integer",
+          "id": 433,
+          "japanese": ""
+        },
+        {
+          "name": "bleS",
+          "classtype": "Integer",
+          "id": 432,
+          "japanese": ""
+        },
+        {
+          "name": "btr",
+          "classtype": "Integer",
+          "id": 431,
+          "japanese": ""
+        },
+        {
+          "name": "lS",
+          "classtype": "Integer",
+          "id": 430,
+          "japanese": ""
+        },
+        {
+          "name": "seEL",
+          "classtype": "Integer",
+          "id": 429,
+          "japanese": ""
+        },
+        {
+          "name": "seBTo",
+          "classtype": "Integer",
+          "id": 428,
+          "japanese": ""
+        },
+        {
+          "name": "pBTo",
+          "classtype": "Integer",
+          "id": 427,
+          "japanese": ""
+        },
+        {
+          "name": "pSpE",
+          "classtype": "Integer",
+          "id": 426,
+          "japanese": ""
+        },
+        {
+          "name": "pSpS",
+          "classtype": "Integer",
+          "id": 425,
+          "japanese": ""
+        },
+        {
+          "name": "lSpE",
+          "classtype": "Integer",
+          "id": 424,
+          "japanese": ""
+        },
+        {
+          "name": "lSpS",
+          "classtype": "Integer",
+          "id": 423,
+          "japanese": ""
+        },
+        {
+          "name": "name",
+          "classtype": "String",
+          "id": 422,
+          "japanese": ""
+        }
+      ]
+    },
+    {
+      "id": 73,
+      "valid": true,
+      "name": "Sensortrail",
+      "japanese": "",
+      "attrs": [
+        {
+          "name": "lD",
+          "classtype": "Date",
+          "id": 535,
+          "japanese": ""
+        },
+        {
+          "name": "updatedAt",
+          "classtype": "Date",
+          "id": 534,
+          "japanese": ""
+        },
+        {
+          "name": "createdAt",
+          "classtype": "Date",
+          "id": 533,
+          "japanese": ""
+        },
+        {
+          "name": "ble",
+          "classtype": "String",
+          "id": 468,
+          "japanese": ""
+        },
+        {
+          "name": "pTm",
+          "classtype": "Integer",
+          "id": 467,
+          "japanese": ""
+        },
+        {
+          "name": "lTm",
+          "classtype": "Integer",
+          "id": 466,
+          "japanese": ""
+        },
+        {
+          "name": "gRg",
+          "classtype": "Integer",
+          "id": 465,
+          "japanese": ""
+        },
+        {
+          "name": "saRt",
+          "classtype": "Integer",
+          "id": 464,
+          "japanese": ""
+        },
+        {
+          "name": "seThZ",
+          "classtype": "Integer",
+          "id": 463,
+          "japanese": ""
+        },
+        {
+          "name": "seThY",
+          "classtype": "Integer",
+          "id": 462,
+          "japanese": ""
+        },
+        {
+          "name": "seThX",
+          "classtype": "Integer",
+          "id": 461,
+          "japanese": ""
+        },
+        {
+          "name": "tsdZ",
+          "classtype": "Integer",
+          "id": 460,
+          "japanese": ""
+        },
+        {
+          "name": "tsdY",
+          "classtype": "Integer",
+          "id": 459,
+          "japanese": ""
+        },
+        {
+          "name": "tsdX",
+          "classtype": "Integer",
+          "id": 458,
+          "japanese": ""
+        },
+        {
+          "name": "sensorId",
+          "classtype": "Integer",
+          "id": 457,
+          "japanese": ""
+        },
+        {
+          "name": "id",
+          "classtype": "Integer",
+          "id": 456,
+          "japanese": ""
+        },
+        {
+          "name": "bleS",
+          "classtype": "Integer",
+          "id": 455,
+          "japanese": ""
+        },
+        {
+          "name": "btr",
+          "classtype": "Integer",
+          "id": 454,
+          "japanese": ""
+        },
+        {
+          "name": "lS",
+          "classtype": "Integer",
+          "id": 453,
+          "japanese": ""
+        },
+        {
+          "name": "seEL",
+          "classtype": "Integer",
+          "id": 452,
+          "japanese": ""
+        },
+        {
+          "name": "seBTo",
+          "classtype": "Integer",
+          "id": 451,
+          "japanese": ""
+        },
+        {
+          "name": "pBTo",
+          "classtype": "Integer",
+          "id": 450,
+          "japanese": ""
+        },
+        {
+          "name": "pSpE",
+          "classtype": "Integer",
+          "id": 449,
+          "japanese": ""
+        },
+        {
+          "name": "pSpS",
+          "classtype": "Integer",
+          "id": 448,
+          "japanese": ""
+        },
+        {
+          "name": "lSpE",
+          "classtype": "Integer",
+          "id": 447,
+          "japanese": ""
+        },
+        {
+          "name": "lSpS",
+          "classtype": "Integer",
+          "id": 446,
+          "japanese": ""
+        }
+      ]
+    },
+    {
+      "id": 74,
+      "valid": true,
+      "name": "Subscription",
+      "japanese": "",
+      "attrs": [
+        {
+          "name": "updatedAt",
+          "classtype": "Date",
+          "id": 537,
+          "japanese": ""
+        },
+        {
+          "name": "createdAt",
+          "classtype": "Date",
+          "id": 536,
+          "japanese": ""
+        },
+        {
+          "name": "accountId",
+          "classtype": "Integer",
+          "id": 473,
+          "japanese": ""
+        },
+        {
+          "name": "active",
+          "classtype": "Boolean",
+          "id": 472,
+          "japanese": ""
+        },
+        {
+          "name": "id",
+          "classtype": "Integer",
+          "id": 471,
+          "japanese": ""
+        },
+        {
+          "name": "planId",
+          "classtype": "Integer",
+          "id": 470,
+          "japanese": ""
+        },
+        {
+          "name": "status",
+          "classtype": "String",
+          "id": 469,
+          "japanese": ""
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "valid": true,
+      "name": "SubscriptionLisense",
+      "japanese": "",
+      "attrs": []
+    },
+    {
+      "id": 75,
+      "valid": true,
+      "name": "Supporttitle",
+      "japanese": "",
+      "attrs": [
+        {
+          "name": "updatedAt",
+          "classtype": "Date",
+          "id": 539,
+          "japanese": ""
+        },
+        {
+          "name": "createdAt",
+          "classtype": "Date",
+          "id": 538,
+          "japanese": ""
+        },
+        {
+          "name": "title",
+          "classtype": "String",
+          "id": 476,
+          "japanese": ""
+        },
+        {
+          "name": "id",
+          "classtype": "Integer",
+          "id": 475,
+          "japanese": ""
+        },
+        {
+          "name": "comment",
+          "classtype": "String",
+          "id": 474,
+          "japanese": ""
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "valid": true,
+      "name": "Transaction",
+      "japanese": "",
+      "attrs": [
+        {
+          "name": "updatedAt",
+          "classtype": "Date",
+          "id": 541,
+          "japanese": ""
+        },
+        {
+          "name": "createdAt",
+          "classtype": "Date",
+          "id": 540,
+          "japanese": ""
+        },
+        {
+          "name": "orderId",
+          "classtype": "String",
+          "id": 484,
+          "japanese": ""
+        },
+        {
+          "name": "accountId",
+          "classtype": "Integer",
+          "id": 483,
+          "japanese": ""
+        },
+        {
+          "name": "amount",
+          "classtype": "Integer",
+          "id": 482,
+          "japanese": ""
+        },
+        {
+          "name": "id",
+          "classtype": "Integer",
+          "id": 481,
+          "japanese": ""
+        },
+        {
+          "name": "planId",
+          "classtype": "Integer",
+          "id": 480,
+          "japanese": ""
+        },
+        {
+          "name": "accessPass",
+          "classtype": "String",
+          "id": 479,
+          "japanese": ""
+        },
+        {
+          "name": "accessId",
+          "classtype": "String",
+          "id": 478,
+          "japanese": ""
+        },
+        {
+          "name": "comment",
+          "classtype": "String",
+          "id": 477,
+          "japanese": ""
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "valid": true,
+      "name": "User",
+      "japanese": "",
+      "attrs": [
+        {
+          "name": "name",
+          "classtype": "String",
+          "id": 72,
+          "japanese": ""
+        },
+        {
+          "name": "password",
+          "classtype": "String",
+          "id": 73,
+          "japanese": ""
+        },
+        {
+          "name": "confirm_password",
+          "classtype": "String",
+          "id": 74,
+          "japanese": ""
+        },
+        {
+          "name": "email",
+          "classtype": "String",
+          "id": 75,
+          "japanese": ""
+        },
+        {
+          "name": "groups",
+          "classtype": "Array<Group>",
+          "id": 76,
+          "japanese": ""
+        },
+        {
+          "name": "address",
+          "classtype": "String",
+          "id": 340,
+          "japanese": ""
+        },
+        {
+          "name": "lastSignInIp",
+          "classtype": "String",
+          "id": 341,
+          "japanese": ""
+        },
+        {
+          "name": "currentSignInIp",
+          "classtype": "String",
+          "id": 342,
+          "japanese": ""
+        },
+        {
+          "name": "authMethod",
+          "classtype": "Integer",
+          "id": 343,
+          "japanese": ""
+        },
+        {
+          "name": "image",
+          "classtype": "String",
+          "id": 344,
+          "japanese": ""
+        },
+        {
+          "name": "signInCount",
+          "classtype": "Integer",
+          "id": 345,
+          "japanese": ""
+        },
+        {
+          "name": "id",
+          "classtype": "Integer",
+          "id": 346,
+          "japanese": ""
+        },
+        {
+          "name": "uid",
+          "classtype": "String",
+          "id": 347,
+          "japanese": ""
+        },
+        {
+          "name": "city",
+          "classtype": "String",
+          "id": 348,
+          "japanese": ""
+        },
+        {
+          "name": "phone",
+          "classtype": "String",
+          "id": 349,
+          "japanese": ""
+        },
+        {
+          "name": "prefecture",
+          "classtype": "Integer",
+          "id": 350,
+          "japanese": ""
+        },
+        {
+          "name": "zip",
+          "classtype": "Integer",
+          "id": 351,
+          "japanese": ""
+        },
+        {
+          "name": "nickname",
+          "classtype": "String",
+          "id": 352,
+          "japanese": ""
+        },
+        {
+          "name": "roleId",
+          "classtype": "Integer",
+          "id": 353,
+          "japanese": ""
+        },
+        {
+          "name": "provider",
+          "classtype": "String",
+          "id": 354,
+          "japanese": ""
+        },
+        {
+          "name": "phoneType",
+          "classtype": "String",
+          "id": 355,
+          "japanese": ""
+        },
+        {
+          "name": "kananame",
+          "classtype": "String",
+          "id": 356,
+          "japanese": ""
+        },
+        {
+          "name": "resetPasswordToken",
+          "classtype": "String",
+          "id": 357,
+          "japanese": ""
+        },
+        {
+          "name": "encryptedPassword",
+          "classtype": "String",
+          "id": 358,
+          "japanese": ""
+        },
+        {
+          "name": "confirmationToken",
+          "classtype": "String",
+          "id": 359,
+          "japanese": ""
+        },
+        {
+          "name": "unconfirmedEmail",
+          "classtype": "String",
+          "id": 360,
+          "japanese": ""
+        },
+        {
+          "name": "avatarFileName",
+          "classtype": "String",
+          "id": 361,
+          "japanese": ""
+        },
+        {
+          "name": "avatarContentType",
+          "classtype": "String",
+          "id": 362,
+          "japanese": ""
+        },
+        {
+          "name": "avatarFileSize",
+          "classtype": "Integer",
+          "id": 363,
+          "japanese": ""
+        },
+        {
+          "name": "parseObjectId",
+          "classtype": "String",
+          "id": 364,
+          "japanese": ""
+        },
+        {
+          "name": "accountId",
+          "classtype": "Integer",
+          "id": 365,
+          "japanese": ""
+        },
+        {
+          "name": "resetPasswordSentAt",
+          "classtype": "Date",
+          "id": 542,
+          "japanese": ""
+        },
+        {
+          "name": "rememberCreatedAt",
+          "classtype": "Date",
+          "id": 543,
+          "japanese": ""
+        },
+        {
+          "name": "currentSignInAt",
+          "classtype": "Date",
+          "id": 544,
+          "japanese": ""
+        },
+        {
+          "name": "lastSignInAt",
+          "classtype": "Date",
+          "id": 545,
+          "japanese": ""
+        },
+        {
+          "name": "createdAt",
+          "classtype": "Date",
+          "id": 546,
+          "japanese": ""
+        },
+        {
+          "name": "updatedAt",
+          "classtype": "Date",
+          "id": 547,
+          "japanese": ""
+        },
+        {
+          "name": "confirmedAt",
+          "classtype": "Date",
+          "id": 548,
+          "japanese": ""
+        },
+        {
+          "name": "confirmationSentAt",
+          "classtype": "Date",
+          "id": 549,
+          "japanese": ""
+        },
+        {
+          "name": "avatarUpdatedAt",
+          "classtype": "Date",
+          "id": 550,
+          "japanese": ""
+        }
+      ]
+    }
+  ]
+}
